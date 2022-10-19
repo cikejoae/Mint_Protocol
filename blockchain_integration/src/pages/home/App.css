@@ -1,0 +1,33 @@
+
+
+
+#root {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+  
+
+  body {
+    background: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  
+
+  h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+  }
+  
+  .aumento{
+    transition: 0.55;
+    animation: ease-in;
+}
+
+.aumento:hover{
+    transform: scale(1.3);
+    box-shadow: 0px 0px 0px 0px;
+}
