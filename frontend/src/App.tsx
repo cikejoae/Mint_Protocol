@@ -1,5 +1,6 @@
 import React from 'react';
-import {Grid, HStack, Flex, Box, Spacer, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Link} from '@chakra-ui/react'
+import { Grid, HStack, VStack,Flex, Box, Spacer, Breadcrumb, BreadcrumbItem, BreadcrumbLink, 
+        Link, Heading, Text, Button } from '@chakra-ui/react'
 import './App.css';
 
 function App() {
@@ -29,8 +30,34 @@ function App() {
       </Flex>
       </HStack>
 
-      </Grid> 
+      <VStack w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
+        max-width='100px'>
+        <Box h='200px'></Box>
+          <Heading h='100px'
+            fontWeight={800}
+            fontSize={{ base: '4xl', sm: '8xl', md: '10xl' }}
+            textColor='white'>
+              Mint Protocol
+          </Heading>
+            <Box h='50px'></Box>
+          <Heading h='100px'
+            fontWeight={400}
+            fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}
+            textColor='white'
+            className="font">
+              You are your own NFT
+          </Heading>
+          <Button colorScheme='teal' size='md' height='60px'
+            width='200px'>
+            <Text fontSize='30px'>Start</Text>
+          </Button>
+      </VStack>
+      <VStack  alignItems='center' height= "300px" max-width= "100%" background = "white">  
+      <Box h='50px'></Box>
+      </VStack>  
+    
+    </Grid> 
+
   );
 }
-
 export default App;
