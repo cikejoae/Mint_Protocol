@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Grid, HStack, Flex, Box, Spacer, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Link} from '@chakra-ui/react'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid w='100%' h='100%'>
+      <HStack>
+        <Flex gap='500'>
+          <Box p='4' bg='white'>
+            <header> Mint Protocol </header>  
+          </Box>
+            <Spacer/>
+              <Box p='4' bg='white.400'>
+              <Breadcrumb spacing='8px'>
+                <BreadcrumbItem>
+                  <BreadcrumbLink as={Link} to='#'>About</BreadcrumbLink>
+                </BreadcrumbItem>
+
+                <BreadcrumbItem>
+                  <BreadcrumbLink as={Link} to='#'>Team</BreadcrumbLink>
+                </BreadcrumbItem>
+
+                <BreadcrumbItem>
+                  <BreadcrumbLink as={Link} to='#'>Contact Us</BreadcrumbLink>
+                </BreadcrumbItem>
+              </Breadcrumb>
+          </Box>
+      </Flex>
+      </HStack>
+
+      </Grid> 
   );
 }
 
