@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, HStack, VStack,Flex, Box, Spacer, Breadcrumb, BreadcrumbItem, BreadcrumbLink, 
-        Link, Heading, Text, Button, Divider } from '@chakra-ui/react'
+        Link, Heading, Text, Button, Divider, Stack, Center, Image, useColorModeValue } from '@chakra-ui/react'
 import './App.css';
 
 function App() {
@@ -73,6 +73,155 @@ function App() {
               </Heading>
             </Box>
         </VStack>
+
+        <Divider/>
+        <VStack>
+        <Box h='50px'></Box>
+        </VStack>
+        <Heading> Team </Heading>
+        <VStack>
+        <Box h='50px'></Box>
+        </VStack>
+
+   <HStack spacing={20}>
+    <Center py={6} className="aumento">
+      <Stack 
+        borderWidth="1px"
+        borderRadius="lg"
+        w={{ sm: '100%', md: '400px' }}
+        height={{ sm: '476px', md: '20rem' }}
+        direction={{ base: 'column', md: 'row' }}
+        bg={useColorModeValue('white', 'gray.900')}
+        boxShadow={'2xl'}
+        padding={4}>
+          <Flex flex={1} bg="blue.200">
+            <Image 
+              objectFit="cover"
+              boxSize="100%"
+            />
+          </Flex>
+        <Stack
+          flex={1}
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          p={1}
+          pt={2}>
+          <Heading fontSize={'2xl'} fontFamily={'body'}>
+            Scarlet Rangel
+          </Heading>
+            <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
+              @-
+            </Text>
+              <Text
+              textAlign={'center'}
+              color={useColorModeValue('gray.700', 'gray.400')}
+              px={3}>
+                -
+            </Text>
+          <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
+          </Stack>
+          <Stack
+            width={'100%'}
+            mt={'2rem'}
+            direction={'row'}
+            padding={2}
+            justifyContent={'space-between'}
+            alignItems={'center'}>
+            <Button
+              flex={1}
+              fontSize={'sm'}
+              rounded={'full'}
+              bg={'blue.400'}
+              color={'white'}
+              boxShadow={
+                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+              }
+              _hover={{
+                bg: 'blue.500',
+              }}
+              _focus={{
+                bg: 'blue.500',
+              }}>
+              Follow
+            </Button>
+          </Stack>
+        </Stack>
+      </Stack>
+    </Center>
+
+    <Center py={6} className="aumento">
+      <Stack
+        borderWidth="1px"
+        borderRadius="lg"
+        w={{ sm: '100%', md: '400px' }}
+        height={{ sm: '476px', md: '20rem' }}
+        direction={{ base: 'column', md: 'row' }}
+        bg={useColorModeValue('white', 'gray.900')}
+        boxShadow={'2xl'}
+        padding={4}>
+          <Flex flex={1} bg="blue.200">
+            <Image 
+              objectFit="cover"
+              boxSize="100%"
+            />
+          </Flex>
+        <Stack
+          flex={1}
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          p={1}
+          pt={2}>
+            <Heading fontSize={'2xl'} fontFamily={'body'}>
+              Adrián Montero
+            </Heading>
+              <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
+              @-
+              </Text>
+                <Text
+                textAlign={'center'}
+                color={useColorModeValue('gray.700', 'gray.400')}
+                px={3}>
+                -
+              </Text>
+          <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
+          </Stack>
+          <Stack
+            width={'100%'}
+            mt={'2rem'}
+            direction={'row'}
+            padding={2}
+            justifyContent={'space-between'}
+            alignItems={'center'}>
+            <Button
+              flex={1}
+              fontSize={'sm'}
+              rounded={'full'}
+              bg={'blue.400'}
+              color={'white'}
+              boxShadow={
+                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
+              }
+              _hover={{
+                bg: 'blue.500',
+              }}
+              _focus={{
+                bg: 'blue.500',
+              }}>
+              Follow
+            </Button>
+          </Stack>
+        </Stack>
+      </Stack>
+    </Center>
+    </HStack>
+
+    <VStack>
+    <Box h='150px'></Box>
+    </VStack>
+
+
         </VStack> 
     </Grid> 
 

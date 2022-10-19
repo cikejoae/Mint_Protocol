@@ -1,0 +1,9 @@
+.aumento{
+    transition: 0.55;
+    animation: ease-in;
+}
+
+.aumento:hover{
+    transform: scale(1.2);
+    box-shadow: 0px 0px 0px 0px;
+}
