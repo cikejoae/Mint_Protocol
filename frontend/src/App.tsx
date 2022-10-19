@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, HStack, VStack,Flex, Box, Spacer, Breadcrumb, BreadcrumbItem, BreadcrumbLink, 
-        Link, Heading, Text, Button } from '@chakra-ui/react'
+        Link, Heading, Text, Button, Divider } from '@chakra-ui/react'
 import './App.css';
 
 function App() {
@@ -54,8 +54,26 @@ function App() {
       </VStack>
       <VStack  alignItems='center' height= "300px" max-width= "100%" background = "white">  
       <Box h='50px'></Box>
-      </VStack>  
-    
+
+      <Divider/>
+        <VStack>
+          <Box h='50px'></Box>
+        </VStack>
+      <Heading> About </Heading>
+        <VStack>
+          <Box h='100px'></Box>
+            <Box>
+              <Heading h='500px' w='900px'
+                textAlign='center'
+                fontSize='30px'
+                >
+                  Mint Protocol is a decentralized application that generates NFTs 
+                  using artificial vision with facial recognition and neural transfer 
+                  style based on convolutional neural networks.    
+              </Heading>
+            </Box>
+        </VStack>
+        </VStack> 
     </Grid> 
 
   );
