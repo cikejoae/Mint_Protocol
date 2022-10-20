@@ -4,6 +4,7 @@ import { FaRedhat } from "react-icons/fa";
 import { useEffect } from 'react';
 import { truncate } from 'fs';
 import './App.css';
+import {Basic, CollapseEx } from './Collapse_efect';
 
 
 
@@ -379,8 +380,9 @@ function Home() {
       <VStack>
           <Center className="aumento"  bg='white' h='50px' color='#e80b9d'>
           <h1>Neural Style Transfer</h1>
+          <CollapseEx />
           </Center>
-        </VStack>
+      </VStack>
 
         <VStack>
         <Box w="100%" h="10px">
