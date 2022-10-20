@@ -9,7 +9,7 @@
   &::before,
   &::after {
     content: '';
-    background: url(/assets/images/icons/gear.svg) center/cover no-repeat;
+    background: white center/cover no-repeat;
     animation: spin linear infinite;
   }
 

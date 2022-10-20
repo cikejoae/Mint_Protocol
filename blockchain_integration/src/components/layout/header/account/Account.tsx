@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useAccount, useAccounts } from '@gear-js/react-hooks';
-import userSVG from 'assets/images/icons/login.svg';
-import { Button } from '@gear-js/ui';
+import { Button as But } from '@chakra-ui/react';
 import { AccountsModal } from './accounts-modal';
 import { Wallet } from './wallet';
 
@@ -23,7 +22,7 @@ function Account() {
       {account ? (
         <Wallet balance={account.balance} address={account.address} name={account.meta.name} onClick={openModal} />
       ) : (
-        <Button icon={userSVG} text="Sign in" onClick={openModal} />
+        <But colorScheme= "pink" w="150px" h="50px" bg= "#e80b9d"  onClick={openModal}> Connect </But>
       )}
       {isModalOpen && <AccountsModal accounts={accounts} close={closeModal} />}
     </>

@@ -37,8 +37,7 @@ function Accounts({ list, onChange }: Props) {
     <ul className={styles.list}>{getAccounts()}</ul>
   ) : (
     <p>
-      No accounts found. Please open Polkadot extension, create a new account or import existing one and reload the
-      page.
+      Create a new account .
     </p>
   );
 }

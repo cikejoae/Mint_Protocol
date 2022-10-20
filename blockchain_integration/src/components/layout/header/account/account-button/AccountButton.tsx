@@ -20,7 +20,7 @@ function AccountButton({ address, name, onClick, isActive, block }: Props) {
   );
 
   return (
-    <But colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d" type="button" className={className} onClick={onClick}>
+    <But className="aumento"  colorScheme= "pink" w="150px" h="50px" bg= "#e80b9d" type="button" onClick={onClick}>
       <Identicon value={address} className={buttonStyles.icon} theme="polkadot" size={28} />
       {name}
     </But>

@@ -4,6 +4,7 @@
 .loader {
   @extend %absoluteCenter;
   font-size: $fontSizeLarge;
+  
 
   &::after {
     content: '.';
