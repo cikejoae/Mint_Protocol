@@ -56,16 +56,32 @@ function App() {
       <Box h='50px'></Box>
 
       <Divider/>
-        <VStack>
+      <VStack>
           <Box h='50px'></Box>
         </VStack>
-      <Heading> About </Heading>
         <VStack>
           <Box h='100px'></Box>
             <Box>
               <Heading h='500px' w='900px'
                 textAlign='center'
                 fontSize='30px'
+                >
+                Create your own collection of NFTs with the best visual filters and with the style of your favorite artist..    
+              </Heading>
+            </Box>
+        </VStack>
+        <VStack>
+          <Box h='50px'></Box>
+        </VStack>
+        <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
+        max-width='100px' >
+          <Heading textColor='white' > About </Heading>
+          <Box h='100px'></Box>   
+            <Box>
+              <Heading h='500px' w='900px'
+                textAlign='center'
+                fontSize='30px'
+                textColor='white'
                 >
                   Mint Protocol is a decentralized application that generates NFTs 
                   using artificial vision with facial recognition and neural transfer 
