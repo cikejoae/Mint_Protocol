@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <Grid w='100%' h='100%'>
-      <HStack>
+      <HStack h='80px'>
         <Flex gap='500'>
           <Box p='4' bg='white'>
             <header> Mint Protocol </header>  
@@ -30,7 +30,7 @@ function App() {
       </Flex>
       </HStack>
 
-      <VStack w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
+      <VStack w = '100%' h = '700px' background= '#e80b9d' alignItems='center' 
         max-width='100px'>
         <Box h='200px'></Box>
           <Heading h='100px'
@@ -47,10 +47,6 @@ function App() {
             className="font">
               You are your own NFT
           </Heading>
-          <Button colorScheme='teal' size='md' height='60px'
-            width='200px'>
-            <Text fontSize='30px'>Start</Text>
-          </Button>
       </VStack>
       <VStack  alignItems='center' height= "300px" max-width= "100%" background = "white">  
       <Box h='50px'></Box>
@@ -62,12 +58,18 @@ function App() {
         <VStack>
           <Box h='100px'></Box>
             <Box>
-              <Heading h='500px' w='900px'
+              <Heading h='200px' w='900px'
                 textAlign='center'
                 fontSize='30px'
                 >
                 Create your own collection of NFTs with the best visual filters and with the style of your favorite artist..    
               </Heading>
+              <Button colorScheme='gray' size='md' height='60px'
+                      width='200px'
+                      borderRadius='30px'
+                      >
+                <Text fontSize='30px'>Start</Text>
+              </Button>
               <Box bg ="black" w="100%" h="300px"> 
               <div className="carousel">
               <div className="carousel_items" >
