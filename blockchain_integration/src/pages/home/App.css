@@ -37,13 +37,13 @@
 }
  .carousel_items{
   display: flex;
-  animation: carousel 4s linear infinite;
+  animation: carousel 15s linear infinite;
 
 
 }
   .carousel_img{
     display: block;
-    width: 640px;
+    width: 300px;
     object-fit: cover;
 
   }
