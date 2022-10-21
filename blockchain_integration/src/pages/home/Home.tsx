@@ -4,8 +4,6 @@ import { FaRedhat } from "react-icons/fa";
 import { useEffect } from 'react';
 import { truncate } from 'fs';
 import './App.css';
-import {Basic, CollapseEx } from './Collapse_efect';
-
 
 
 function Home() {
@@ -380,15 +378,145 @@ function Home() {
       <VStack>
           <Center className="aumento"  bg='white' h='50px' color='#e80b9d'>
           <h1>Neural Style Transfer</h1>
-          <CollapseEx />
           </Center>
       </VStack>
 
         <VStack>
-        <Box w="100%" h="10px">
+        <Box w="100%" h="50px">
+          
+          <Center> Pablo Picasso </Center>
          
          </Box>
+         <Box w="100%" h="50px">
+         </Box>
         </VStack>
+        <div  >
+        <VStack  w="100%" h="350px">
+        <div className ="carrousel">
+          <HStack  w="100%" h="350px" >
+          <Flex  gap="2" w="100%" h="350px" >
+          
+          <article className="card">
+          <Box  className="aumento" w="300px" h="300px">
+            <Tooltip  label="La persistencia de la memoria: Salvador Dalí" aria-label='A tooltip'>
+              <But  bg ="white" w="300px" h="300px"   type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/portrait-of-ambroise-vollard-1910.jpg"}  ></img> 
+              </But>
+              </Tooltip>
+          </Box>
+          </article>
+          <article className="card">
+          <Box className="aumento" w="300px" h="300px">
+            <Tooltip label="Mujeres de argel: Pablo Picasso" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"  type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/old-guitarist-chicago-1903.jpg"}  ></img>
+              </But>
+            </Tooltip>
+          </Box>
+          </article>
+          <article className="card">
+          <Box  className="aumento" w="300px" h="300px">
+            <Tooltip label="The Starry Night: Vincent van Gogh" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"   type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/mujeres_de_argel_picasso.jpg"}  ></img>
+              </But>
+            </Tooltip>
+          </Box>
+          </article>
+          <article className="card">
+          <Box  className="aumento" w="300px" h="300px">
+            <Tooltip label="La creación de Adán: Miguel Ángel" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"  type="submit">
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/girl-on-the-ball-1905.jpg"}  ></img>
+              </But>
+            </Tooltip>
+          </Box>
+          </article>
+          <article className="card">
+          <Box  className="aumento" w="300px" h="300px">
+            <Tooltip label="El grito: Edvard Munch" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"   type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/portrait-of-dora-maar-1937.jpg"}  ></img>
+              </But>
+            </Tooltip>
+          </Box>
+          </article>
+          <article className="card">
+          <Box  className="aumento" w="300px" h="300px">
+            <Tooltip label="El beso: Gustav Klimt" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"   type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/figures-at-the-seaside-1931.jpg"}  ></img>
+              </But>
+            </Tooltip>
+          </Box>
+          </article>
+          <article className="card">
+          <Box className="aumento" w="300px" h="300px">
+            <Tooltip label="Autorretrato: Leonardo da Vinci" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"   type="submit"> 
+              <img width = "100%"  height="100%" src={"./style/Pablo_picasso_collection/child-with-dove-1901.jpg"}  ></img>
+              </But>
+            </Tooltip>
+          </Box>
+          </article>
+          <article className="card">
+          <Box  className="aumento" w="300px" h="300px">
+            <Tooltip label="El abrazo del amor del Universo: Frida Kahlo" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"  type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/cat-catching-a-bird-1939.jpg"}  ></img>
+               </But>
+            </Tooltip>
+          </Box>
+          </article>
+          <article className="card">
+          <Box  className="aumento" w="300px" h="300px">
+            <Tooltip label="El abrazo del amor del Universo: Frida Kahlo" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"  type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/Portrait-of-woman-in dhermine-pass-1937.jpg"}  ></img>
+               </But>
+            </Tooltip>
+          </Box>   
+          </article>
+          <article className="card">
+          <Box  className="aumento" w="300px" h="300px">
+            <Tooltip label="El abrazo del amor del Universo: Frida Kahlo" aria-label='A tooltip'>
+              <But bg ="white" w="300px" h="300px"  type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"}  ></img>
+               </But>
+            </Tooltip>
+          </Box>
+          </article>
+           
+          </Flex>
+      </HStack>
+      </div> 
+      <VStack bg="red" w="100%" h="500px">
+
+      </VStack>
+      </VStack>
+      </div>
+      <VStack w="100%" h="300px">
+      <Box bg ="black" w="100%" h="300px"> 
+      <div className="carousel">
+        <div className="carousel_items" >
+          <HStack className="carousel_items"  >
+            <Flex className="carousel_items"  gap="2" >
+             <But className="carousel_img" bg ="red" w="50px" h="50px"  type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"}  ></img>
+               </But>
+               <But className="carousel_img" bg ="red" w="50px" h="50px"  type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"}  ></img>
+               </But>
+               <But className="carousel_img" bg ="red" w="50px" h="50px"  type="submit"> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"}  ></img>
+               </But>
+               </Flex>
+               </HStack>
+               <img  src={"./style/Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"} alt="" className="carousel_img" ></img>
+        </div>
+      </div>
+      </Box>
+      </VStack>
               
 
       </TabPanel>

@@ -68,6 +68,20 @@ function App() {
                 >
                 Create your own collection of NFTs with the best visual filters and with the style of your favorite artist..    
               </Heading>
+              <Box bg ="black" w="100%" h="300px"> 
+              <div className="carousel">
+              <div className="carousel_items" >
+              <img  src={"./adan.jpg"} alt="" className="carousel_img" ></img>
+              <img  src={"./Grito.jpg"} alt="" className="carousel_img" ></img>
+              <img  src={"./Mona_Lisa.jpg"} alt="" className="carousel_img" ></img>
+              <img  src={"./StarryNight.jpg"} alt="" className="carousel_img" ></img>
+              <img  src={"./Persistencia_de_la_memoria.jpg"} alt="" className="carousel_img" ></img>
+              </div>
+              </div>
+              </Box>
+
+
+
             </Box>
         </VStack>
         <VStack>
