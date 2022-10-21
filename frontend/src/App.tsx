@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, HStack, VStack,Flex, Box, Spacer, Breadcrumb, BreadcrumbItem, BreadcrumbLink, 
-        Link, Heading, Text, Button, Divider, Stack, Center, Image, useColorModeValue } from '@chakra-ui/react'
+        Link, Heading, Text, Button, Divider, Stack, Center, Image, useColorModeValue, Container } from '@chakra-ui/react'
+import { FaGithub, FaTelegramPlane, FaDiscord,FaLinkedinIn, FaTwitter} from "react-icons/fa"
 import './App.css';
 
 function App() {
@@ -250,7 +251,33 @@ function App() {
     <VStack>
     <Box h='150px'></Box>
     </VStack>
-
+    
+    <Divider/>
+    <VStack>
+    <Box h='50px'></Box>
+    </VStack>
+    <Heading> Contact us </Heading>
+    <VStack>
+    <Box h='50px'></Box>
+    </VStack>
+    <Container p="5"></Container>
+      <Flex height= "200px" alignItems='center' gap='2'>  
+    <Box  px={5} h={20}>
+      <Button  bg="white" ><FaGithub  color ="gray" size = "30px"/></Button> 
+    </Box>
+    <Box px={5} h={20}>
+      <Button bg="white" ><FaTelegramPlane color ="gray" size = "30px"/></Button>
+    </Box>
+    <Box px={5} h={20}>
+      <Button bg="white"> <FaDiscord  color ="gray" size = "30px"/> </Button>
+    </Box>
+    <Box px={5} h={20}>
+      <Button bg="white"> <FaLinkedinIn color ="gray" size = "30px"/> </Button>
+    </Box>
+    <Box px={5} h={20}>
+      <Button bg="white"> <FaTwitter color ="gray" size = "30px"/> </Button>
+    </Box>
+      </Flex>
 
         </VStack> 
     </Grid> 
