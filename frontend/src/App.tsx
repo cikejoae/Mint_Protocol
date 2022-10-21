@@ -64,7 +64,7 @@ function App() {
                 >
                 Create your own collection of NFTs with the best visual filters and with the style of your favorite artist..    
               </Heading>
-              <Button colorScheme='gray' size='md' height='60px'
+              <Button colorScheme='pink' size='md' height='60px'
                       width='200px'
                       borderRadius='30px'
                       >
@@ -81,8 +81,6 @@ function App() {
               </div>
               </div>
               </Box>
-
-
 
             </Box>
         </VStack>
