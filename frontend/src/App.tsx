@@ -253,10 +253,12 @@ function App() {
     </VStack>
     
     <Divider/>
+    <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
+            max-width='100px' >
     <VStack>
     <Box h='50px'></Box>
     </VStack>
-    <Heading> Contact us </Heading>
+    <Heading textColor='white'> Contact us </Heading>
     <VStack>
     <Box h='50px'></Box>
     </VStack>
@@ -278,7 +280,7 @@ function App() {
       <Button bg="white"> <FaTwitter color ="gray" size = "30px"/> </Button>
     </Box>
       </Flex>
-
+      </VStack>
         </VStack> 
     </Grid> 
 
