@@ -142,13 +142,13 @@ function App() {
             Scarlet Rangel
           </Heading>
             <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
-              @-
+              @scar.rguez
             </Text>
               <Text
               textAlign={'center'}
               color={useColorModeValue('gray.700', 'gray.400')}
               px={3}>
-                -
+                Frontend Developer.
             </Text>
           <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
           </Stack>
@@ -204,17 +204,17 @@ function App() {
           alignItems="center"
           p={1}
           pt={2}>
-            <Heading fontSize={'2xl'} fontFamily={'body'}>
+            <Heading fontSize={'2xl'} fontFamily={'body'} textAlign="center">
               Adrián Montero
             </Heading>
               <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
-              @-
+              @a_mont24
               </Text>
                 <Text
                 textAlign={'center'}
                 color={useColorModeValue('gray.700', 'gray.400')}
                 px={3}>
-                -
+                Computational Physics and Artificial Intelligence.
               </Text>
           <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
           </Stack>
