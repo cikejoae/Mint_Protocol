@@ -56,6 +56,7 @@ function App() {
       <VStack>
           <Box h='50px'></Box>
         </VStack>
+        
         <VStack>
           <Box h='100px'></Box>
             <Box>
@@ -82,11 +83,11 @@ function App() {
               </div>
               </div>
               </Box>
-
             </Box>
         </VStack>
+        
         <VStack>
-          <Box h='50px'></Box>
+          <Box h='350px'></Box>
         </VStack>
         <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
         max-width='100px' >
