@@ -87,7 +87,7 @@ function App() {
         </VStack>
         
         <VStack>
-          <Box h='350px'></Box>
+          <Box h='10px'></Box>
         </VStack>
         <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
         max-width='100px' >
