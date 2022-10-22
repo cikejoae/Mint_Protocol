@@ -57,10 +57,9 @@ function App() {
           <Box h='50px'></Box>
         </VStack>
         
-        <VStack>
-          <Box h='100px'></Box>
-            <Box>
-              <Heading h='200px' w='900px'
+      <VStack>
+      <Box h='100px'></Box>
+      <Heading h='200px' w='900px'
                 textAlign='center'
                 fontSize='30px'
                 >
@@ -83,18 +82,18 @@ function App() {
               </div>
               </div>
               </Box>
-            </Box>
-        </VStack>
+      </VStack>
         
         <VStack>
           <Box h='10px'></Box>
         </VStack>
         <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
         max-width='100px' >
+          <Box h='100px'></Box>
           <Heading textColor='white' > About </Heading>
           <Box h='100px'></Box>   
             <Box>
-              <Heading h='500px' w='900px'
+              <Heading h='400px' w='900px'
                 textAlign='center'
                 fontSize='30px'
                 textColor='white'
