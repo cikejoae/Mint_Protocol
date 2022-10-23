@@ -495,9 +495,7 @@ function Home() {
       </VStack>
       </VStack>
       </div>
-      
-              
-
+       
       </TabPanel>
     <TabPanel>
       <p>My NFT collection</p>
