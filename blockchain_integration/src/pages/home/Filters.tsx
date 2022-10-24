@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
-import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip } from '@chakra-ui/react';
-import { FaRedhat } from "react-icons/fa";
-import { useEffect } from 'react';
-import { truncate } from 'fs';
+import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
+import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
+import { ChangeEvent } from 'react';
+import { isWhiteSpaceLike } from 'typescript';
 import './App.css';
-import { Davincicollection } from './DaVincicollection';
-import { Picassocollection} from './Picassocollection';
-import { Filters } from './Filters';
 
 
 
-
-
-
-
-function Home() {
+function Filters() {
 
   const [value, setValue] = useState(false);
 
@@ -239,62 +232,19 @@ function Home() {
             const data = await res.json();
               
             }
-    
-  const get = async () => {
-    const res = await fetch('http://localhost:5000/button')
-    const data = await res.json();
-    console.log(data)
-    }
-    
-    useEffect(() => {
-      get();
-    },[])
-  
-    
-    
 
 
-  return (
+         
+                   
+    
+    return (
     <>
-      <Tabs variant='soft-rounded' colorScheme= "pink">
-        <TabList>
-          <Tab>Mint</Tab>
-          <Tab>My collection</Tab>
-      
-        </TabList>
-  <TabPanels>
-    <TabPanel>
-      <VStack>
-      <Box w = "100%" h="50px" >
-
-      <Flex gap="2">
-       
-      </Flex>
-      </Box>
-
-
-      <Box w = "100%" h="60px" >
-          <Center className="aumento" 
-           bg='white' h='50px' color='#e80b9d'>
-          <h1>Mint Protocol</h1> 
-          </Center>
-      </Box>
-      
-      </VStack>
-      <HStack>
-      <Flex gap="4">
-      <Box w="100px" h="100px">
-          </Box>    
-      <Box w="500px" h="500px">
-          <img src={'/video_feed'}/>
-          <But  colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"   type="submit" onClick = {activeInactive_button_capture} >Capture</But>    
-      </Box>
-      <Spacer />
+        <div>
           
-      <VStack w="100px" h="500px" >
+      <VStack w="100%" h="500px" >
 
-       <Box  overflowY="auto" css={{ '&::-webkit-scrollbar': { width: '8px',}, '&::-webkit-scrollbar-track': {width: '12px',},'&::-webkit-scrollbar-thumb': { background: "#e80b9d", borderRadius: '24px', }, }}>
-        <Flex gap="1"  direction="column" >
+
+        <Flex gap="2"  >
           <Box className="aumento"  w="100px" h="100px">
             <Tooltip label="Nose pig" aria-label='A tooltip' placement='top-start'>
               <But bg ="white" w="100px" h="100px"  onClick = {activeInactive_button_nose_pork}  type="submit" > 
@@ -302,7 +252,7 @@ function Home() {
               </But>
             </Tooltip>
           </Box>
-          <Box  className="aumento" w="100px" h="100px">
+          <Box  className="aumento" w="150px" h="150px">
             <Tooltip label="Nose clown" aria-label='A tooltip' placement='top-start'>
               <But bg ="white" w="100px" h="100px" onClick = {activeInactive_button_nose_clown} type="submit"> 
                <img src={"./icons/CLOWN.png"}  ></img>
@@ -365,64 +315,14 @@ function Home() {
               </But>
             </Tooltip>
           </Box>
-        </Flex>
-
-        </Box> 
-    
-      </VStack>
-
-      <Spacer />
-  
-      <Box bg = "pink" w="500px" h="400px">
-   
-         <img  width="100%" height="100%" src={"./photo.jpg"}  ></img>
-
-      <Box  w="100%" h="50px">
-      <But  colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"  type="submit"> Mint </But>      
-      </Box>
-
-    
-      </Box>   
-      </Flex>
-      </HStack>
-      
-      <Tabs isFitted variant='soft-rounded' colorScheme='red'>
-          <TabList mb='1em'>
-                        <Tab>Add Filters</Tab>
-                        <Tab>Add Styles</Tab>
-          </TabList>
-           <TabPanels>
-            <TabPanel>
-                        <h1>Add Filters</h1>
-                        <Filters></Filters>
-           </TabPanel>
-            <TabPanel>
-                        <h1>Add Styles</h1>
-                        <Davincicollection></Davincicollection>
-                        <Picassocollection></Picassocollection>
-            </TabPanel>
-            </TabPanels>
-       </Tabs>
-
-        
-        
-
-        
-       
-       
-      </TabPanel>
-    <TabPanel>
-      <p>My NFT collection</p>
-    </TabPanel>
-    </TabPanels>
-    </Tabs>
-      
-      
+          </Flex>
+          </VStack>
+        </div> 
     </>
-  );
-}
+    )
+  }
 
 
-export { Home };
 
 
+export { Filters }

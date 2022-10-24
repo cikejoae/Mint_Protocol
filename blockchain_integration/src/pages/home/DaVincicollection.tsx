@@ -14,7 +14,7 @@ import './App.css';
 function Davincicollection() {
 
 
-         const [className, setclassName]= useState('movecarrusel');
+         const [className, setclassName]= useState('carousel_slow');
 
          const fixedcarrusel = (event: MouseEvent<HTMLDivElement>) =>{
           if (event){
