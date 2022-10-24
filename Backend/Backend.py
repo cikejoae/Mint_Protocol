@@ -25,6 +25,12 @@ class Videocapture():
         self.filter_gavin=0
         self.filter_dot =0
         self.filter_dot_2 =0
+        self.filter_nose_clown=0
+        self.filter_glasses=0
+        self.filter_mustache=0
+        self.filter_focus=0
+        self.filter_hat=0
+        self.filter_beard=0
         
     def Main(self):
         
@@ -43,10 +49,11 @@ class Videocapture():
         on_face_image_gavin = cv2.imread("GAVIN_NEW.png")
         on_face_image_dot = cv2.imread("POLKA.png")
         on_face_image_focus = cv2.imread("FOCUS.png")
-
-
-
-
+        on_face_image_dot_2 = cv2.imread("POLKADOT_NEW.png")
+        on_head_glasses=cv2.imread("GLASSES.png")
+        on_head_mustache=cv2.imread("MUSTACHE.png")
+        on_face_image_hat= cv2.imread("HAT.png")
+        on_head_beard = cv2.imread("BEARD.png")
 
         #################
         _, frame = cap.read()
@@ -162,7 +169,7 @@ class Videocapture():
                                              int(eyebrow_center[1] + eyebrow_height / 2))
                             
                          
-                            
+                               # Adding the new filter
                          
                              On_head = cv2.resize(on_face_image_dot, (eyebrow_width, eyebrow_height))
                              nose_pig_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
@@ -175,7 +182,7 @@ class Videocapture():
                                          top_left[0]: top_left[0] + eyebrow_width] = On_Head_filter
                              
                              
-
+                             #################################################################
                              
                              pass
                         
@@ -195,7 +202,7 @@ class Videocapture():
                                                     int(eyebrow_center[1] - eyebrow_height / 2))
                              bottom_right = (int(eyebrow_center[0] + eyebrow_width / 2),
                                              int(eyebrow_center[1] + eyebrow_height / 2))
-                            
+                                                 
                              On_head = cv2.resize(on_face_image_gavin, (eyebrow_width, eyebrow_height))
                              nose_pig_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
                              _, nose_mask = cv2.threshold(nose_pig_gray, 25, 255, cv2.THRESH_BINARY_INV)
@@ -207,7 +214,7 @@ class Videocapture():
                                          top_left[0]: top_left[0] + eyebrow_width] = On_Head_filter
                              
                              
-            
+                             #################################################################
                              
                              pass
                          
@@ -240,20 +247,185 @@ class Videocapture():
                              On_Head_filter = cv2.add(nose_area_no_nose, On_head)
                              frame[top_left[1]: top_left[1] + eyebrow_height,
                                          top_left[0]: top_left[0] + eyebrow_width] = On_Head_filter
-    
-                    
+                             
+                             
+                             #################################################################
+                             
+                             pass
+                         
+                    if self.filter_mustache == 1: 
+                              
+                              left= (landmarks.part(54).x, landmarks.part(54).y)
+                              right= (landmarks.part(48).x, landmarks.part(48).y)
+                              center= (landmarks.part(66).x, landmarks.part(66).y)
+                              
+                              
+                              eyebrow_width = int(hypot(left[0] - right[0],
+                                                  left[1] - right[1])*1.3)
+                              eyebrow_height = int(eyebrow_width)
+                              
+                              
+                              top_left = (int(center[0] - eyebrow_width / 2),
+                                                     int(center[1] - eyebrow_height / 2))
+                              bottom_right = (int(center[0] + eyebrow_width / 2),
+                                              int(center[1] + eyebrow_height / 2))
+                             
+                          
+                                # Adding the new filter
+                          
+                              On_head = cv2.resize(on_head_mustache, (eyebrow_width, eyebrow_height))
+                              eyebrow_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
+                              _, nose_mask = cv2.threshold(eyebrow_gray, 25, 255, cv2.THRESH_BINARY_INV)
+                              nose_area = frame[top_left[1]: top_left[1] + eyebrow_height,
+                                          top_left[0]: top_left[0] + eyebrow_width]
+                              eyebrow_area_no_nose = cv2.bitwise_and(nose_area, nose_area, mask=nose_mask)
+                              On_Head_filter = cv2.add(eyebrow_area_no_nose, On_head)
+                              frame[top_left[1]: top_left[1] + eyebrow_height,
+                                          top_left[0]: top_left[0] + eyebrow_width] = On_Head_filter
+                              
+                              
+                              #################################################################
+                              
+                              pass
+                         
+                    if self.filter_glasses == 1: 
+                              
+                              eyebrow_left= (landmarks.part(16).x, landmarks.part(16).y)
+                              eyebrow_right= (landmarks.part(0).x, landmarks.part(0).y)
+                              eyebrow_center= (landmarks.part(27).x, landmarks.part(27).y)
+                              
+                              
+                              eyebrow_width = int(hypot(eyebrow_left[0] - eyebrow_right[0],
+                                                  eyebrow_left[1] - eyebrow_right[1]))
+                              eyebrow_height = int(eyebrow_width*0.80)
+                              
+                              
+                              top_left = (int(eyebrow_center[0] - eyebrow_width / 2),
+                                                     int(eyebrow_center[1] - eyebrow_height / 2))
+                              bottom_right = (int(eyebrow_center[0] + eyebrow_width / 2),
+                                              int(eyebrow_center[1] + eyebrow_height / 2))
+                             
+                          
+                                # Adding the new filter
+                          
+                              On_head = cv2.resize(on_head_glasses, (eyebrow_width, eyebrow_height))
+                              eyebrow_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
+                              _, nose_mask = cv2.threshold(eyebrow_gray, 25, 255, cv2.THRESH_BINARY_INV)
+                              nose_area = frame[top_left[1]: top_left[1] + eyebrow_height,
+                                          top_left[0]: top_left[0] + eyebrow_width]
+                              eyebrow_area_no_nose = cv2.bitwise_and(nose_area, nose_area, mask=nose_mask)
+                              On_Head_filter = cv2.add(eyebrow_area_no_nose, On_head)
+                              frame[top_left[1]: top_left[1] + eyebrow_height,
+                                          top_left[0]: top_left[0] + eyebrow_width] = On_Head_filter
+                              
+                              
+                              #################################################################
+                              
+                              pass
+                          
+                            
+                    if self.filter_focus == 1: 
+                             
+                             eyebrow_left= (landmarks.part(24).x, 0.50*landmarks.part(24).y)
+                             eyebrow_right= (landmarks.part(19).x, 0.50*landmarks.part(19).y)
+                             eyebrow_center= (landmarks.part(27).x, 0.50*landmarks.part(27).y)
+                             
+                             
+                             eyebrow_width = int(hypot(eyebrow_left[0] - eyebrow_right[0],
+                                                 eyebrow_left[1] - eyebrow_right[1]))
+                             eyebrow_height = int(eyebrow_width)
+                             
+                             
+                             top_left = (int(eyebrow_center[0] - eyebrow_width / 2),
+                                                    int(eyebrow_center[1] - eyebrow_height / 2))
+                             bottom_right = (int(eyebrow_center[0] + eyebrow_width / 2),
+                                             int(eyebrow_center[1] + eyebrow_height / 2))
+                            
+                             On_head = cv2.resize(on_face_image_focus, (eyebrow_width, eyebrow_height))
+                             nose_pig_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
+                             _, nose_mask = cv2.threshold(nose_pig_gray, 25, 255, cv2.THRESH_BINARY_INV)
+                             nose_area = frame[top_left[1]: top_left[1] + eyebrow_height,
+                                         top_left[0]: top_left[0] + eyebrow_width]
+                             nose_area_no_nose = cv2.bitwise_and(nose_area, nose_area, mask=nose_mask)
+                             On_Head_filter = cv2.add(nose_area_no_nose, On_head)
+                             frame[top_left[1]: top_left[1] + eyebrow_height,
+                                         top_left[0]: top_left[0] + eyebrow_width] = On_Head_filter
+                             
+                             
+                             pass
+                         
+                    if self.filter_hat == 1: 
+                             
+                             eyebrow_left= (landmarks.part(16).x, 0.55*landmarks.part(16).y)
+                             eyebrow_right= (landmarks.part(0).x, 0.55*landmarks.part(0).y)
+                             eyebrow_center= (landmarks.part(27).x, 0.55*landmarks.part(27).y)
+                             
+                             
+                             eyebrow_width = int(hypot(eyebrow_left[0] - eyebrow_right[0],
+                                                 eyebrow_left[1] - eyebrow_right[1])*1.70)
+                             eyebrow_height = int(eyebrow_width*0.80)
+                             
+                             
+                             top_left = (int(eyebrow_center[0] - eyebrow_width / 2),
+                                                    int(eyebrow_center[1] - eyebrow_height / 2))
+                             bottom_right = (int(eyebrow_center[0] + eyebrow_width / 2),
+                                             int(eyebrow_center[1] + eyebrow_height / 2))
+                                                     
+                             On_head = cv2.resize(on_face_image_hat, (eyebrow_width, eyebrow_height))
+                             nose_pig_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
+                             _, nose_mask = cv2.threshold(nose_pig_gray, 25, 255, cv2.THRESH_BINARY_INV)
+                             nose_area = frame[top_left[1]: top_left[1] + eyebrow_height,
+                                         top_left[0]: top_left[0] + eyebrow_width]
+                             nose_area_no_nose = cv2.bitwise_and(nose_area, nose_area, mask=nose_mask)
+                             On_Head_filter = cv2.add(nose_area_no_nose, On_head)
+                             frame[top_left[1]: top_left[1] + eyebrow_height,
+                                         top_left[0]: top_left[0] + eyebrow_width] = On_Head_filter
+                             
+                             
+                             pass
+                         
+                    if self.filter_beard == 1: 
+                             
+                             left= (landmarks.part(12).x, 1.05*landmarks.part(12).y)
+                             right= (landmarks.part(4).x, 1.05*landmarks.part(4).y)
+                             center= (landmarks.part(57).x, 1.05*landmarks.part(57).y)
+                             
+                             
+                             eyebrow_width = int(hypot(left[0] - right[0],
+                                                 left[1] - right[1])*1.5)
+                             eyebrow_height = int(eyebrow_width)
+                             
+                             
+                             top_left = (int(center[0] - eyebrow_width / 2),
+                                                    int(center[1] - eyebrow_height / 2))
+                             bottom_right = (int(center[0] + eyebrow_width / 2),
+                                             int(center[1] + eyebrow_height / 2))
+                            
+                        
+                             On_head = cv2.resize(on_head_beard, (eyebrow_width, eyebrow_height))
+                             eyebrow_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
+                             _, nose_mask = cv2.threshold(eyebrow_gray, 25, 255, cv2.THRESH_BINARY_INV)
+                             nose_area = frame[top_left[1]: top_left[1] + eyebrow_height,
+                                         top_left[0]: top_left[0] + eyebrow_width]
+                             eyebrow_area_no_nose = cv2.bitwise_and(nose_area, nose_area, mask=nose_mask)
+                             On_Head_filter = cv2.add(eyebrow_area_no_nose, On_head)
+                             frame[top_left[1]: top_left[1] + eyebrow_height,
+                                         top_left[0]: top_left[0] + eyebrow_width] = On_Head_filter
+                             
+                             
+                             pass
                         
                 
                 if ret:
                     
-                    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)               
-                    faces = face_detector.detectMultiScale(gray,1.3,5)   
+                    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)                  
+                    faces = face_detector.detectMultiScale(gray,1.3,5)  
                     (flag,encodedImage) =cv2.imencode(".jpg",frame)
-                    
+                                  
                     if self.button_capture == 1:
                         cv2.imwrite("../frontend/public/photo.jpg",frame)
                         self.button_capture = 0
-            
+                                              
                     
                     if not flag:
                         
@@ -267,19 +439,19 @@ class Videocapture():
                 
 
         @app.route("/")
-        def index():         
+        def index():
             return render_template("index.html")
             
         @app.route("/video_feed",methods = ['GET'])
-        def video_feed():
+        def video_feed():          
             return Response(generate(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
+        
         @app.route("/button_nose_pork",methods = ['POST'])
-        def button_nose_pork():  
+        def button_nose_pork():
             print("DATA RECIBIDA")
             print(request.json)
             self.filter_nose_pork = int(request.json)
-            
+            return "ok"
         @app.route("/button_nose_clown",methods = ['POST'])
         def button_nose_clown():
              
@@ -300,9 +472,9 @@ class Videocapture():
              
              
         @app.route("/button_dot",methods = ['POST'])
-        def button_dot():    
+        def button_dot():       
              print("DATA RECIBIDA")
-             print(request.json) 
+
              self.filter_dot = int(request.json)
          
         @app.route("/button_dot_2",methods = ['POST'])
@@ -315,6 +487,43 @@ class Videocapture():
               self.filter_dot_2 = int(request.json)
               
               return "ok"
+         
+        @app.route("/button_glasses",methods = ['POST'])
+        def button_glasses():
+             
+             print("DATA RECIBIDA")
+             print(request.json)
+             self.filter_glasses = int(request.json)
+             return "ok"
+         
+        @app.route("/button_mustache",methods = ['POST'])
+        def button_mustache():
+             print("DATA RECIBIDA")
+             print(request.json)
+             self.filter_mustache = int(request.json)
+             return "ok"
+         
+        @app.route("/button_focus",methods = ['POST'])
+        def button_focus():
+             print("DATA RECIBIDA")
+             print(request.json)
+             self.filter_focus = int(request.json)
+             return "ok"
+         
+        @app.route("/button_hat",methods = ['POST'])
+        def button_hat():
+             print("DATA RECIBIDA")
+             print(request.json)
+             self.filter_hat = int(request.json)
+             return "ok"
+         
+        @app.route("/button_beard",methods = ['POST'])
+        def button_beard():
+             
+             print("DATA RECIBIDA")
+             print(request.json)
+             self.filter_beard = int(request.json) 
+             return "ok"            
              
         @app.route("/button_capture",methods = ['POST'])
         def button_capture():
@@ -326,7 +535,6 @@ class Videocapture():
              
              return "ok"
         
-
         if __name__ == "__main__":
             
             
@@ -339,3 +547,5 @@ class Videocapture():
 Videocapture= Videocapture()
 
 Videocapture.Main()
+
+#Videocapture.Style_tranfer()
