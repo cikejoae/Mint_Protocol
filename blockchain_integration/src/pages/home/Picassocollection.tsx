@@ -266,7 +266,7 @@ function Picassocollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/Portrait-of-woman-in dhermine-pass-1937.jpg"}  ></img> 
+              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/Portrait-of-woman-in-dhermine-pass-1937.jpg"}  ></img> 
               </But>
             </PopoverTrigger>
             <Portal>
