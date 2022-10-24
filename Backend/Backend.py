@@ -44,16 +44,16 @@ class Videocapture():
 
 
       
-        nose_image_clown = cv2.imread("PAYASO_NEW.png")
-        nose_image_pork = cv2.imread("COCHINO.png")
-        on_face_image_gavin = cv2.imread("GAVIN_NEW.png")
-        on_face_image_dot = cv2.imread("POLKA.png")
-        on_face_image_focus = cv2.imread("FOCUS.png")
-        on_face_image_dot_2 = cv2.imread("POLKADOT_NEW.png")
-        on_head_glasses=cv2.imread("GLASSES.png")
-        on_head_mustache=cv2.imread("MUSTACHE.png")
-        on_face_image_hat= cv2.imread("HAT.png")
-        on_head_beard = cv2.imread("BEARD.png")
+        nose_image_clown = cv2.imread("./Filters/PAYASO_NEW.png")
+        nose_image_pork = cv2.imread("./Filters/COCHINO.png")
+        on_face_image_gavin = cv2.imread("./Filters/GAVIN_NEW.png")
+        on_face_image_dot = cv2.imread("./Filters/POLKA.png")
+        on_face_image_focus = cv2.imread("./Filters/FOCUS.png")
+        on_face_image_dot_2 = cv2.imread("./Filters/POLKADOT_NEW.png")
+        on_head_glasses=cv2.imread("./Filters/GLASSES.png")
+        on_head_mustache=cv2.imread("./Filters/MUSTACHE.png")
+        on_face_image_hat= cv2.imread("./Filters/HAT.png")
+        on_head_beard = cv2.imread("./Filters/BEARD.png")
 
         #################
         _, frame = cap.read()
@@ -423,7 +423,7 @@ class Videocapture():
                     (flag,encodedImage) =cv2.imencode(".jpg",frame)
                                   
                     if self.button_capture == 1:
-                        cv2.imwrite("../frontend/public/photo.jpg",frame)
+                        cv2.imwrite("../blockchain_integration/public/photo.jpg",frame)
                         self.button_capture = 0
                                               
                     
