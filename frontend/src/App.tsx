@@ -16,15 +16,15 @@ function App() {
               <Box p='4' bg='white.400'>
               <Breadcrumb spacing='8px'>
                 <BreadcrumbItem>
-                  <BreadcrumbLink as={Link} to='#'>About</BreadcrumbLink>
+                <a href="#about">About</a>
                 </BreadcrumbItem>
 
                 <BreadcrumbItem>
-                  <BreadcrumbLink as={Link} to='#'>Team</BreadcrumbLink>
+                <a href="#team">Team</a>
                 </BreadcrumbItem>
 
                 <BreadcrumbItem>
-                  <BreadcrumbLink as={Link} to='#'>Contact Us</BreadcrumbLink>
+                <a href="#contact">Contact us</a>
                 </BreadcrumbItem>
               </Breadcrumb>
           </Box>
@@ -126,10 +126,11 @@ function App() {
       </VStack>
       </div>
       </Container>
-
+        
         <VStack>
           <Box h='40px'></Box>
         </VStack>
+        <a id="about"></a> 
         <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
         max-width='100px' >
           <Box h='100px'></Box>
@@ -152,6 +153,7 @@ function App() {
         <VStack>
         <Box h='50px'></Box>
         </VStack>
+        <a id="team"></a>
         <Heading> Team </Heading>
         <VStack>
         <Box h='100px'></Box>
@@ -301,6 +303,7 @@ function App() {
     <VStack>
     <Box h='50px'></Box>
     </VStack>
+    <a id="contact"></a>
     <Heading textColor='white'> Contact us </Heading>
     <VStack>
     <Box h='50px'></Box>
