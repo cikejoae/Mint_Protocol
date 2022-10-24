@@ -41,6 +41,30 @@
 
 
 }
+
+.carousel_items2{
+  display: flex;
+  animation: carousel 120s linear infinite;
+
+
+}
+
+.carousel_fixed{
+  display: flex;
+  animation: carousel 0s linear infinite;
+
+
+}
+
+.carousel_slow{
+  display: flex;
+  animation: carousel 200s linear infinite;
+
+
+}
+
+
+
   .carousel_img{
     display: block;
     width: 300px;
