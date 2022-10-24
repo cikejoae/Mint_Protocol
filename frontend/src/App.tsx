@@ -35,28 +35,24 @@ function App() {
         max-width='100px'>
         <Box h='200px'></Box>
           <Heading h='100px'
-            fontWeight={800}
+            fontWeight={900}
             fontSize={{ base: '4xl', sm: '8xl', md: '10xl' }}
             textColor='white'>
               Mint Protocol
           </Heading>
             <Box h='50px'></Box>
           <Heading h='100px'
-            fontWeight={400}
+            fontWeight={500}
             fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}
             textColor='white'
             className="font">
               You are your own NFT
           </Heading>
       </VStack>
-      <VStack  alignItems='center' height= "300px" max-width= "100%" background = "white">  
-      <Box h='50px'></Box>
+      <VStack  alignItems='center' background = "white"></VStack>
 
       <Divider/>
-      <VStack>
-          <Box h='50px'></Box>
-        </VStack>
-        
+      <Box h='100px'></Box>
       <VStack>
       <Box h='100px'></Box>
       <Heading h='200px' w='900px'
@@ -71,21 +67,68 @@ function App() {
                       >
                 <Text fontSize='30px'>Start</Text>
               </Button>
-              <Box bg ="black" w="100%" h="300px"> 
-              <div className="carousel">
-              <div className="carousel_items" >
-              <img  src={"./adan.jpg"} alt="" className="carousel_img" ></img>
-              <img  src={"./Grito.jpg"} alt="" className="carousel_img" ></img>
-              <img  src={"./Mona_Lisa.jpg"} alt="" className="carousel_img" ></img>
-              <img  src={"./StarryNight.jpg"} alt="" className="carousel_img" ></img>
-              <img  src={"./Persistencia_de_la_memoria.jpg"} alt="" className="carousel_img" ></img>
-              </div>
-              </div>
-              </Box>
+              
+              <Box h='100px'></Box>
+              
+              <Container>
+              <div>
+              <VStack>
+              <div className="carousel_items">
+              <HStack  w="100px" h="300px" ></HStack>
+
+              <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img src={"./adan.jpg"}></img> 
+          </Box>
+          </article>
+          
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box className="aumento" w="300px" h="300px">
+              <img src={"./Grito.jpg"}></img>
+          </Box>
+          </article>
+
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img  src={"./Mona_Lisa.jpg"}></img>
+          </Box>
+          </article>
+
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img src={"./StarryNight.jpg"}></img>
+          </Box>
+          </article>
+
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img width = "100%" height="100%" src={"./Persistencia_de_la_memoria.jpg"}></img>
+          </Box>
+          </article>
+ 
+      </div>
       </VStack>
-        
+      </div>
+      </Container>
+
         <VStack>
-          <Box h='10px'></Box>
+          <Box h='40px'></Box>
         </VStack>
         <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
         max-width='100px' >
@@ -111,7 +154,7 @@ function App() {
         </VStack>
         <Heading> Team </Heading>
         <VStack>
-        <Box h='50px'></Box>
+        <Box h='100px'></Box>
         </VStack>
 
    <HStack spacing={20}>
@@ -249,11 +292,11 @@ function App() {
     </HStack>
 
     <VStack>
-    <Box h='150px'></Box>
+    <Box h='200px'></Box>
     </VStack>
     
     <Divider/>
-    <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
+    <VStack  w = '100%' h = '500px' background= '#e80b9d' alignItems='center' 
             max-width='100px' >
     <VStack>
     <Box h='50px'></Box>
@@ -282,6 +325,7 @@ function App() {
       </Flex>
       </VStack>
         </VStack> 
+    
     </Grid> 
 
   );
