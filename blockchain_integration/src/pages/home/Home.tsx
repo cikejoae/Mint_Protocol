@@ -18,23 +18,26 @@ function Home() {
   const Multistate2 = (state:any) => {
 
      setMulti2(state);
-     const Newstate = multi2;
+     const Newstate2 = multi2;
+
     
    };
 
    const Newstate2 = multi2;
-   function resultado_p2 () {if (Newstate != 0){console.log("Vacio")}
-   else if (Newstate2 == 1 ) {return(<img src={"./icons/COCHINO.png"}  ></img>)}
-   else if (Newstate2 == 2 ){return(<img src={"./icons/CLOWN.png"}  ></img>)}
-   else if (Newstate2 == 3 ){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)}
-   else if (Newstate2 == 4 ){return(<img src={"./icons/POLKA.png"}  ></img>)}
-   else if (Newstate2 == 5 ){return(<img src={"./icons/POLKADOT.png"}  ></img>)}
-   else if (Newstate2 == 6 ){return(<img src={"./icons/MUSTACHE.png"}  ></img>)}
-   else if (Newstate2 == 7 ){return(<img src={"./icons/GLASSES.png"}  ></img>)}
-   else if (Newstate2 == 8 ){return(<img src={"./icons/FOCUS.png"}  ></img>)}
-   else if (Newstate2 == 9 ){return(<img src={"./icons/HAT.png"}  ></img>)}
-   else if (Newstate2 == 10 ){return(<img src={"./icons/BEARD.png"}  ></img>)}
- }
+
+   
+   function resultado_p2 () {if ( statepanel_1 != 1 ){return(<img src={"./icons/VACIO.png"}  ></img>)}
+                else if (Newstate2 == 1 ) {return(<img src={"./icons/COCHINO.png"}  ></img>)}
+                else if (Newstate2 == 2 ){return(<img src={"./icons/CLOWN.png"}  ></img>)}
+                else if (Newstate2 == 3 ){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)}
+                else if (Newstate2 == 4 ){return(<img src={"./icons/POLKA.png"}  ></img>)}
+                else if (Newstate2 == 5 ){return(<img src={"./icons/POLKADOT.png"}  ></img>)}
+                else if (Newstate2 == 6 ){return(<img src={"./icons/MUSTACHE.png"}  ></img>)}
+                else if (Newstate2 == 7 ){return(<img src={"./icons/GLASSES.png"}  ></img>)}
+                else if (Newstate2 == 8 ){return(<img src={"./icons/FOCUS.png"}  ></img>)}
+                else if (Newstate2 == 9 ){return(<img src={"./icons/HAT.png"}  ></img>)}
+                else if (Newstate2 == 10 ){return(<img src={"./icons/BEARD.png"}  ></img>)}
+                  }
  
 
 
@@ -46,12 +49,16 @@ function Home() {
   const Multistate = (state:any) => {
 
      setMulti(state);
-     const Newstate = multi;
-    
+     let Newstate = multi;
+
+     
+
    };
 
-   const Newstate = multi;
-   function resultado_p () {if (Newstate == 0){console.log("Vacio")}
+   let Newstate = multi;
+   let statepanel_1 = 0;
+   if (Newstate > 0) { let statepanel_1 = 1;}
+   function resultado_p () {if (Newstate == 0){return(<img src={"./icons/VACIO.png"}  ></img>)}
    else if (Newstate == 1 ) {return(<img src={"./icons/COCHINO.png"}  ></img>)}
    else if (Newstate == 2 ){return(<img src={"./icons/CLOWN.png"}  ></img>)}
    else if (Newstate == 3 ){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)}
@@ -62,26 +69,42 @@ function Home() {
    else if (Newstate == 8 ){return(<img src={"./icons/FOCUS.png"}  ></img>)}
    else if (Newstate == 9 ){return(<img src={"./icons/HAT.png"}  ></img>)}
    else if (Newstate == 10 ){return(<img src={"./icons/BEARD.png"}  ></img>)}
+   
  }
+
+
+ 
  
 
    
 
 
 
-  const [imagen, setImagen]= useState(false);
+  const [pig, setPig]= useState(false);
     
-    const Newbutton_1 = () => {
+    const pigbutton = () => {
   
-       setImagen(prevValue => !prevValue );
-
+       setPig(prevValue => !prevValue );
       
    
      };
    
-     const but = imagen ? 0 : 1
+     const pigbut = pig ? 0 : 1
 
-     function resultado () {if (but == 0){return(<img src={"./icons/COCHINO.png"}  ></img>)};}
+     function resultado () {if (pigbut == 0){return(<img src={"./icons/COCHINO.png"}  ></img>)};}
+  
+  const [clown, setClown]= useState(false);
+    
+  const clownbutton = () => {
+   
+    setClown(prevValue => !prevValue );
+       
+    
+      };
+    
+      const clownbut = clown ? 0 : 1
+ 
+      function resultado_2 () {if (clownbut == 0){return(<img src={"./icons/CLOWN.png"}  ></img>)};}
 
    
 
@@ -95,12 +118,14 @@ function Home() {
     setValue(prevValue => !prevValue );
 
     pull_button_gavin();
+    
 
     
 
   };
 
   const button_signal = value ? 0 : 1
+
 
 
 
@@ -361,7 +386,7 @@ return (
         <HStack>
         <Flex gap="2">
         <Box  border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-         {resultado_p()}
+         {resultado () }{resultado_2 ()}
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
         {resultado_p2 ()}    
@@ -418,14 +443,14 @@ return (
 
           <Box className="aumento"  w="100px" h="100px">
             <Tooltip label="Nose pig" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px"  onClick = {(e)=> {Multistate2(1) ;Multistate(1); activeInactive_button_nose_pork;}}  type="submit" > 
+              <But bg ="white" w="100px" h="100px"  onClick = {(e)=> { pigbutton(); Multistate2(1) ;Multistate(1); activeInactive_button_nose_pork;}}  type="submit" > 
               <img src={"./icons/COCHINO.png"}  ></img>
               </But>
             </Tooltip>
           </Box>
           <Box  className="aumento" w="150px" h="150px">
             <Tooltip label="Nose clown" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {Multistate2(2); Multistate(2); activeInactive_button_nose_clown}} type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {clownbutton();Multistate2(2); Multistate(2); activeInactive_button_nose_clown}} type="submit"> 
                <img src={"./icons/CLOWN.png"}  ></img>
               </But>
             </Tooltip>
