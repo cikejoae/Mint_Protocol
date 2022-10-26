@@ -1,8 +1,6 @@
 import React from 'react';
 import {
     Textarea,
-    Select,
-    InputGroup,
     Stack,
     Box,
     FormLabel,
@@ -17,6 +15,7 @@ import {
     DrawerContent,
     DrawerCloseButton,
   } from '@chakra-ui/react'
+  import { GrAdd} from "react-icons/gr";
 
 
 
@@ -26,7 +25,7 @@ function Form() {
   
     return (
       <>
-        <Button colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"  type="submit" onClick={onOpen}>
+        <Button leftIcon={<GrAdd/>} w="100%" h="50px" bg= "white"  type="submit" onClick={onOpen}>
           Add features
         </Button>
         <Drawer

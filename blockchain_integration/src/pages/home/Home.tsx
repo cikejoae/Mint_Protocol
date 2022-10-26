@@ -265,7 +265,7 @@ function Home() {
       const res = await fetch('http://localhost:5000/button_gavin',
       { method : "POST", 
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(button_signal)})
+      body: JSON.stringify(gavinbut)})
       const data = await res.json();
   
       }
@@ -288,7 +288,7 @@ function Home() {
       const res = await fetch('http://localhost:5000/button_nose_pork',
       { method : "POST", 
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(button_signal)})
+      body: JSON.stringify(pigbut)})
       const data = await res.json();
   
       }
@@ -308,7 +308,7 @@ function Home() {
           const res = await fetch('http://localhost:5000/button_glasses',
           { method : "POST", 
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(button_signal)})
+          body: JSON.stringify(glassesbut)})
           const data = await res.json();
       
           }
@@ -327,7 +327,7 @@ function Home() {
               const res = await fetch('http://localhost:5000/button_mustache',
               { method : "POST", 
               headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify(button_signal)})
+              body: JSON.stringify(mustachebut)})
               const data = await res.json();
           
               }
@@ -348,7 +348,7 @@ function Home() {
           const res = await fetch('http://localhost:5000/button_nose_clown',
           { method : "POST", 
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(button_signal)})
+          body: JSON.stringify(clownbut)})
           const data = await res.json();
       
           }
@@ -367,7 +367,7 @@ function Home() {
             const res = await fetch('http://localhost:5000/button_dot',
             { method : "POST", 
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(button_signal)})
+            body: JSON.stringify(polkabut)})
             const data = await res.json();
           
             }
@@ -386,7 +386,7 @@ function Home() {
               const res = await fetch('http://localhost:5000/button_dot_2',
               { method : "POST", 
               headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify(button_signal)})
+              body: JSON.stringify(polkadotbut)})
               const data = await res.json();
             
               }
@@ -405,7 +405,7 @@ function Home() {
                 const res = await fetch('http://localhost:5000/button_focus',
                 { method : "POST", 
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(button_signal)})
+                body: JSON.stringify(focusbut)})
                 const data = await res.json();
               
                 }
@@ -425,7 +425,7 @@ function Home() {
                   const res = await fetch('http://localhost:5000/button_hat',
                   { method : "POST", 
                   headers: {'Content-Type': 'application/json'},
-                  body: JSON.stringify(button_signal)})
+                  body: JSON.stringify(hatbut)})
                   const data = await res.json();
                 
                   }
@@ -443,7 +443,7 @@ function Home() {
                     const res = await fetch('http://localhost:5000/button_beard',
                     { method : "POST", 
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify(button_signal)})
+                    body: JSON.stringify(beardbut)})
                     const data = await res.json();
                   
                     }
@@ -504,7 +504,7 @@ return (
       <Spacer />
       <Box  w="100" h="100px">    
       </Box>
-      <Box w="400px" h="400px">
+      <Box className="aumento"  w="400px" h="400px">
           <img src={'/video_feed'}/>
           <But  colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"   type="submit" onClick = {activeInactive_button_capture } >Capture</But>    
       </Box>
@@ -542,7 +542,7 @@ return (
 
       <Spacer />
   
-      <Box bg = "white" w="400px" h="400px">
+      <Box className="aumento"  bg = "white" w="400px" h="400px">
    
          <img  width="100%" height="100%" src={"./photo.jpg"}  ></img>
 
@@ -593,70 +593,70 @@ return (
 
           <Box className="aumento"  w="100px" h="100px">
             <Tooltip label="Nose pig" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px"  onClick = {(e)=> { pigbutton(); activeInactive_button_nose_pork;}}  type="submit" > 
+              <But bg ="white" w="100px" h="100px"  onClick = {(e)=> { pigbutton(); activeInactive_button_nose_pork();}}  type="submit" > 
               <img src={"./icons/COCHINO.png"}  ></img>
               </But>
             </Tooltip>
           </Box>
           <Box  className="aumento" w="150px" h="150px">
             <Tooltip label="Nose clown" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {clownbutton(); activeInactive_button_nose_clown}} type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {clownbutton(); activeInactive_button_nose_clown();}} type="submit"> 
                <img src={"./icons/CLOWN.png"}  ></img>
               </But>
             </Tooltip>
           </Box>
           <Box  className="aumento" w="100px" h="100px">
             <Tooltip label="Mask Gavin" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {gavinbutton (); activeInactive_button_gavin}}  type="submit">
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {gavinbutton (); activeInactive_button_gavin();}}  type="submit">
               <img src={"./icons/GAVIN_NEW.png"}  ></img>
               </But>
             </Tooltip>
           </Box> 
           <Box className="aumento"  w="100px" h="100px">
             <Tooltip label="Polkadot" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {polkabutton() ;activeInactive_button_dot} } type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {polkabutton() ;activeInactive_button_dot();} } type="submit"> 
               <img src={"./icons/POLKA.png"}  ></img> 
               </But>
             </Tooltip>
           </Box>
           <Box className="aumento" w="100px" h="100px">
             <Tooltip label="Polkadot" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {polkadotbutton() ; activeInactive_button_dot_2}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {polkadotbutton() ; activeInactive_button_dot_2();}}  type="submit"> 
               <img src={"./icons/POLKADOT.png"}  ></img> 
               </But>
             </Tooltip>
           </Box>
           <Box className="aumento" w="100px" h="100px">
             <Tooltip label="Mustache" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick ={(e)=> {mustachebutton(); activeInactive_button_mustache}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick ={(e)=> {mustachebutton(); activeInactive_button_mustache();}}  type="submit"> 
               <img src={"./icons/MUSTACHE.png"}  ></img> 
               </But>
             </Tooltip>
           </Box>
           <Box className="aumento" w="100px" h="100px">
             <Tooltip label="Glasses" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {glassesbutton();  activeInactive_button_glasses}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {glassesbutton();  activeInactive_button_glasses();}}  type="submit"> 
               <img src={"./icons/GLASSES.png"}  ></img> 
               </But>
               </Tooltip>
           </Box>
           <Box  className="aumento" w="100px" h="100px">
             <Tooltip label="Focus" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick =  {(e)=>  {focusbutton(); activeInactive_button_focus}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick =  {(e)=>  {focusbutton(); activeInactive_button_focus();}}  type="submit"> 
               <img src={"./icons/FOCUS.png"}  ></img> 
               </But>
             </Tooltip>
           </Box>
           <Box className="aumento" w="100px" h="100px">
             <Tooltip label="Hat" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick =  {(e)=>  {hatbutton(); activeInactive_button_hat}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick =  {(e)=>  {hatbutton(); activeInactive_button_hat();}}  type="submit"> 
               <img src={"./icons/HAT.png"}  ></img> 
               </But>
             </Tooltip>
           </Box>
           <Box  className="aumento" w="100px" h="100px">
             <Tooltip label="Beard" aria-label='A tooltip' placement='top-start'>
-               <But bg ="white" w="100px" h="100px" onClick = {(e)=> {beardbutton();  activeInactive_button_beard}}  type="submit"> 
+               <But bg ="white" w="100px" h="100px" onClick = {(e)=> {beardbutton();  activeInactive_button_beard();}}  type="submit"> 
                <img src={"./icons/BEARD.png"}  ></img> 
               </But>
             </Tooltip>
