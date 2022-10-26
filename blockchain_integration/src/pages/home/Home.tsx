@@ -74,6 +74,21 @@ function Home() {
 
 
  //////STATES PANEL
+
+ const [polka, setPolka]= useState(false);
+    
+ const polkabutton = () => {
+
+  setPolka(prevValue => !prevValue );
+   
+
+  };
+
+  const polkabut = polka ? 0 : 1
+
+  function polkaPanel () {if (polkabut == 0){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)};}
+
+
  const [gavin, setGavin]= useState(false);
     
  const gavinbutton = () => {
@@ -397,7 +412,7 @@ return (
         <HStack>
         <Flex gap="2">
         <Box  border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-         {pigPanel () }{clownPanel ()}{gavinPanel ()}
+         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
         {pigPanel () }   
@@ -475,7 +490,7 @@ return (
           </Box> 
           <Box className="aumento"  w="100px" h="100px">
             <Tooltip label="Polkadot" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {Multistate2(4);Multistate(4);activeInactive_button_dot} } type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {polkabutton() ;Multistate2(4);Multistate(4);activeInactive_button_dot} } type="submit"> 
               <img src={"./icons/POLKA.png"}  ></img> 
               </But>
             </Tooltip>
