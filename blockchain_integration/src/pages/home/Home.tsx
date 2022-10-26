@@ -73,8 +73,19 @@ function Home() {
  }
 
 
- 
- 
+ //////STATES PANEL
+ const [gavin, setGavin]= useState(false);
+    
+ const gavinbutton = () => {
+
+  setGavin(prevValue => !prevValue );
+   
+
+  };
+
+  const gavinbut = gavin ? 0 : 1
+
+  function gavinPanel () {if (gavinbut == 0){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)};}
 
    
 
@@ -91,7 +102,7 @@ function Home() {
    
      const pigbut = pig ? 0 : 1
 
-     function resultado () {if (pigbut == 0){return(<img src={"./icons/COCHINO.png"}  ></img>)};}
+     function pigPanel () {if (pigbut == 0){return(<img src={"./icons/COCHINO.png"}  ></img>)};}
   
   const [clown, setClown]= useState(false);
     
@@ -104,10 +115,10 @@ function Home() {
     
       const clownbut = clown ? 0 : 1
  
-      function resultado_2 () {if (clownbut == 0){return(<img src={"./icons/CLOWN.png"}  ></img>)};}
+      function clownPanel () {if (clownbut == 0){return(<img src={"./icons/CLOWN.png"}  ></img>)};}
 
    
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
  
 
   const [value, setValue] = useState(false);
@@ -386,10 +397,10 @@ return (
         <HStack>
         <Flex gap="2">
         <Box  border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-         {resultado () }{resultado_2 ()}
+         {pigPanel () }{clownPanel ()}{gavinPanel ()}
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-        {resultado_p2 ()}    
+        {pigPanel () }   
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">    
         </Box>
@@ -457,7 +468,7 @@ return (
           </Box>
           <Box  className="aumento" w="100px" h="100px">
             <Tooltip label="Mask Gavin" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {Multistate2(3);Multistate(3); activeInactive_button_gavin}}  type="submit">
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {gavinbutton (); Multistate2(3);Multistate(3); activeInactive_button_gavin}}  type="submit">
               <img src={"./icons/GAVIN_NEW.png"}  ></img>
               </But>
             </Tooltip>
