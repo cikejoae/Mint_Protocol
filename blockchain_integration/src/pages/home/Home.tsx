@@ -7,6 +7,7 @@ import { truncate } from 'fs';
 import './App.css';
 import { Davincicollection } from './DaVincicollection';
 import { Picassocollection} from './Picassocollection';
+import {Form} from  './form';
 import { Filters } from './Filters';
 import { render } from '@testing-library/react';
 
@@ -567,7 +568,7 @@ return (
               </Popover>
        
       </Box>
-       <But  colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"  type="submit"> Add features </But>
+      <Form></Form>
       </Box>
       <Spacer />
       </Flex>
