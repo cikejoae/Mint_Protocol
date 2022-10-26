@@ -74,6 +74,24 @@ function Home() {
 
 
  //////STATES PANEL
+ const [hat, setHat]= useState(false);
+    
+ const hatbutton = () => {
+
+  setHat(prevValue => !prevValue );
+   
+
+  };
+
+  const hatbut = hat ? 0 : 1
+
+  function hatPanel () {if (hatbut == 0){return(<img src={"./icons/FOCUS.png"}  ></img>)};}
+
+
+
+
+
+
  const [focus, setFocus]= useState(false);
     
  const focusbutton = () => {
@@ -477,7 +495,7 @@ return (
         <HStack>
         <Flex gap="2">
         <Box  border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}{polkadotPanel()}{mustachePanel()}{glassesPanel()}{focusPanel()}
+         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}{polkadotPanel()}{mustachePanel()}{glassesPanel()}{focusPanel()}{hatPanel()}
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
         {pigPanel () }   
@@ -590,7 +608,7 @@ return (
           </Box>
           <Box className="aumento" w="100px" h="100px">
             <Tooltip label="Hat" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick =  {(e)=>  {Multistate2(9);Multistate(9); activeInactive_button_hat}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick =  {(e)=>  {hatbutton(); Multistate2(9);Multistate(9); activeInactive_button_hat}}  type="submit"> 
               <img src={"./icons/HAT.png"}  ></img> 
               </But>
             </Tooltip>
