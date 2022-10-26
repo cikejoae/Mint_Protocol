@@ -74,6 +74,38 @@ function Home() {
 
 
  //////STATES PANEL
+ const [focus, setFocus]= useState(false);
+    
+ const focusbutton = () => {
+
+  setFocus(prevValue => !prevValue );
+   
+
+  };
+
+  const focusbut = focus ? 0 : 1
+
+  function focusPanel () {if (focusbut == 0){return(<img src={"./icons/FOCUS.png"}  ></img>)};}
+
+
+
+
+ const [glasses, setGlasses]= useState(false);
+    
+ const glassesbutton = () => {
+
+  setGlasses(prevValue => !prevValue );
+   
+
+  };
+
+  const glassesbut = glasses ? 0 : 1
+
+  function glassesPanel () {if (glassesbut == 0){return(<img src={"./icons/GLASSES.png"}  ></img>)};}
+
+
+
+
  const [mustache, setMustache]= useState(false);
     
  const mustachebutton = () => {
@@ -85,7 +117,7 @@ function Home() {
 
   const mustachebut = mustache ? 0 : 1
 
-  function mustachePanel () {if (mustachebut == 0){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)};}
+  function mustachePanel () {if (mustachebut == 0){return(<img src={"./icons/MUSTACHE.png"}  ></img>)};}
 
 
 
@@ -103,7 +135,7 @@ function Home() {
 
   const polkadotbut = polkadot ? 0 : 1
 
-  function polkadotPanel () {if (polkadotbut == 0){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)};}
+  function polkadotPanel () {if (polkadotbut == 0){return(<img src={"./icons/POLKADOT.png"}  ></img>)};}
 
 
 
@@ -119,7 +151,7 @@ function Home() {
 
   const polkabut = polka ? 0 : 1
 
-  function polkaPanel () {if (polkabut == 0){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)};}
+  function polkaPanel () {if (polkabut == 0){return(<img src={"./icons/POLKA.png"}  ></img>)};}
 
 
  const [gavin, setGavin]= useState(false);
@@ -445,7 +477,7 @@ return (
         <HStack>
         <Flex gap="2">
         <Box  border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}{polkadotPanel()}{mustachePanel()}
+         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}{polkadotPanel()}{mustachePanel()}{glassesPanel()}{focusPanel()}
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
         {pigPanel () }   
@@ -544,14 +576,14 @@ return (
           </Box>
           <Box className="aumento" w="100px" h="100px">
             <Tooltip label="Glasses" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {Multistate2(7); Multistate(7); activeInactive_button_glasses}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick = {(e)=> {glassesbutton(); Multistate2(7); Multistate(7); activeInactive_button_glasses}}  type="submit"> 
               <img src={"./icons/GLASSES.png"}  ></img> 
               </But>
               </Tooltip>
           </Box>
           <Box  className="aumento" w="100px" h="100px">
             <Tooltip label="Focus" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick =  {(e)=>  {Multistate2(8); Multistate(8); activeInactive_button_focus}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick =  {(e)=>  {focusbutton(); Multistate2(8); Multistate(8); activeInactive_button_focus}}  type="submit"> 
               <img src={"./icons/FOCUS.png"}  ></img> 
               </But>
             </Tooltip>
