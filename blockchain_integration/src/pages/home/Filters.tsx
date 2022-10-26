@@ -1,13 +1,47 @@
-import React, { useState } from 'react';
+import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
 import { ChangeEvent } from 'react';
-import { isWhiteSpaceLike } from 'typescript';
+import { isConstructorDeclaration, isWhiteSpaceLike } from 'typescript';
 import './App.css';
 
 
 
+
 function Filters() {
+
+var lst_filters = [""];
+
+function listFilters(fil:any){ 
+  lst_filters.push(fil);
+  console.log(lst_filters);
+}
+
+    
+    
+
+
+    const [imagen, setImagen]= useState(false);
+    
+    const Newbutton = () => {
+  
+       setImagen(prevValue => !prevValue );
+      
+   
+     };
+   
+     const but = imagen ? 0 : 1
+
+     function resultado () {if (but == 1){return(<img src={"./icons/COCHINO.png"}  ></img>)};}
+
+     
+
+
+   
+           
+
+
+
 
   const [value, setValue] = useState(false);
 
@@ -41,6 +75,9 @@ function Filters() {
     setValue(prevValue => !prevValue );
 
     pull_button_nose_pork();
+    Newbutton();
+   
+    
 
 
   };
@@ -239,15 +276,18 @@ function Filters() {
     
     return (
     <>
-        <div>
-          
+        <div> 
+   
       <VStack w="100%" h="500px" >
 
 
+          
         <Flex gap="2"  >
+
           <Box className="aumento"  w="100px" h="100px">
+           {resultado () }
             <Tooltip label="Nose pig" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px"  onClick = {activeInactive_button_nose_pork}  type="submit" > 
+              <But bg ="white" w="100px" h="100px"  onClick = {(e)=> {activeInactive_button_nose_pork;}}  type="submit" > 
               <img src={"./icons/COCHINO.png"}  ></img>
               </But>
             </Tooltip>
@@ -321,8 +361,7 @@ function Filters() {
     </>
     )
   }
-
-
+  
 
 
 export { Filters }
