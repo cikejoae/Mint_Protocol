@@ -74,6 +74,24 @@ function Home() {
 
 
  //////STATES PANEL
+ const [mustache, setMustache]= useState(false);
+    
+ const mustachebutton = () => {
+
+  setMustache(prevValue => !prevValue );
+   
+
+  };
+
+  const mustachebut = mustache ? 0 : 1
+
+  function mustachePanel () {if (mustachebut == 0){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)};}
+
+
+
+
+
+
  const [polkadot, setPolkadot]= useState(false);
     
  const polkadotbutton = () => {
@@ -427,7 +445,7 @@ return (
         <HStack>
         <Flex gap="2">
         <Box  border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}{polkadotPanel()}
+         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}{polkadotPanel()}{mustachePanel()}
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
         {pigPanel () }   
@@ -519,7 +537,7 @@ return (
           </Box>
           <Box className="aumento" w="100px" h="100px">
             <Tooltip label="Mustache" aria-label='A tooltip' placement='top-start'>
-              <But bg ="white" w="100px" h="100px" onClick ={(e)=> {Multistate2(6);Multistate(6); activeInactive_button_mustache}}  type="submit"> 
+              <But bg ="white" w="100px" h="100px" onClick ={(e)=> {mustachebutton() ;Multistate2(6);Multistate(6); activeInactive_button_mustache}}  type="submit"> 
               <img src={"./icons/MUSTACHE.png"}  ></img> 
               </But>
             </Tooltip>
