@@ -74,6 +74,21 @@ function Home() {
 
 
  //////STATES PANEL
+ const [beard, setBeard]= useState(false);
+    
+ const beardbutton = () => {
+
+  setBeard(prevValue => !prevValue );
+   
+
+  };
+
+  const beardbut = beard ? 0 : 1
+
+  function beardPanel () {if (beardbut == 0){return(<img src={"./icons/BEARD.png"}  ></img>)};}
+
+
+
  const [hat, setHat]= useState(false);
     
  const hatbutton = () => {
@@ -85,7 +100,7 @@ function Home() {
 
   const hatbut = hat ? 0 : 1
 
-  function hatPanel () {if (hatbut == 0){return(<img src={"./icons/FOCUS.png"}  ></img>)};}
+  function hatPanel () {if (hatbut == 0){return(<img src={"./icons/HAT.png"}  ></img>)};}
 
 
 
@@ -495,7 +510,7 @@ return (
         <HStack>
         <Flex gap="2">
         <Box  border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}{polkadotPanel()}{mustachePanel()}{glassesPanel()}{focusPanel()}{hatPanel()}
+         {pigPanel () }{clownPanel ()}{gavinPanel ()}{polkaPanel ()}{polkadotPanel()}{mustachePanel()}{glassesPanel()}{focusPanel()}{hatPanel()}{beardPanel()}
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
         {pigPanel () }   
@@ -615,7 +630,7 @@ return (
           </Box>
           <Box  className="aumento" w="100px" h="100px">
             <Tooltip label="Beard" aria-label='A tooltip' placement='top-start'>
-               <But bg ="white" w="100px" h="100px" onClick = {(e)=> {Multistate2(10);Multistate(10); activeInactive_button_beard}}  type="submit"> 
+               <But bg ="white" w="100px" h="100px" onClick = {(e)=> {beardbutton(); Multistate2(10);Multistate(10); activeInactive_button_beard}}  type="submit"> 
                <img src={"./icons/BEARD.png"}  ></img> 
               </But>
             </Tooltip>
