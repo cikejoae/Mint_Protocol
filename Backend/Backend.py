@@ -446,6 +446,21 @@ class Videocapture():
         def video_feed():          
             return Response(generate(), mimetype='multipart/x-mixed-replace; boundary=frame')
         
+        
+        @app.route("/Vincentvangoghcollection",methods = ['POST'])
+        def Vincentvangoghcollection():
+            print("DATA RECIBIDA")
+            self.Vincentvangoghcollection_state = int(request.json)
+            print(self.Vincentvangoghcollection_state)
+            return "ok"
+        
+        @app.route("/Davincicollection",methods = ['POST'])
+        def Davincicollection():
+            print("DATA RECIBIDA")
+            self.Davincicollection_state = int(request.json)
+            print(self.Davincicollection_state)
+            return "ok"
+        
         @app.route("/button_nose_pork",methods = ['POST'])
         def button_nose_pork():
             print("DATA RECIBIDA")
