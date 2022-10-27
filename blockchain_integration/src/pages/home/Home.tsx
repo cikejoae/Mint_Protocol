@@ -11,6 +11,7 @@ import {Vincentvangoghcollection} from './Vincentvangoghcollection';
 import {Salvadordalicollection} from './Salvadordalicollection';
 import {Claudemonetcollection} from  './Claudemonetcollection';
 import {Edvardmunchcollection} from './Edvardmunchcollection';
+import {Renoircollection} from './Renoircollection';
 import {Form} from  './form';
 import { Filters } from './Filters';
 import { render } from '@testing-library/react';
