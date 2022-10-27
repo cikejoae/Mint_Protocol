@@ -10,10 +10,9 @@ import './App.css';
 
 
 
-function Picassocollection() {
+function Salvadordalicollection() {
 
-
-         ///Multistate fuction
+        ///Multistate fuction
         const [multi, setMulti]= useState(0);
     
         const Multistate = (state:any) => {
@@ -28,13 +27,15 @@ function Picassocollection() {
          const sendMultistate = async () => {
             
                   
-          const res = await fetch('http://localhost:5000/Picassocollection',
+          const res = await fetch('http://localhost:5000/Salvadordalicollection',
           { method : "POST", 
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(Newstate)})
           const data = await res.json();
             
           }
+
+         ///Carusel fuctions
 
 
          const [className, setclassName]= useState('carousel_slow');
@@ -57,6 +58,8 @@ function Picassocollection() {
           }
          }
 
+
+
          
  
               
@@ -66,7 +69,7 @@ function Picassocollection() {
         <VStack w="100%">
         <Box w="100%" h="50px">
           
-          <Center className="aumento" > Pablo Picasso </Center>
+          <Center className="aumento" > Salvador Dalí </Center>
          
          </Box>
          <Box w="100%" h="50px">
@@ -84,13 +87,13 @@ function Picassocollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/cat-catching-a-bird-1939.jpg"}  ></img>
+              <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/3salvador-dali-peyzazh-bliz-figerasa-1910.jpg"}  ></img>
               </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Cat catching a bird (1939)</Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" > Peyzazh bliz figerasa (1910)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -109,13 +112,13 @@ function Picassocollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/child-with-dove-1901.jpg"}  ></img>
+              <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/boat-1918.jpg"}  ></img>
               </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Child with dove (1901) </Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >Boat (1918)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -134,13 +137,13 @@ function Picassocollection() {
             <PopoverTrigger>
 
             <But bg ="white" w="300px" h="300px"  type="submit">
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/figures-at-the-seaside-1931.jpg"}  ></img>
+              <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/Dream_for_bee_1944.jpg"}  ></img>
               </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Figures at the seaside (1931)</Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >Dream for bee (1944)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -160,13 +163,13 @@ function Picassocollection() {
             <PopoverTrigger>
 
               <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/girl-on-the-ball-1905.jpg"}  ></img>
+              <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/landscape-1916.jpg"}  ></img>
               </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Girl on the ball (1905)</Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >Landscape (1916)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -186,13 +189,13 @@ function Picassocollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/mujeres_de_argel_picasso.jpg"}  ></img>
+              <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/landscape-near-ampurdan-1914.jpg"}  ></img>
               </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Wifes of argel </Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >Landscape near ampurdan (1914)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -212,13 +215,13 @@ function Picassocollection() {
             <PopoverTrigger>
             
             <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%"  height="100%" src={"./style/Pablo_picasso_collection/old-guitarist-chicago-1903.jpg"}  ></img>
+              <img width = "100%"  height="100%" src={"./style/Salvador_dali_collection/llane-beach-cadaques-1919.jpg"}  ></img>
               </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md">Old guitarist (1903)</Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md">llane beach cadaques (1919)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -238,13 +241,13 @@ function Picassocollection() {
             <PopoverTrigger>
             
                 <But bg ="white" w="300px" h="300px"  type="submit"> 
-                <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/portrait-of-ambroise-vollard-1910.jpg"}  ></img>
+                <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/Persistencia_de_la_memoria.jpg"}  ></img>
                </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Portrait of ambroise vollard (1910)</Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >The Persistence of Memory (1931)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -265,13 +268,13 @@ function Picassocollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-            <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/portrait-of-dora-maar-1937.jpg"}  ></img>
+            <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/portdogue-1918.jpg"}  ></img>
             </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Portrait of dora maar (1937)</Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >Portdogue (1918)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -290,13 +293,13 @@ function Picassocollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/Portrait-of-woman-in-dhermine-pass-1937.jpg"}  ></img> 
+              <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/the-disintegration-of-the-persistence-of-memory-1952.jpg"}  ></img> 
               </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Portrait of woman in dhermine pass (1937) </Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >The disintegration of the persistence of memory (1952) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -314,13 +317,13 @@ function Picassocollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"}  ></img> 
+              <img width = "100%" height="100%" src={"./style/Salvador_dali_collection/the-great-masturbator-1929.jpg"}  ></img> 
               </But>
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >The girls of avignon (1907) </Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >The great masturbator (1929) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
              <But w="20px" h="40px" colorScheme='red'>Add</But>
@@ -329,81 +332,6 @@ function Picassocollection() {
               </Portal>
               </Popover>
           
-          </Box>
-          </article>
-          <article className="carousel_img">
-          <Box  className="aumento" w="300px" h="300px">
-
-          <Popover>
-            <PopoverTrigger>
-            <But bg ="white" w="300px" h="300px"  type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/cat-catching-a-bird-1939.jpg"}  ></img>
-              </But>
-            </PopoverTrigger>
-            <Portal>
-            <PopoverContent>
-            <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Cat catching a bird (1939)</Heading></PopoverHeader>
-            <PopoverCloseButton />
-            <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
-              </PopoverBody>
-             </PopoverContent>
-              </Portal>
-              </Popover>
-            
-             
-        
-          </Box>
-          </article>
-          <article className="carousel_img">
-          <Box  className="aumento" w="300px" h="300px">
-
-          <Popover>
-            <PopoverTrigger>
-            <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/child-with-dove-1901.jpg"}  ></img>
-              </But>
-            </PopoverTrigger>
-            <Portal>
-            <PopoverContent>
-            <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Child with dove (1901) </Heading></PopoverHeader>
-            <PopoverCloseButton />
-            <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
-              </PopoverBody>
-             </PopoverContent>
-              </Portal>
-              </Popover>
-            
-            
-          </Box>
-          </article>
-          <article className="carousel_img">
-          <Box  className="aumento" w="300px" h="300px">
-
-          <Popover>
-            <PopoverTrigger>
-
-            <But bg ="white" w="300px" h="300px"  type="submit">
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/figures-at-the-seaside-1931.jpg"}  ></img>
-              </But>
-            </PopoverTrigger>
-            <Portal>
-            <PopoverContent>
-            <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Figures at the seaside (1931)</Heading></PopoverHeader>
-            <PopoverCloseButton />
-            <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
-              </PopoverBody>
-             </PopoverContent>
-              </Portal>
-              </Popover>
-            
-              
-            
           </Box>
           </article>
            
@@ -424,4 +352,4 @@ function Picassocollection() {
 
 
 
-export {Picassocollection } 
+export {Salvadordalicollection } 

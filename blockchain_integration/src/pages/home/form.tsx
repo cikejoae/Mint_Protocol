@@ -49,20 +49,20 @@ function Form() {
                     id='username'
                     placeholder='Please enter NFT name'
                   />
-                  <FormLabel htmlFor='username'>Rarity</FormLabel>
+                  <FormLabel htmlFor='rarity'>Rarity</FormLabel>
                   <Input
                     id='Rarity'
-                    placeholder='Please enter rarety'
+                    placeholder='Please enter rarity'
                   />
-                  <FormLabel htmlFor='username'>Type</FormLabel>
+                  <FormLabel htmlFor='type'>Type</FormLabel>
                   <Input
                     id='Type'
                     placeholder='Please enter type'
                   />
-                  <FormLabel htmlFor='username'>Royalty</FormLabel>
+                  <FormLabel htmlFor='royalty'>Royalty</FormLabel>
                   <Input
                     id='royalty'
-                    placeholder='Please enter user royalty'
+                    placeholder='Please enter royalty'
                   />
                 </Box>
 

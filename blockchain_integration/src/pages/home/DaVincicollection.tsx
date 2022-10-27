@@ -13,6 +13,31 @@ import './App.css';
 
 function Davincicollection() {
 
+        ///Multistate fuction
+        const [multi, setMulti]= useState(0);
+    
+        const Multistate = (state:any) => {
+
+                     setMulti(state);
+                      let Newstate = multi;
+
+                       };
+
+         const Newstate = multi;
+
+         const sendMultistate = async () => {
+            
+                  
+          const res = await fetch('http://localhost:5000/Davincicollection',
+          { method : "POST", 
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(Newstate)})
+          const data = await res.json();
+            
+          }
+
+         ///Carusel fuctions
+
 
          const [className, setclassName]= useState('carousel_slow');
 

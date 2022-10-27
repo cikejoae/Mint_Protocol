@@ -8,6 +8,7 @@ import './App.css';
 import { Davincicollection } from './DaVincicollection';
 import { Picassocollection} from './Picassocollection';
 import {Vincentvangoghcollection} from './Vincentvangoghcollection';
+import {Salvadordalicollection} from './Salvadordalicollection';
 import {Form} from  './form';
 import { Filters } from './Filters';
 import { render } from '@testing-library/react';
@@ -670,6 +671,7 @@ return (
                         <h1>Add Styles</h1>
                         <Vincentvangoghcollection></Vincentvangoghcollection>
                         <Picassocollection></Picassocollection>
+                        <Salvadordalicollection></Salvadordalicollection>
                         <Davincicollection></Davincicollection>
                         
             </TabPanel>
