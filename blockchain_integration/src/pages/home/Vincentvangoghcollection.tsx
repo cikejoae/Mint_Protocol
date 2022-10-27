@@ -94,7 +94,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Irises (1889)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit"  >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -119,7 +119,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Landscape with house and ploughman (1889)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -144,7 +144,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Paul gauguins armchair (1888)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit"  >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -170,7 +170,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Prisoners exercising prisoners round (1890)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -196,7 +196,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Red vineyards at arles (1888)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -222,7 +222,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md">Self portrait (1887)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -248,7 +248,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Self portrait with bandaged ear (1889)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -275,7 +275,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >StarryNight (1889)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -300,7 +300,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Still life vase with fifteen sunflowers (1888) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -324,7 +324,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Heatfield with crows (1890) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
