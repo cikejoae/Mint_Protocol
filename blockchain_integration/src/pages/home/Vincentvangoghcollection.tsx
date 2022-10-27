@@ -12,13 +12,13 @@ import './App.css';
 
 function Vincentvangoghcollection() {
 
-          ///Multistate fuction
+        ///Multistate fuction
         const [multi, setMulti]= useState(0);
     
         const Multistate = (state:any) => {
 
                      setMulti(state);
-                      let Newstate = multi;
+                     sendMultistate();
 
                        };
 

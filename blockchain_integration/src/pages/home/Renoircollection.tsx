@@ -69,7 +69,7 @@ function Renoircollection() {
         <VStack w="100%">
         <Box w="100%" h="50px">
           
-          <Center className="aumento" > Leonardo da Vinci </Center>
+          <Center className="aumento" > Pierre Auguste Renoir </Center>
          
          </Box>
          <Box w="100%" h="50px">

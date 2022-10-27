@@ -19,7 +19,7 @@ function Davincicollection() {
         const Multistate = (state:any) => {
 
                      setMulti(state);
-                      let Newstate = multi;
+                     sendMultistate();
 
                        };
 
@@ -87,7 +87,7 @@ function Davincicollection() {
 
           <Popover>
             <PopoverTrigger>
-            <But bg ="white" w="300px" h="300px"  type="submit"> 
+            <But bg ="white" w="300px" h="300px" type="submit"> 
               <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/da-vinci-vitruve-luc-viatour.jpg"}  ></img>
               </But>
             </PopoverTrigger>
@@ -97,7 +97,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Da vinci vitruve luc viatour</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" onClick = {(e)=> {Multistate(0);}}  colorScheme='red'>Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -112,7 +112,7 @@ function Davincicollection() {
 
           <Popover>
             <PopoverTrigger>
-            <But bg ="white" w="300px" h="300px"   type="submit"> 
+            <But bg ="white" w="300px" h="300px"   > 
               <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/drapery-for-a-seated-1470.jpg"}  ></img>
               </But>
             </PopoverTrigger>
@@ -122,7 +122,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Rapery for a seated (1470)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -137,7 +137,7 @@ function Davincicollection() {
           <Popover>
             <PopoverTrigger>
 
-            <But bg ="white" w="300px" h="300px"  type="submit">
+            <But bg ="white" w="300px" h="300px" >
               <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/mona-lisa.1503.jpg"}  ></img>
               </But>
             </PopoverTrigger>
@@ -147,7 +147,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Mona lisa (1503)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -163,7 +163,7 @@ function Davincicollection() {
              <Popover>
             <PopoverTrigger>
 
-              <But bg ="white" w="300px" h="300px"   type="submit"> 
+              <But bg ="white" w="300px" h="300px" > 
               <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/profile-of-a-warrior-in-helmet-1472.jpg"}  ></img>
               </But>
             </PopoverTrigger>
@@ -173,7 +173,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Profile of a warrior in helmet (1472)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}}   type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -189,7 +189,7 @@ function Davincicollection() {
           <Popover>
             <PopoverTrigger>
             
-            <But bg ="white" w="300px" h="300px"   type="submit"> 
+            <But bg ="white" w="300px" h="300px" > 
               <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/study-of-hands-1474.jpg"}  ></img>
               </But>
             </PopoverTrigger>
@@ -199,7 +199,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Study of hands (1474)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}}   type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -215,7 +215,7 @@ function Davincicollection() {
           <Popover>
             <PopoverTrigger>
             
-            <But  bg ="white" w="300px" h="300px"   type="submit"> 
+            <But  bg ="white" w="300px" h="300px" > 
               <img width = "100%"  height="100%" src={"./style/Leonardo_davinci_collection/the-baptism-of-christ-c-1475.png"}  ></img>
               </But>
             </PopoverTrigger>
@@ -225,7 +225,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md">The baptism of christ (1475)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}}  type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -241,7 +241,7 @@ function Davincicollection() {
           <Popover>
             <PopoverTrigger>
             
-                <But bg ="white" w="300px" h="300px"  type="submit"> 
+                <But bg ="white" w="300px" h="300px" > 
                 <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/the-madonna-of-the-carnation-1480.jpg"}  ></img>
                </But>
             </PopoverTrigger>
@@ -251,7 +251,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >The madonna of the carnation (1480)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -268,7 +268,7 @@ function Davincicollection() {
           <Popover>
             <PopoverTrigger>
             
-            <But bg ="white" w="300px" h="300px"  type="submit"> 
+            <But bg ="white" w="300px" h="300px" > 
             <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/the-lady-with-the-ermine-cecilia-gallerani-1496.jpg"}  ></img>
             </But>
             </PopoverTrigger>
@@ -278,7 +278,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >The lady with the ermine cecilia gallerani (1496)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -293,7 +293,7 @@ function Davincicollection() {
             <Popover>
             <PopoverTrigger>
             
-              <But  bg ="white" w="300px" h="300px"   type="submit"> 
+              <But  bg ="white" w="300px" h="300px" > 
               <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/Autorretrato.jpg"}  ></img> 
               </But>
             </PopoverTrigger>
@@ -303,7 +303,7 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Autorretrato </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
