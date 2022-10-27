@@ -10,6 +10,7 @@ import { Picassocollection} from './Picassocollection';
 import {Vincentvangoghcollection} from './Vincentvangoghcollection';
 import {Salvadordalicollection} from './Salvadordalicollection';
 import {Claudemonetcollection} from  './Claudemonetcollection';
+import {Edvardmunchcollection} from './Edvardmunchcollection';
 import {Form} from  './form';
 import { Filters } from './Filters';
 import { render } from '@testing-library/react';
@@ -673,6 +674,7 @@ return (
                         <Vincentvangoghcollection></Vincentvangoghcollection>
                         <Picassocollection></Picassocollection>
                         <Claudemonetcollection></Claudemonetcollection>
+                        <Edvardmunchcollection></Edvardmunchcollection>
                         <Salvadordalicollection></Salvadordalicollection>
                         <Davincicollection></Davincicollection>
                         
