@@ -32,6 +32,59 @@ class Videocapture():
         self.filter_hat=0
         self.filter_beard=0
         
+        
+    def Style_tranfer(self,style_file,lr):
+        
+        
+
+        vgg = models.vgg19(pretrained=True).features
+
+
+        for parameters in vgg.parameters():
+    
+            vgg.requires_grad_(False)
+    
+    
+        device= torch.device("cuda" if torch.cuda.is_available() else "cpu" )
+
+
+        vgg.to(device)
+
+
+
+        def load_image(img_path,max_size=400,shape=None):
+    
+    
+            image = Image.open(img_path).convert("RGB")
+    
+            if max(image.size) > max_size:
+        
+                size = max_size
+        
+            else:
+        
+                size =max(image.size)
+        
+            if shape is not None:
+        
+                size=shape
+        
+        
+            in_transform = transforms.Compose((
+                transforms.Resize(size),
+                transforms.ToTensor(),
+                transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5)) 
+                ))
+    
+            image = in_transform(image).unsqueeze(0)
+    
+    
+            return image
+    
+        
+    
+    
+    
     def Main(self):
         
         
