@@ -59,7 +59,7 @@ function App() {
                 textAlign='center'
                 fontSize='30px'
                 >
-                Create your own collection of NFTs with the best visual filters and with the style of your favorite artist..    
+                Create your own NFT collections with the best visual filters and with the style of your favorite artist..    
               </Heading>
               <Button colorScheme='pink' size='md' height='60px'
                       width='200px'
@@ -309,21 +309,21 @@ function App() {
     <Box h='50px'></Box>
     </VStack>
     <Container p="5"></Container>
-      <Flex height= "200px" alignItems='center' gap='2'>  
+      <Flex height= "100px" alignItems='center' gap='2'>  
     <Box  px={5} h={20}>
-      <Button  bg="white" ><FaGithub  color ="gray" size = "30px"/></Button> 
+      <FaGithub  color ="white" size = "50px"/>
     </Box>
     <Box px={5} h={20}>
-      <Button bg="white" ><FaTelegramPlane color ="gray" size = "30px"/></Button>
+      <FaTelegramPlane color ="white" size = "50px"/>
     </Box>
     <Box px={5} h={20}>
-      <Button bg="white"> <FaDiscord  color ="gray" size = "30px"/> </Button>
+       <FaDiscord  color ="white" size = "50px"/>
     </Box>
     <Box px={5} h={20}>
-      <Button bg="white"> <FaLinkedinIn color ="gray" size = "30px"/> </Button>
+       <FaLinkedinIn color ="white" size = "50px"/> 
     </Box>
     <Box px={5} h={20}>
-      <Button bg="white"> <FaTwitter color ="gray" size = "30px"/> </Button>
+      <FaTwitter color ="white" size = "50px"/>
     </Box>
       </Flex>
       </VStack>
