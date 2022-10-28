@@ -27,7 +27,7 @@ function Vincentvangoghcollection() {
          const sendMultistate = async () => {
             
                   
-          const res = await fetch('http://localhost:5000/vangoghcollection',
+          const res = await fetch('http://localhost:5000/Vincentvangoghcollection',
           { method : "POST", 
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(Newstate)})

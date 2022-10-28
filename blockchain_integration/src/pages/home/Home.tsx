@@ -13,6 +13,7 @@ import {Claudemonetcollection} from  './Claudemonetcollection';
 import {Edvardmunchcollection} from './Edvardmunchcollection';
 import {Renoircollection} from './Renoircollection';
 import {Rembrandcollection} from './Rembrandcollection';
+import {Progressbar} from './progressbar';
 import {Form} from  './form';
 import { Filters } from './Filters';
 import { render } from '@testing-library/react';
@@ -543,7 +544,9 @@ return (
         </Box>
         </Flex>
         </HStack>
-        <But colorScheme= "red"  borderRadius='md' w="150px" h="70px" bg= "red"  type="submit">Style transfer</But>
+        <Center>
+        <Progressbar></Progressbar>
+        </Center>
       </VStack>
 
       <Spacer />
