@@ -33,6 +33,64 @@ class Videocapture():
         self.filter_beard=0
         
         
+        #MAIN PANEL
+        self.mainpanel=[]
+        
+        
+    def Multiprocess(self):
+        
+
+        self.Vincentvangoghcollection=["Vincent_van_gogh_collection/Irises-1889.jpg","Vincent_van_gogh_collection/landscape-with-house-and-ploughman-1889.jpg","Vincent_van_gogh_collection/paul-gauguin-s-armchair-1888.jpg","Vincent_van_gogh_collection/prisoners-exercising-prisoners-round-1890.jpg","Vincent_van_gogh_collection/red-vineyards-at-arles-1888.jpg","Vincent_van_gogh_collection/self-portrait-1887.jpg","Vincent_van_gogh_collection/self-portrait-with-bandaged-ear-1889.jpg","Vincent_van_gogh_collection/StarryNight.jpg","Vincent_van_gogh_collection/still-life-vase-with-fifteen-sunflowers-1888.jpg","Vincent_van_gogh_collection/wheatfield-with-crows-1890.jpg"]
+           
+        if self.Vincentvangoghcollection_state != 0 :
+            
+            self.mainpanel.append(self.Vincentvangoghcollection[self.Vincentvangoghcollection_state-1])
+            self.Vincentvangoghcollection_state = 0
+            
+            print(self.mainpanel)
+            
+            
+        self.Picassocollection=["Pablo_picasso_collection/cat-catching-a-bird-1939.jpg","Pablo_picasso_collection/child-with-dove-1901.jpg","Pablo_picasso_collection/figures-at-the-seaside-1931.jpg","Pablo_picasso_collection/girl-on-the-ball-1905.jpg","Pablo_picasso_collection/mujeres_de_argel_picasso.jpg","Pablo_picasso_collection/old-guitarist-chicago-1903.jpg","Pablo_picasso_collection/portrait-of-ambroise-vollard-1910.jpg","Pablo_picasso_collection/portrait-of-dora-maar-1937.jpg","Pablo_picasso_collection/Portrait-of-woman-in-dhermine-pass-1937.jpg","Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"]
+           
+        if self.Picassocollection_state != 0 :
+            
+            self.mainpanel.append(self.Picassocollection[self.Picassocollection_state-1])
+            self.Picassocollection_state = 0
+            
+            print(self.mainpanel)
+            
+            
+        self.Claudemonetcollection=["Claude_monet_collection/autumn-on-the-seine-at-argenteuil-1873.jpg","Claude_monet_collection/camille-with-green-parasol-1876.jpg","Claude_monet_collection/claude-monet-irises-in-monets-garden-1899.jpg","Claude_monet_collection/impression-sunrise-1872.jpg","Claude_monet_collection/madame-monet-and-child-1875.jpg","Claude_monet_collection/poplars-at-giverny-1887.jpg","Claude_monet_collection/snow-at-argenteuil-1875.jpg","Claude_monet_collection/the-boat-studio-1876.jpg","Claude_monet_collection/the-shoot-1876.jpg","Claude_monet_collection/waterloo-bridge-london-1903.jpg"]
+           
+        if self.Claudemonetcollection_state != 0 :
+            
+            self.mainpanel.append(self.Claudemonetcollection[self.Claudemonetcollection_state-1])
+            self.Claudemonetcollection_state = 0
+            
+            print(self.mainpanel)
+            
+        
+        self.Edvardmunchcollection=[""]
+           
+        if self.Edvardmunchcollection_state != 0 :
+            
+            self.mainpanel.append(self.Edvardmunchcollection[self.Edvardmunchcollection_state-1])
+            self.Edvardmunchcollection_state = 0
+            
+            print(self.mainpanel)
+            
+            
+            
+        
+        return self.mainpanel
+            
+            
+        
+            
+        
+        
+        
+        
     def Style_tranfer(self,style_file,lr):
         
         
@@ -626,12 +684,14 @@ class Videocapture():
         @app.route("/video_feed",methods = ['GET'])
         def video_feed():          
             return Response(generate(), mimetype='multipart/x-mixed-replace; boundary=frame')
+    
         
         @app.route("/Rembrandcollection",methods = ['POST'])
         def Rembrandcollection():
             print("DATA RECIBIDA")
             self.Rembrandcollection_state = int(request.json)
             print(self.Rembrandcollection_state)
+            self.Multiprocess()
             return "ok"
         
         
@@ -641,14 +701,16 @@ class Videocapture():
             print("DATA RECIBIDA")
             self.Salvadordalicollection_state = int(request.json)
             print(self.Salvadordalicollection_state)
+            self.Multiprocess()
             return "ok"
         
         
         @app.route("/Renoircollection",methods = ['POST'])
-        def Edvardmunchcollection():
+        def Renoircollection():
             print("DATA RECIBIDA")
             self.Renoircollection_state = int(request.json)
             print(self.Renoircollection_state)
+            self.Multiprocess()
             return "ok"
         
         
@@ -658,6 +720,7 @@ class Videocapture():
             print("DATA RECIBIDA")
             self.Edvardmunchcollection_state = int(request.json)
             print(self.Edvardmunchcollection_state)
+            self.Multiprocess()
             return "ok"
         
         
@@ -666,6 +729,7 @@ class Videocapture():
             print("DATA RECIBIDA")
             self.Claudemonetcollection_state = int(request.json)
             print(self.Claudemonetcollection_state)
+            self.Multiprocess()
             return "ok"
         
         
@@ -674,6 +738,7 @@ class Videocapture():
             print("DATA RECIBIDA")
             self.Picassocollection_state = int(request.json)
             print(self.Picassocollection_state)
+            self.Multiprocess()
             return "ok"
         
         @app.route("/Vincentvangoghcollection",methods = ['POST'])
@@ -681,6 +746,7 @@ class Videocapture():
             print("DATA RECIBIDA")
             self.Vincentvangoghcollection_state = int(request.json)
             print(self.Vincentvangoghcollection_state)
+            self.Multiprocess()
             return "ok"
         
         @app.route("/Davincicollection",methods = ['POST'])
@@ -688,6 +754,7 @@ class Videocapture():
             print("DATA RECIBIDA")
             self.Davincicollection_state = int(request.json)
             print(self.Davincicollection_state)
+            self.Multiprocess()
             return "ok"
         
         @app.route("/button_nose_pork",methods = ['POST'])
@@ -767,6 +834,18 @@ class Videocapture():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_beard = int(request.json) 
+             return "ok"
+
+        @app.route("/tranferstyle",methods = ['POST'])
+        def button_tranferstyle():
+             
+             print("DATA RECIBIDA")
+             print(request.json)
+             
+             self.button_tranferstyle = int(request.json)
+             self.Multiprocess()
+             
+             
              return "ok"            
              
         @app.route("/button_capture",methods = ['POST'])
@@ -776,7 +855,7 @@ class Videocapture():
              print(request.json)
              
              self.button_capture = int(request.json)
-             
+        
              return "ok"
         
         if __name__ == "__main__":
