@@ -80,6 +80,50 @@ class Videocapture():
     
     
             return image
+        
+        def im_convert(tensor):
+    
+                image=tensor.cpu().clone().detach().numpy()
+                image=image.squeeze()
+                image=image.transpose(1,2,0)
+                image=image*np.array((0.5,0.5,0.5)) + np.array((0.5,0.5,0.5))
+                image.clip(0,1)
+    
+                return image
+
+
+        def get_features(image,model):
+    
+                layers={"0":"conv1_1",
+                        "5":"conv2_1",
+                        "10":"conv3_1",
+                        "19":"conv4_1",
+                        "21":"conv4_2",
+                        "28":"conv5_1"  
+                        }
+                features={}
+    
+                for name, layer in model._modules.items():
+        
+                        image = layer(image)
+        
+                        if name in layers:
+            
+                            features[layers[name]] = image
+            
+            
+                return features
+
+
+
+
+
+
+        content = load_image("../frontend/public/photo.jpg").to(device)
+        Style = load_image(str("../frontend/public/style/") + str(style_file),shape=content.shape[-2:]).to(device)
+    
+        content_feature = get_features(content, vgg)  
+        style_feature = get_features(Style, vgg)
     
         
     
