@@ -18,7 +18,7 @@ function Rembrandcollection() {
         const Multistate = (state:any) => {
 
                      setMulti(state);
-                      let Newstate = multi;
+                     sendMultistate();
 
                        };
 
@@ -27,7 +27,7 @@ function Rembrandcollection() {
          const sendMultistate = async () => {
             
                   
-          const res = await fetch('http://localhost:5000/Davincicollection',
+          const res = await fetch('http://localhost:5000/Rembrandcollection',
           { method : "POST", 
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(Newstate)})
@@ -96,7 +96,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >Beggar man and woman (1628)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -121,7 +121,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >Beggar man and woman behind a bank (1630)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -146,7 +146,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >Old man in a long cloak sitting in an armchair (1630)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -172,7 +172,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >Seated old man (1630)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -198,7 +198,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >Self portrait (1630)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -224,7 +224,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md">Self portrait leaning forward listening (1628)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -250,7 +250,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >St jerome kneeling (1630)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -277,7 +277,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >St Paul in meditation (1629)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -302,7 +302,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >The flight into Egypt a sketch (1627) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -326,7 +326,7 @@ function Rembrandcollection() {
             <PopoverHeader><Heading size = "md" >Widebrim (1632) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
