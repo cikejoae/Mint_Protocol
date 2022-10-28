@@ -13,13 +13,13 @@ import './App.css';
 function Picassocollection() {
 
 
-         ///Multistate fuction
+        ///Multistate fuction
         const [multi, setMulti]= useState(0);
     
         const Multistate = (state:any) => {
 
                      setMulti(state);
-                      let Newstate = multi;
+                     sendMultistate();
 
                        };
 
@@ -93,7 +93,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Cat catching a bird (1939)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -118,7 +118,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Child with dove (1901) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -143,7 +143,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Figures at the seaside (1931)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -169,7 +169,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Girl on the ball (1905)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -195,7 +195,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Wifes of argel </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -221,7 +221,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md">Old guitarist (1903)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -247,7 +247,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Portrait of ambroise vollard (1910)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -274,7 +274,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Portrait of dora maar (1937)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -299,7 +299,7 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Portrait of woman in dhermine pass (1937) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -323,90 +323,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >The girls of avignon (1907) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
               </Popover>
           
           </Box>
-          </article>
-          <article className="carousel_img">
-          <Box  className="aumento" w="300px" h="300px">
-
-          <Popover>
-            <PopoverTrigger>
-            <But bg ="white" w="300px" h="300px"  type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/cat-catching-a-bird-1939.jpg"}  ></img>
-              </But>
-            </PopoverTrigger>
-            <Portal>
-            <PopoverContent>
-            <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Cat catching a bird (1939)</Heading></PopoverHeader>
-            <PopoverCloseButton />
-            <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
-              </PopoverBody>
-             </PopoverContent>
-              </Portal>
-              </Popover>
-            
-             
-        
-          </Box>
-          </article>
-          <article className="carousel_img">
-          <Box  className="aumento" w="300px" h="300px">
-
-          <Popover>
-            <PopoverTrigger>
-            <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/child-with-dove-1901.jpg"}  ></img>
-              </But>
-            </PopoverTrigger>
-            <Portal>
-            <PopoverContent>
-            <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Child with dove (1901) </Heading></PopoverHeader>
-            <PopoverCloseButton />
-            <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
-              </PopoverBody>
-             </PopoverContent>
-              </Portal>
-              </Popover>
-            
-            
-          </Box>
-          </article>
-          <article className="carousel_img">
-          <Box  className="aumento" w="300px" h="300px">
-
-          <Popover>
-            <PopoverTrigger>
-
-            <But bg ="white" w="300px" h="300px"  type="submit">
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/figures-at-the-seaside-1931.jpg"}  ></img>
-              </But>
-            </PopoverTrigger>
-            <Portal>
-            <PopoverContent>
-            <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Figures at the seaside (1931)</Heading></PopoverHeader>
-            <PopoverCloseButton />
-            <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
-              </PopoverBody>
-             </PopoverContent>
-              </Portal>
-              </Popover>
-            
-              
-            
-          </Box>
-          </article>
-           
+          </article> 
           </Flex>
       </HStack>
       </div> 
