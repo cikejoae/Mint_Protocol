@@ -446,6 +446,32 @@ class Videocapture():
         def video_feed():          
             return Response(generate(), mimetype='multipart/x-mixed-replace; boundary=frame')
         
+        @app.route("/Rembrandcollection",methods = ['POST'])
+        def Rembrandcollection():
+            print("DATA RECIBIDA")
+            self.Rembrandcollection_state = int(request.json)
+            print(self.Rembrandcollection_state)
+            return "ok"
+        
+        
+        
+        @app.route("/Salvadordalicollection",methods = ['POST'])
+        def Salvadordalicollection():
+            print("DATA RECIBIDA")
+            self.Salvadordalicollection_state = int(request.json)
+            print(self.Salvadordalicollection_state)
+            return "ok"
+        
+        
+        @app.route("/Renoircollection",methods = ['POST'])
+        def Edvardmunchcollection():
+            print("DATA RECIBIDA")
+            self.Renoircollection_state = int(request.json)
+            print(self.Renoircollection_state)
+            return "ok"
+        
+        
+        
         @app.route("/Edvardmunchcollection",methods = ['POST'])
         def Edvardmunchcollection():
             print("DATA RECIBIDA")
