@@ -18,7 +18,7 @@ function Claudemonetcollection() {
         const Multistate = (state:any) => {
 
                      setMulti(state);
-                      let Newstate = multi;
+                     sendMultistate();
 
                        };
 
@@ -27,7 +27,7 @@ function Claudemonetcollection() {
          const sendMultistate = async () => {
             
                   
-          const res = await fetch('http://localhost:5000/Davincicollection',
+          const res = await fetch('http://localhost:5000/Claudemonetcollection',
           { method : "POST", 
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(Newstate)})
@@ -96,7 +96,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Autumn on the seine at argenteuil (1873)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -121,7 +121,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Camille with green parasol (1876)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -146,7 +146,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Irises in monets garden (1899)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -172,7 +172,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Impression sunrise (1872)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -198,7 +198,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Madame monet and child (1875)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -224,7 +224,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md">Poplars at giverny (1887)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -250,7 +250,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Snow at argenteuil (1875)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -277,7 +277,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >The boat studio (1876)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -302,7 +302,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >The shoot (1876) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -326,7 +326,7 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Waterloo bridge london (1903) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>

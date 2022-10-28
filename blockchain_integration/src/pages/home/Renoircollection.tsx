@@ -18,7 +18,7 @@ function Renoircollection() {
         const Multistate = (state:any) => {
 
                      setMulti(state);
-                      let Newstate = multi;
+                     sendMultistate();
 
                        };
 
@@ -96,7 +96,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >Banks of the seine at Champrosay (1876)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -121,7 +121,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >By the fireside (1875)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -146,7 +146,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >By the seashore (1883)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -172,7 +172,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >Girl gathering flowers (1872)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -198,7 +198,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >Girl with a dog (1875)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -224,7 +224,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md">Jeanne Samary in a low necked dress (1877)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -250,7 +250,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >Self portrait with a white hat (1910)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -277,7 +277,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >The duck pond (1873)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -302,7 +302,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >The seine at argenteuil (1875) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -326,7 +326,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >Young woman with a dog (1876) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -350,7 +350,7 @@ function Renoircollection() {
             <PopoverHeader><Heading size = "md" >Young woman with a japanese umbrella (1876) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(11);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>

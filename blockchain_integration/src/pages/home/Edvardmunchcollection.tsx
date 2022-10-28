@@ -18,7 +18,7 @@ function Edvardmunchcollection() {
         const Multistate = (state:any) => {
 
                      setMulti(state);
-                      let Newstate = multi;
+                     sendMultistate();
 
                        };
 
@@ -27,7 +27,7 @@ function Edvardmunchcollection() {
          const sendMultistate = async () => {
             
                   
-          const res = await fetch('http://localhost:5000/Davincicollection',
+          const res = await fetch('http://localhost:5000/Edvardmunchcollection',
           { method : "POST", 
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(Newstate)})
@@ -96,7 +96,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >August Stindberg (1892)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -121,7 +121,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Rosa meissner (1907)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -146,7 +146,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Girl combing her hair (1892)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -172,7 +172,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Morning (1884)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -198,7 +198,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Portrait of the painter jensen hjell (1885)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -224,7 +224,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md">Selvportrett (1926)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -250,7 +250,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Spring day on karl Johan street(1890)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -277,7 +277,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Street lafayette (1891)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -302,7 +302,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >The scream (1893) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -326,7 +326,7 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >View over the rover at stcloud (1890) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red'>Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
