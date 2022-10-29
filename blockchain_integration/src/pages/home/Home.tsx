@@ -22,6 +22,18 @@ import { render } from '@testing-library/react';
 
 
 function Home() {
+
+
+
+  const get = async () =>{ 
+    
+  const res = await fetch('http://localhost:5000/mainpanel',
+  { method : "GET", 
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify(gavinbut)})
+  const data = await res.json();
+
+  }
   
 
   const [multi, setMulti]= useState(0);
