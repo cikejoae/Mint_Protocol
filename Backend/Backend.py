@@ -34,10 +34,60 @@ class Videocapture():
         
         
         #MAIN PANEL
+        self.Vincentvangoghcollection_state = 0
+        self.Picassocollection_state = 0
+        self.Claudemonetcollection_state = 0
+        self.Edvardmunchcollection_state = 0
+        self.Renoircollection_state = 0
+        self.Salvadordalicollection_state = 0
+        self.Davincicollection_state = 0
+        self.Rembrandcollection_state = 0
         self.mainpanel=[]
+        
+        #Style tranfer
+        self.Style_transfer=0
+        
+        
+    def execution(self):
+        
+        
+        
+        print("Iniciando procesamiento de este panel")
+        
+        print(self.mainpanel)
+        
+        if (len(self.mainpanel) > 0) and  (len(self.mainpanel) < 3):
+        
+            for i in self.mainpanel:
+                
+                print("Procesando",i)
+            
+                lr=0.05
+                self.Style_tranfer(i,lr)
+                time.sleep(5)
+            
+                
+        if (len(self.mainpanel) > 3):
+             
+             Newpanel=[self.mainpanel[-1],self.mainpanel[-2],self.mainpanel[-3]]
+             
+             print(Newpanel)
+             
+        if (len(self.mainpanel) == 0):
+             
+             print("Panel sin elementos de estilo...")
+             
+             
+        #Reset panel 
+        self.mainpanel=[]
+    
+
         
         
     def Multiprocess(self):
+        
+        print("Panel actual")
+        print(self.mainpanel)
         
 
         self.Vincentvangoghcollection=["Vincent_van_gogh_collection/Irises-1889.jpg","Vincent_van_gogh_collection/landscape-with-house-and-ploughman-1889.jpg","Vincent_van_gogh_collection/paul-gauguin-s-armchair-1888.jpg","Vincent_van_gogh_collection/prisoners-exercising-prisoners-round-1890.jpg","Vincent_van_gogh_collection/red-vineyards-at-arles-1888.jpg","Vincent_van_gogh_collection/self-portrait-1887.jpg","Vincent_van_gogh_collection/self-portrait-with-bandaged-ear-1889.jpg","Vincent_van_gogh_collection/StarryNight.jpg","Vincent_van_gogh_collection/still-life-vase-with-fifteen-sunflowers-1888.jpg","Vincent_van_gogh_collection/wheatfield-with-crows-1890.jpg"]
@@ -46,6 +96,7 @@ class Videocapture():
             
             self.mainpanel.append(self.Vincentvangoghcollection[self.Vincentvangoghcollection_state-1])
             self.Vincentvangoghcollection_state = 0
+    
             
             print(self.mainpanel)
             
@@ -56,6 +107,7 @@ class Videocapture():
             
             self.mainpanel.append(self.Picassocollection[self.Picassocollection_state-1])
             self.Picassocollection_state = 0
+           
             
             print(self.mainpanel)
             
@@ -67,22 +119,71 @@ class Videocapture():
             self.mainpanel.append(self.Claudemonetcollection[self.Claudemonetcollection_state-1])
             self.Claudemonetcollection_state = 0
             
+            
             print(self.mainpanel)
             
         
-        self.Edvardmunchcollection=[""]
+        self.Edvardmunchcollection=["Edvard_munch_collection/august-stindberg-1892.jpg","Edvard_munch_collection/edvard-munch-rosa-meissner.jpg","Edvard_munch_collection/girl-combing-her-hair-1892.jpg","Edvard_munch_collection/morning-1884.jpg","Edvard_munch_collection/portrait-of-the-painter-jensen-hjell-1885.jpg","Edvard_munch_collection/Selvportrett-1926.jpg","Edvard_munch_collection/spring-day-on-karl-johan-street-1890.jpg","Edvard_munch_collection/street-lafayette-1891.jpg","Edvard_munch_collection/the-scream-1893.jpg","Edvard_munch_collection/view-over-the-rover-at-st-cloud-1890.jpg"]
            
         if self.Edvardmunchcollection_state != 0 :
             
             self.mainpanel.append(self.Edvardmunchcollection[self.Edvardmunchcollection_state-1])
             self.Edvardmunchcollection_state = 0
             
+            
             print(self.mainpanel)
             
             
             
+        self.Renoircollection=["Pierre_auguste_renoir_collection/banks-of-the-seine-at-champrosay-1876.jpg","Pierre_auguste_renoir_collection/by-the-fireside-1875.jpg","Pierre_auguste_renoir_collection/by-the-seashore-1883.jpg","Pierre_auguste_renoir_collection/girl-gathering-flowers-1872.jpg","Pierre_auguste_renoir_collection/girl-with-a-dog-1875.jpg","Pierre_auguste_renoir_collection/jeanne-samary-in-a-low-necked-dress-1877.jpg","Pierre_auguste_renoir_collection/self-portrait-with-a-white-hat-1910.jpg","Pierre_auguste_renoir_collection/the-duck-pond-1873.jpg","Pierre_auguste_renoir_collection/the-seine-at-argenteuil-1875.jpg","Pierre_auguste_renoir_collection/young-woman-with-a-dog-1876.jpg","Pierre_auguste_renoir_collection/young-woman-with-a-japanese-umbrella-1876.jpg"]
+            
+        if self.Renoircollection_state != 0 :
+             
+             self.mainpanel.append(self.Renoircollection[self.Renoircollection_state-1])
+             self.Renoircollection_state = 0
+            
+             
+             print(self.mainpanel)
+             
+             
+             
+        self.Salvadordalicollection=["Salvador_dali_collection/3salvador-dali-peyzazh-bliz-figerasa-1910.jpg","Salvador_dali_collection/boat-1918.jpg","Salvador_dali_collection/Dream_for_bee_1944.jpg","Salvador_dali_collection/landscape-1916.jpg","Salvador_dali_collection/landscape-near-ampurdan-1914.jpg","Salvador_dali_collection/llane-beach-cadaques-1919.jpg","Salvador_dali_collection/Persistencia_de_la_memoria.jpg","Salvador_dali_collection/portdogue-1918.jpg","Salvador_dali_collection/the-disintegration-of-the-persistence-of-memory-1952.jpg","Salvador_dali_collection/the-great-masturbator-1929.jpg"]
+            
+        if self.Salvadordalicollection_state != 0 :
+             
+             self.mainpanel.append(self.Salvadordalicollection[self.Salvadordalicollection_state-1])
+             self.Salvadordalicollection_state = 0
+            
+             
+             print(self.mainpanel)
+             
+             
+             
+        self.Davincicollection=["Leonardo_davinci_collection/da-vinci-vitruve-luc-viatour.jpg","Leonardo_davinci_collection/drapery-for-a-seated-1470.jpg","Leonardo_davinci_collection/mona-lisa.1503.jpg","Leonardo_davinci_collection/profile-of-a-warrior-in-helmet-1472.jpg","Leonardo_davinci_collection/study-of-hands-1474.jpg","Leonardo_davinci_collection/the-baptism-of-christ-c-1475.png","Leonardo_davinci_collection/the-madonna-of-the-carnation-1480.jpg","Leonardo_davinci_collection/the-lady-with-the-ermine-cecilia-gallerani-1496.jpg","Leonardo_davinci_collection/Autorretrato.jpg"]
+             
+        if self.Davincicollection_state != 0 :
+              
+              self.mainpanel.append(self.Davincicollection[self.Davincicollection_state-1])
+              self.Davincicollection_state = 0
+             
+              
+              print(self.mainpanel)
+              
+              
+              
+        self.Rembrandcollection=["Rembrandt_collection/beggar-man-and-woman-1628.jpg","Rembrandt_collection/beggar-man-and-woman-behind-a-bank-1630.jpg","Rembrandt_collection/old-man-in-a-long-cloak-sitting-in-an-armchair-1630.jpg","Rembrandt_collection/seated-old-man-1630.jpg","Rembrandt_collection/self-portrait-1630.jpg","Rembrandt_collection/self-portrait-leaning-forward-listening-1628.jpg","Rembrandt_collection/st-jerome-kneeling-1630.jpg","Rembrandt_collection/st-paul-in-meditation-1629.jpg","Rembrandt_collection/the-flight-into-egypt-a-sketch-1627.jpg","Rembrandt_collection/widebrim-1632.jpg"]
+              
+        if self.Rembrandcollection_state != 0 :
+               
+               self.mainpanel.append(self.Rembrandcollection[self.Rembrandcollection_state-1])
+               self.Rembrandcollection_state = 0
+               
+               
+               print(self.mainpanel)
+            
+            
+            
         
-        return self.mainpanel
             
             
         
@@ -91,7 +192,7 @@ class Videocapture():
         
         
         
-    def Style_tranfer(self,style_file,lr):
+    def Style_tranfer(self,style_file,lr,n):
         
         
 
@@ -177,8 +278,8 @@ class Videocapture():
 
 
 
-        content = load_image("../frontend/public/photo.jpg").to(device)
-        Style = load_image(str("../frontend/public/style/") + str(style_file),shape=content.shape[-2:]).to(device)
+        content = load_image("../blockchain_integration/public/images/photo.jpg").to(device)
+        Style = load_image(str("../blockchain_integration/public/style/") + str(style_file),shape=content.shape[-2:]).to(device)
     
         content_feature = get_features(content, vgg)  
         style_feature = get_features(Style, vgg)
@@ -213,11 +314,11 @@ class Videocapture():
 
         target = content.clone().requires_grad_(True).to(device)
 
-        show_every = 25
+        show_every = 30
 
         optimizer = optim.Adam([target],lr=float(lr))
 
-        steps=25
+        steps=30
 
 
         height, width, channels = im_convert(target).shape
@@ -257,11 +358,16 @@ class Videocapture():
         
                         print("Total loss: ", total_loss.item())
                         print("Iteration: ", ii)
-                        
+                              
                         figure = plt.figure()
                         plt.imshow(im_convert(target))
                         plt.axis("off")
-                        figure.savefig("../frontend/public/photo.jpg", dpi=300, bbox_inches="tight")
+                        figure.savefig("../blockchain_integration/public/images/photo" + str(n)+ ".jpg", dpi=300, bbox_inches="tight")
+                                
+                        
+                            
+                            
+                            
                         
         
                     if ii%capture_frame == 0:
@@ -662,8 +768,31 @@ class Videocapture():
                     (flag,encodedImage) =cv2.imencode(".jpg",frame)
                                   
                     if self.button_capture == 1:
-                        cv2.imwrite("../blockchain_integration/public/photo.jpg",frame)
+                        cv2.imwrite("../blockchain_integration/public/images/photo.jpg",frame)
                         self.button_capture = 0
+                        
+                        #Filters reset
+                        #Filters
+                        self.button_capture= 0
+                        self.filter_nose_pork= 0
+                        self.filter_gavin=0
+                        self.filter_dot =0
+                        self.filter_dot_2 =0
+                        self.filter_nose_clown=0
+                        self.filter_glasses=0
+                        self.filter_mustache=0
+                        self.filter_focus=0
+                        self.filter_hat=0
+                        self.filter_beard=0
+                        
+                    if self.Style_transfer == 1:
+                        
+                        self.execution()
+                        
+                        self.Style_transfer=0
+                        
+                        
+                        pass
                                               
                     
                     if not flag:
@@ -837,13 +966,12 @@ class Videocapture():
              return "ok"
 
         @app.route("/tranferstyle",methods = ['POST'])
-        def button_tranferstyle():
+        def tranferstyle():
              
              print("DATA RECIBIDA")
              print(request.json)
              
-             self.button_tranferstyle = int(request.json)
-             self.Multiprocess()
+             self.Style_transfer = int(request.json)
              
              
              return "ok"            
