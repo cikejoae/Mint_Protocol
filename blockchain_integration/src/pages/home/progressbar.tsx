@@ -9,19 +9,19 @@ function Progressbar() {
    
 		setValue(prevValue => !prevValue );
 		
-		pull_button_transferstyle();
+		pullbuttonTransferstyle();
 		
 		};
 
-	const button_signaltransferstyle = value ? 0 : 1
+	const buttonsignalTransferstyle = value ? 0 : 1
 		
-    const pull_button_transferstyle = async () => {
+    const pullbuttonTransferstyle = async () => {
 		
 			  
 		const res = await fetch('http://localhost:5000/tranferstyle',
 		{ method : "POST", 
 		headers: {'Content-Type': 'application/json'},
-		body: JSON.stringify(button_signaltransferstyle)})
+		body: JSON.stringify(buttonsignalTransferstyle)})
 		const data = await res.json();
 		  
 		}
@@ -32,7 +32,7 @@ function Progressbar() {
 	const [isRunning, setIsRunning] = useState(false);
 	useEffect(() => {
 		if (filled < 100 && isRunning) {
-			setTimeout(() => setFilled(prev => prev += 2), 600)
+			setTimeout(() => setFilled(prev => prev += 2), 800)
 		}
 	},[filled, isRunning])
   return (

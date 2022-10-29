@@ -22,36 +22,7 @@ import { render } from '@testing-library/react';
 
 
 function Home() {
-  const [multi2, setMulti2]= useState(0);
-    
-  const Multistate2 = (state:any) => {
-
-     setMulti2(state);
-     const Newstate2 = multi2;
-
-    
-   };
-
-   const Newstate2 = multi2;
-
-   
-   function resultado_p2 () {if ( statepanel_1 != 1 ){return(<img src={"./icons/VACIO.png"}  ></img>)}
-                else if (Newstate2 == 1 ) {return(<img src={"./icons/COCHINO.png"}  ></img>)}
-                else if (Newstate2 == 2 ){return(<img src={"./icons/CLOWN.png"}  ></img>)}
-                else if (Newstate2 == 3 ){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)}
-                else if (Newstate2 == 4 ){return(<img src={"./icons/POLKA.png"}  ></img>)}
-                else if (Newstate2 == 5 ){return(<img src={"./icons/POLKADOT.png"}  ></img>)}
-                else if (Newstate2 == 6 ){return(<img src={"./icons/MUSTACHE.png"}  ></img>)}
-                else if (Newstate2 == 7 ){return(<img src={"./icons/GLASSES.png"}  ></img>)}
-                else if (Newstate2 == 8 ){return(<img src={"./icons/FOCUS.png"}  ></img>)}
-                else if (Newstate2 == 9 ){return(<img src={"./icons/HAT.png"}  ></img>)}
-                else if (Newstate2 == 10 ){return(<img src={"./icons/BEARD.png"}  ></img>)}
-                  }
- 
-
-
-
-
+  
 
   const [multi, setMulti]= useState(0);
     
@@ -465,7 +436,13 @@ function Home() {
             pull_button_capture();
             
             };
-            
+
+
+  function capturePhoto () {if(value == true){return(<Box className="aumento"  bg = "white" w="400px" h="400px"><img  width="100%" height="100%" src={"./images/photo.jpg"}  ></img></Box>)}}
+
+  
+
+         
   const pull_button_capture = async () => {
             
                   
@@ -476,6 +453,7 @@ function Home() {
             const data = await res.json();
               
             }
+            
 
 
 
@@ -552,9 +530,10 @@ return (
       <Spacer />
   
       <Box className="aumento"  bg = "white" w="400px" h="400px">
-   
-         <img  width="100%" height="100%" src={"./photo.jpg"}  ></img>
 
+
+      <img  width="100%" height="100%" src={"./images/photo.jpg"}  ></img>
+      
       <Box  w="100%" h="50px">
       <Popover>
             <PopoverTrigger>
