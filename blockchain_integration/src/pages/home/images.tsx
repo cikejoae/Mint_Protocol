@@ -40,6 +40,17 @@ export default [
 "./style/Edvard_munch_collection/street-lafayette-1891.jpg",
 "./style/Edvard_munch_collection/the-scream-1893.jpg",
 "./style/Edvard_munch_collection/view-over-the-rover-at-st-cloud-1890.jpg",
+"./style/Pierre_auguste_renoir_collection/banks-of-the-seine-at-champrosay-1876.jpg",
+"./style/Pierre_auguste_renoir_collection/by-the-fireside-1875.jpg",
+"./style/Pierre_auguste_renoir_collection/by-the-seashore-1883.jpg",
+"./style/Pierre_auguste_renoir_collection/girl-gathering-flowers-1872.jpg",
+"./style/Pierre_auguste_renoir_collection/girl-with-a-dog-1875.jpg",
+"./style/Pierre_auguste_renoir_collection/jeanne-samary-in-a-low-necked-dress-1877.jpg",
+"./style/Pierre_auguste_renoir_collection/self-portrait-with-a-white-hat-1910.jpg",
+"./style/Pierre_auguste_renoir_collection/the-duck-pond-1873.jpg",
+"./style/Pierre_auguste_renoir_collection/the-seine-at-argenteuil-1875.jpg",
+"./style/Pierre_auguste_renoir_collection/young-woman-with-a-dog-1876.jpg",
+"./style/Pierre_auguste_renoir_collection/young-woman-with-a-japanese-umbrella-1876.jpg"
 
 
 
