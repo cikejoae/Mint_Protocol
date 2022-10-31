@@ -57,13 +57,16 @@ class Videocapture():
         print(self.mainpanel)
         
         if (len(self.mainpanel) > 0) and  (len(self.mainpanel) < 3):
+            
+            self.n=0#Number process
         
             for i in self.mainpanel:
                 
                 print("Procesando",i)
+                self.n += 1
             
                 lr=0.05
-                self.Style_tranfer(i,lr)
+                self.Style_tranfer(i,lr,self.n)
                 time.sleep(5)
             
                 
@@ -80,6 +83,7 @@ class Videocapture():
              
         #Reset panel 
         self.mainpanel=[]
+        self.n=0#Number process
     
 
         
@@ -275,10 +279,17 @@ class Videocapture():
 
 
 
+        if int(n) == 1:            
 
-
-
-        content = load_image("../blockchain_integration/public/images/photo.jpg").to(device)
+                content = load_image("../blockchain_integration/public/images/photo.jpg").to(device)
+                
+        elif int(n) > 1:
+            
+                content = load_image("./images/photo" + str(int(n)-1)+ ".jpg").to(device)
+                
+                print("Procesando","./images/photo" + str(int(n)-1)+ ".jpg" )
+        
+        
         Style = load_image(str("../blockchain_integration/public/style/") + str(style_file),shape=content.shape[-2:]).to(device)
     
         content_feature = get_features(content, vgg)  
@@ -362,7 +373,15 @@ class Videocapture():
                         figure = plt.figure()
                         plt.imshow(im_convert(target))
                         plt.axis("off")
-                        figure.savefig("../blockchain_integration/public/images/photo" + str(n)+ ".jpg", dpi=300, bbox_inches="tight")
+                        figure.savefig("./images/photo" + str(n)+ ".jpg", dpi=300, bbox_inches="tight")
+                        
+                        
+                        if len(self.mainpanel) == self.n :
+                            
+                            figure = plt.figure()
+                            plt.imshow(im_convert(target))
+                            plt.axis("off")
+                            figure.savefig("../blockchain_integration/public/images/photo.jpg", dpi=300, bbox_inches="tight")
                                 
                         
                             
@@ -769,6 +788,7 @@ class Videocapture():
                                   
                     if self.button_capture == 1:
                         cv2.imwrite("../blockchain_integration/public/images/photo.jpg",frame)
+                        cv2.imwrite("./images/photo.jpg",frame)
                         self.button_capture = 0
                         
                         #Filters reset
@@ -926,7 +946,7 @@ class Videocapture():
            
               self.filter_dot_2 = int(request.json)
               
-              return "ok"
+             
          
         @app.route("/button_glasses",methods = ['POST'])
         def button_glasses():
@@ -934,28 +954,28 @@ class Videocapture():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_glasses = int(request.json)
-             return "ok"
+            
          
         @app.route("/button_mustache",methods = ['POST'])
         def button_mustache():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_mustache = int(request.json)
-             return "ok"
+            
          
         @app.route("/button_focus",methods = ['POST'])
         def button_focus():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_focus = int(request.json)
-             return "ok"
+            
          
         @app.route("/button_hat",methods = ['POST'])
         def button_hat():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_hat = int(request.json)
-             return "ok"
+            
          
         @app.route("/button_beard",methods = ['POST'])
         def button_beard():
@@ -963,7 +983,7 @@ class Videocapture():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_beard = int(request.json) 
-             return "ok"
+            
 
         @app.route("/tranferstyle",methods = ['POST'])
         def tranferstyle():
@@ -974,7 +994,15 @@ class Videocapture():
              self.Style_transfer = int(request.json)
              
              
-             return "ok"            
+            
+
+        @app.route("/mainpanel",methods = ['GET'])
+        def mainpanel():
+            
+            
+            print("Preparando main panel")
+              
+            return {"panel1":self.mainpanel[-1],"panel2":self.mainpanel[-2],"panel3":self.mainpanel[-3]}
              
         @app.route("/button_capture",methods = ['POST'])
         def button_capture():
@@ -983,8 +1011,10 @@ class Videocapture():
              print(request.json)
              
              self.button_capture = int(request.json)
+             
+             return {"Recibido": True}
         
-             return "ok"
+            
         
         if __name__ == "__main__":
             

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import images from "./images";
 
 
-function galery(){
+function ga(){
 
     const [selectedImg, setSelectedImg]=useState(images[0]);
 
@@ -10,7 +10,6 @@ function galery(){
 <div>
 
     <div className="container">
-
 
         <img src={selectedImg} alt="Select" className="selected"></img>
 
@@ -26,4 +25,4 @@ function galery(){
 
 }
 
-export {galery}
+export {ga}

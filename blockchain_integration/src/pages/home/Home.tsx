@@ -13,7 +13,7 @@ import {Edvardmunchcollection} from './Edvardmunchcollection';
 import {Renoircollection} from './Renoircollection';
 import {Rembrandcollection} from './Rembrandcollection';
 import {Progressbar} from './progressbar';
-import { galery } from './Galery';
+import { ga } from './Galery';
 import images from "./images";
 import {Form} from  './form';
 import { Filters } from './Filters';
@@ -24,24 +24,44 @@ import { render } from '@testing-library/react';
 
 function Home() {
 
+  ////PANEL PRINCIPAL
+
   const [selectedImg, setSelectedImg]=useState(images[0]);
+
+  const [selectedImg2, setSelectedImg2]=useState(images[0]);
+
+  function mainPanel(i:any){
+
+    setSelectedImg(images[i]);
+  }
+
+  /////////////////////////////////
+
+
+
+
+
 
   const [panel, setPanel]= useState();
 
+
+
   const get = async () =>{ 
     
-  //const res = await fetch('http://localhost:5000/mainpanel')
-  //const data= await res.json();
-  const pan={"panel1":"direction1","panel2":"direction1","panel3":"direction1"};
-  //setPanel(data);
+  const res = await fetch('http://localhost:5000/mainpanelresponse')
+  const data= await res.json();
+  setPanel(data);
 
-  console.log(pan.panel1)
 
-  return (<div>{pan.panel1}</div>)
+  setSelectedImg(images[data.panel1]);
+  setSelectedImg2(images[data.panel2]);
 
 
   }
 
+  
+
+ 
  
 
   useEffect(()=>{
@@ -544,13 +564,12 @@ return (
         <Heading size="md">Styles  </Heading>
         
         <HStack>
-        <Flex gap="2">
-        <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
-        <img src={selectedImg} alt="Select" className="selected"></img>    
+        <Flex gap="3">
+        <Box  className="aumento" border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="180px" h="180px">
+        <img src={selectedImg} alt="Select" className="selected"></img>
         </Box>
-        <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">    
-        </Box>
-        <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">    
+        <Box className="aumento" border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="180px" h="180px">
+        <img src={selectedImg2} alt="Select" className="selected"></img>        
         </Box>
         </Flex>
         </HStack>
@@ -578,7 +597,7 @@ return (
             <PopoverBody>
             <HStack>
               <Flex gap="6">
-             <But w="120px" h="50px" colorScheme='red' onClick = {(e)=> { get()}}>NFT </But>
+             <But w="120px" h="50px" colorScheme='red' onClick = {(e)=> { get();}}>NFT </But>
              <But w="120px" h="50px" colorScheme='red'>RMRK</But>
              </Flex>
              </HStack>

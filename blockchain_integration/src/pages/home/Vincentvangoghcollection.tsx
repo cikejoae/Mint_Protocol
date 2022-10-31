@@ -3,6 +3,7 @@ import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularPro
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
 import { ChangeEvent } from 'react';
 import { isWhiteSpaceLike } from 'typescript';
+import images from "./images";
 import './App.css';
 
 
@@ -11,6 +12,33 @@ import './App.css';
 
 
 function Vincentvangoghcollection() {
+
+
+         ///PANEL CONTROL
+         const [panel ,setMultipanel]= useState(0);
+    
+         const Multipanel = (state:any) => {
+ 
+                      setMultipanel(state);
+                      sendPanelstate();
+ 
+                        };
+ 
+          const Newstatepanel = panel;
+ 
+          const sendPanelstate = async () => {
+             
+                   
+           const res = await fetch('http://localhost:5000/mainpanel',
+           { method : "POST", 
+           headers: {'Content-Type': 'application/json'},
+           body: JSON.stringify(Newstatepanel)})
+           const data = await res.json();
+             
+           }
+
+////////////////////////////////////////////////////////////////////////7
+      
 
         ///Multistate fuction
         const [multi, setMulti]= useState(0);
@@ -94,7 +122,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Irises (1889)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit"  >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1); Multipanel(1) }} type="submit"  >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -119,7 +147,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Landscape with house and ploughman (1889)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2); Multipanel(2)}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -144,7 +172,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Paul gauguins armchair (1888)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit"  >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3); Multipanel(3)}} type="submit"  >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -170,7 +198,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Prisoners exercising prisoners round (1890)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4); Multipanel(4)}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -196,7 +224,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Red vineyards at arles (1888)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5); Multipanel(5)}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -222,7 +250,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md">Self portrait (1887)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6); Multipanel(6) }} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -248,7 +276,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Self portrait with bandaged ear (1889)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7); Multipanel(7)}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -275,7 +303,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >StarryNight (1889)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8); Multipanel(8)}} type="submit">Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -300,7 +328,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Still life vase with fifteen sunflowers (1888) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9); Multipanel(9)}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -324,7 +352,7 @@ function Vincentvangoghcollection() {
             <PopoverHeader><Heading size = "md" >Heatfield with crows (1890) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10); Multipanel(10)}} type="submit" >Add</But>
               </PopoverBody>
              </PopoverContent>
               </Portal>
