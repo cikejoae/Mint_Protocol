@@ -43,6 +43,7 @@ class Videocapture():
         self.Davincicollection_state = 0
         self.Rembrandcollection_state = 0
         self.mainpanel=[]
+        self.MAINPANEL=[]#PANEL PRINCIPAL DE ESTILOS
         
         #Style tranfer
         self.Style_transfer=0
@@ -56,9 +57,19 @@ class Videocapture():
         
         print(self.mainpanel)
         
-        if (len(self.mainpanel) > 0) and  (len(self.mainpanel) < 3):
+        if (len(self.mainpanel) == 1):
+            
+            self.n=1
+            lr=0.05
+            self.Style_tranfer(self.mainpanel[-1],lr,self.n)
+            time.sleep(5)
+             
+
+        
+        if (len(self.mainpanel) > 1):
             
             self.n=0#Number process
+            self.mainpanel=[self.mainpanel[-1],self.mainpanel[-2]]
         
             for i in self.mainpanel:
                 
@@ -69,12 +80,7 @@ class Videocapture():
                 self.Style_tranfer(i,lr,self.n)
                 time.sleep(5)
             
-                
-        if (len(self.mainpanel) > 3):
-             
-             Newpanel=[self.mainpanel[-1],self.mainpanel[-2],self.mainpanel[-3]]
-             
-             print(Newpanel)
+            
              
         if (len(self.mainpanel) == 0):
              
@@ -841,7 +847,7 @@ class Videocapture():
             self.Rembrandcollection_state = int(request.json)
             print(self.Rembrandcollection_state)
             self.Multiprocess()
-            return "ok"
+            
         
         
         
@@ -851,7 +857,7 @@ class Videocapture():
             self.Salvadordalicollection_state = int(request.json)
             print(self.Salvadordalicollection_state)
             self.Multiprocess()
-            return "ok"
+            
         
         
         @app.route("/Renoircollection",methods = ['POST'])
@@ -860,7 +866,7 @@ class Videocapture():
             self.Renoircollection_state = int(request.json)
             print(self.Renoircollection_state)
             self.Multiprocess()
-            return "ok"
+          
         
         
         
@@ -870,7 +876,7 @@ class Videocapture():
             self.Edvardmunchcollection_state = int(request.json)
             print(self.Edvardmunchcollection_state)
             self.Multiprocess()
-            return "ok"
+           
         
         
         @app.route("/Claudemonetcollection",methods = ['POST'])
@@ -879,7 +885,7 @@ class Videocapture():
             self.Claudemonetcollection_state = int(request.json)
             print(self.Claudemonetcollection_state)
             self.Multiprocess()
-            return "ok"
+          
         
         
         @app.route("/Picassocollection",methods = ['POST'])
@@ -888,7 +894,7 @@ class Videocapture():
             self.Picassocollection_state = int(request.json)
             print(self.Picassocollection_state)
             self.Multiprocess()
-            return "ok"
+          
         
         @app.route("/Vincentvangoghcollection",methods = ['POST'])
         def Vincentvangoghcollection():
@@ -896,7 +902,7 @@ class Videocapture():
             self.Vincentvangoghcollection_state = int(request.json)
             print(self.Vincentvangoghcollection_state)
             self.Multiprocess()
-            return "ok"
+           
         
         @app.route("/Davincicollection",methods = ['POST'])
         def Davincicollection():
@@ -904,14 +910,14 @@ class Videocapture():
             self.Davincicollection_state = int(request.json)
             print(self.Davincicollection_state)
             self.Multiprocess()
-            return "ok"
+           
         
         @app.route("/button_nose_pork",methods = ['POST'])
         def button_nose_pork():
             print("DATA RECIBIDA")
             print(request.json)
             self.filter_nose_pork = int(request.json)
-            return "ok"
+           
         @app.route("/button_nose_clown",methods = ['POST'])
         def button_nose_clown():
              
@@ -921,7 +927,7 @@ class Videocapture():
             
              self.filter_nose_clown = int(request.json)
              
-             return "ok"
+          
             
         @app.route("/button_gavin",methods = ['POST'])
         def button_gavin():
@@ -996,13 +1002,30 @@ class Videocapture():
              
             
 
-        @app.route("/mainpanel",methods = ['GET'])
+        @app.route("/mainpanel",methods = ['POST'])
         def mainpanel():
             
             
             print("Preparando main panel")
+            print("POSICION EN PANEL",int(request.json))
+           
+            self.MAINPANEL.append(int(request.json))
+            
+            print(self.MAINPANEL)
+            return {"panel1": int(self.MAINPANEL[-1])}
+            
+            
+            
+        @app.route("/mainpanelresponse",methods = ['GET'])
+        def mainpanelresponse():
+            
+            
+            
+             
+             
+            return {"panel1": int(self.MAINPANEL[-1]),"panel2": int(self.MAINPANEL[-2])}
               
-            return {"panel1":self.mainpanel[-1],"panel2":self.mainpanel[-2],"panel3":self.mainpanel[-3]}
+        
              
         @app.route("/button_capture",methods = ['POST'])
         def button_capture():
