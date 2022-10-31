@@ -1,8 +1,7 @@
-import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
+import React, {MouseEventHandler, MouseEvent , useState, useEffect} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react';
 import { FaRedhat } from "react-icons/fa";
-import { useEffect } from 'react';
 import { truncate } from 'fs';
 import './App.css';
 import { Davincicollection } from './DaVincicollection';
@@ -14,6 +13,8 @@ import {Edvardmunchcollection} from './Edvardmunchcollection';
 import {Renoircollection} from './Renoircollection';
 import {Rembrandcollection} from './Rembrandcollection';
 import {Progressbar} from './progressbar';
+import { galery } from './Galery';
+import images from "./images";
 import {Form} from  './form';
 import { Filters } from './Filters';
 import { render } from '@testing-library/react';
@@ -23,17 +24,34 @@ import { render } from '@testing-library/react';
 
 function Home() {
 
+  const [selectedImg, setSelectedImg]=useState(images[0]);
 
+  const [panel, setPanel]= useState();
 
   const get = async () =>{ 
     
-  const res = await fetch('http://localhost:5000/mainpanel',
-  { method : "GET", 
-  headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify(gavinbut)})
-  const data = await res.json();
+  //const res = await fetch('http://localhost:5000/mainpanel')
+  //const data= await res.json();
+  const pan={"panel1":"direction1","panel2":"direction1","panel3":"direction1"};
+  //setPanel(data);
+
+  console.log(pan.panel1)
+
+  return (<div>{pan.panel1}</div>)
+
 
   }
+
+ 
+
+  useEffect(()=>{
+    get();
+  },[])
+
+  function panel1(panel1:any){return(<div>{panel1}</div>);}
+
+ 
+
   
 
   const [multi, setMulti]= useState(0);
@@ -515,18 +533,20 @@ return (
         <Box  border='2px' borderColor="white" borderRadius='md' bg="white" w="80px" h="80px">
          <HStack>
           {pigPanel () } {clownPanel ()} {gavinPanel ()} {polkaPanel ()} {polkadotPanel()} {mustachePanel()}{glassesPanel()}{focusPanel()} {hatPanel()}{beardPanel()}
- 
+          
          </HStack>
         </Box>
-        <Box w="300px" h="40px"></Box>
+        <Box w="300px" h="40px">  </Box>
         
         </Flex>
         </HStack>
         <Box bg="white" w="300px" h="20px"></Box>   
-        <Heading size="md">Styles</Heading>
+        <Heading size="md">Styles  </Heading>
+        
         <HStack>
         <Flex gap="2">
-        <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">    
+        <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">
+        <img src={selectedImg} alt="Select" className="selected"></img>    
         </Box>
         <Box border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="100px" h="100px">    
         </Box>
@@ -549,7 +569,7 @@ return (
       <Box  w="100%" h="50px">
       <Popover>
             <PopoverTrigger>
-            <But  colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"  type="submit"> Mint </But>     
+            <But  colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"    type="submit"> Mint </But>     
             </PopoverTrigger>
             <Portal>
             <PopoverContent>
@@ -558,7 +578,7 @@ return (
             <PopoverBody>
             <HStack>
               <Flex gap="6">
-             <But w="120px" h="50px" colorScheme='red'>NFT </But>
+             <But w="120px" h="50px" colorScheme='red' onClick = {(e)=> { get()}}>NFT </But>
              <But w="120px" h="50px" colorScheme='red'>RMRK</But>
              </Flex>
              </HStack>
