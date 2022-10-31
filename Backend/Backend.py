@@ -57,16 +57,20 @@ class Videocapture():
         
         print(self.mainpanel)
         
-        if (len(self.mainpanel) == 1):
+        if (len(self.mainpanel) == 1) and (self.MAINPANEL[-1] !=0):
             
             self.n=1
             lr=0.05
             self.Style_tranfer(self.mainpanel[-1],lr,self.n)
             time.sleep(5)
+            
+        else:
+            
+            print("No hay estilos agregados")
              
 
         
-        if (len(self.mainpanel) > 1):
+        if (len(self.mainpanel) > 1) and (self.MAINPANEL[-1] != 0) and (self.MAINPANEL[-2] != 0):
             
             self.n=0#Number process
             self.mainpanel=[self.mainpanel[-1],self.mainpanel[-2]]
