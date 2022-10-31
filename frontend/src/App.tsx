@@ -10,6 +10,8 @@ function App() {
       <HStack h='80px'>
         <Flex gap='500'>
           <Box p='4' bg='white'>
+            <Image src="mintlogot.png"
+                    boxSize="50%"></Image>
             <header> Mint Protocol </header>  
           </Box>
             <Spacer/>
