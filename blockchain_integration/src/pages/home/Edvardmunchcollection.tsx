@@ -1,6 +1,17 @@
 import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
+import {Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton, 
+  useDisclosure
+} from '@chakra-ui/react'
+
 import { ChangeEvent } from 'react';
 import { isWhiteSpaceLike } from 'typescript';
 import './App.css';
@@ -11,6 +22,48 @@ import './App.css';
 
 
 function Edvardmunchcollection() {
+
+  
+  ///////////////////////////////SCREEN SECUNDARY
+
+  const OverlayOne = () => (
+    <ModalOverlay
+      bg='blackAlpha.300'
+      backdropFilter='blur(10px) hue-rotate(90deg)'
+    />
+  )
+
+
+        const { isOpen, onOpen, onClose } = useDisclosure()
+        const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
+        
+
+
+         ///PANEL CONTROL
+         const [panel ,setMultipanel]= useState(0);
+    
+         const Multipanel = (state:any) => {
+ 
+                      setMultipanel(state);
+                      sendPanelstate();
+ 
+                        };
+ 
+          const Newstatepanel = panel;
+ 
+          const sendPanelstate = async () => {
+             
+                   
+           const res = await fetch('http://localhost:5000/mainpanel',
+           { method : "POST", 
+           headers: {'Content-Type': 'application/json'},
+           body: JSON.stringify(Newstatepanel)})
+           const data = await res.json();
+             
+           }
+
+////////////////////////////////////////////////////////////////////////
 
         ///Multistate fuction
         const [multi, setMulti]= useState(0);
@@ -96,7 +149,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >August Stindberg (1892)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1); Multipanel(31); setOverlay(<OverlayOne />);  onOpen(); }} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -121,7 +181,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Rosa meissner (1907)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2); Multipanel(32); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -146,7 +213,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Girl combing her hair (1892)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3); Multipanel(33); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -172,7 +246,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Morning (1884)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4); Multipanel(34); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -198,7 +279,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Portrait of the painter jensen hjell (1885)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);  Multipanel(35); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -224,7 +312,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md">Selvportrett (1926)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);   Multipanel(36); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -250,7 +345,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Spring day on karl Johan street(1890)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);   Multipanel(37); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -277,7 +379,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >Street lafayette (1891)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);   Multipanel(38); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -302,7 +411,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >The scream (1893) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9); Multipanel(39); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -326,7 +442,14 @@ function Edvardmunchcollection() {
             <PopoverHeader><Heading size = "md" >View over the rover at stcloud (1890) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10); Multipanel(40); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>

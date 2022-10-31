@@ -2,6 +2,17 @@ import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
 import { ChangeEvent } from 'react';
+import {Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton, 
+  useDisclosure
+} from '@chakra-ui/react'
+
 import { isWhiteSpaceLike } from 'typescript';
 import './App.css';
 
@@ -11,6 +22,52 @@ import './App.css';
 
 
 function Claudemonetcollection() {
+        
+         
+
+  ///////////////////////////////SCREEN SECUNDARY
+
+      const OverlayOne = () => (
+        <ModalOverlay
+          bg='blackAlpha.300'
+          backdropFilter='blur(10px) hue-rotate(90deg)'
+        />
+      )
+    
+    
+            const { isOpen, onOpen, onClose } = useDisclosure()
+            const [overlay, setOverlay] = React.useState(<OverlayOne />)
+    
+            
+    
+    
+             ///PANEL CONTROL
+             const [panel ,setMultipanel]= useState(0);
+        
+             const Multipanel = (state:any) => {
+     
+                          setMultipanel(state);
+                          sendPanelstate();
+     
+                            };
+     
+              const Newstatepanel = panel;
+     
+              const sendPanelstate = async () => {
+                 
+                       
+               const res = await fetch('http://localhost:5000/mainpanel',
+               { method : "POST", 
+               headers: {'Content-Type': 'application/json'},
+               body: JSON.stringify(Newstatepanel)})
+               const data = await res.json();
+                 
+               }
+    
+    ////////////////////////////////////////////////////////////////////////
+
+
+
 
         ///Multistate fuction
         const [multi, setMulti]= useState(0);
@@ -96,7 +153,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Autumn on the seine at argenteuil (1873)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1); Multipanel(21); setOverlay(<OverlayOne />);  onOpen(); }} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -121,7 +185,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Camille with green parasol (1876)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2); Multipanel(22); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -146,7 +217,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Irises in monets garden (1899)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3); Multipanel(23); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -172,7 +250,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Impression sunrise (1872)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4); Multipanel(24); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -198,7 +283,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Madame monet and child (1875)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5); Multipanel(25); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -224,7 +316,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md">Poplars at giverny (1887)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);  Multipanel(26); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -250,7 +349,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Snow at argenteuil (1875)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);   Multipanel(27); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -277,7 +383,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >The boat studio (1876)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);   Multipanel(28); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -302,7 +415,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >The shoot (1876) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);  Multipanel(29); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -326,7 +446,14 @@ function Claudemonetcollection() {
             <PopoverHeader><Heading size = "md" >Waterloo bridge london (1903) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10); Multipanel(30); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>

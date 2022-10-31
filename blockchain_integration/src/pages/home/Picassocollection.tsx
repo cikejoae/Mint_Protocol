@@ -1,6 +1,16 @@
 import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
+import {Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton, 
+  useDisclosure
+} from '@chakra-ui/react'
 import { ChangeEvent } from 'react';
 import { isWhiteSpaceLike } from 'typescript';
 import './App.css';
@@ -11,6 +21,48 @@ import './App.css';
 
 
 function Picassocollection() {
+
+  ///////////////////////////////SCREEN SECUNDARY
+
+  const OverlayOne = () => (
+    <ModalOverlay
+      bg='blackAlpha.300'
+      backdropFilter='blur(10px) hue-rotate(90deg)'
+    />
+  )
+
+
+        const { isOpen, onOpen, onClose } = useDisclosure()
+        const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
+
+          ///PANEL CONTROL
+          const [panel ,setMultipanel]= useState(0);
+    
+          const Multipanel = (state:any) => {
+  
+                       setMultipanel(state);
+                       sendPanelstate();
+  
+                         };
+  
+           const Newstatepanel = panel;
+  
+           const sendPanelstate = async () => {
+              
+                    
+            const res = await fetch('http://localhost:5000/mainpanel',
+            { method : "POST", 
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(Newstatepanel)})
+            const data = await res.json();
+              
+            }
+ 
+ ////////////////////////////////////////////////////////////////////////
+
+        
+
 
 
         ///Multistate fuction
@@ -93,7 +145,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Cat catching a bird (1939)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1); Multipanel(11); setOverlay(<OverlayOne />);  onOpen(); }} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -118,7 +177,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Child with dove (1901) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2); Multipanel(12); setOverlay(<OverlayOne />);  onOpen(); }} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -143,7 +209,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Figures at the seaside (1931)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3); Multipanel(13); setOverlay(<OverlayOne />);  onOpen(); }} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -169,7 +242,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Girl on the ball (1905)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4); Multipanel(14); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -192,10 +272,17 @@ function Picassocollection() {
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Wifes of argel </Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >The Women of Alger (1834) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);  Multipanel(15); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -221,7 +308,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md">Old guitarist (1903)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6); Multipanel(16); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -247,7 +341,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Portrait of ambroise vollard (1910)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7); Multipanel(17); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -274,7 +375,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Portrait of dora maar (1937)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);  Multipanel(18); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -299,7 +407,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >Portrait of woman in dhermine pass (1937) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);  Multipanel(19); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -323,7 +438,14 @@ function Picassocollection() {
             <PopoverHeader><Heading size = "md" >The girls of avignon (1907) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);  Multipanel(20); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
