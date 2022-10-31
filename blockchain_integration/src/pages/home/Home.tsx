@@ -4,6 +4,16 @@ import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, Popover
 import { FaRedhat } from "react-icons/fa";
 import { truncate } from 'fs';
 import './App.css';
+import {Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton, 
+  useDisclosure
+} from '@chakra-ui/react'
 import { Davincicollection } from './DaVincicollection';
 import { Picassocollection} from './Picassocollection';
 import {Vincentvangoghcollection} from './Vincentvangoghcollection';
@@ -24,6 +34,54 @@ import { render } from '@testing-library/react';
 
 function Home() {
 
+  //////////SCREN SECUNDARY
+  const OverlayOne = () => (
+    <ModalOverlay
+      bg='blackAlpha.300'
+      backdropFilter='blur(10px) hue-rotate(90deg)'
+    />
+  )
+
+
+        const { isOpen, onOpen, onClose } = useDisclosure()
+        const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
+
+  ////PROGRESS BAR
+
+  const [valueprogress, setValueprogress] = useState(false);
+
+    const activeInactiveButtontransferstyle = () => {
+   
+    setValueprogress(prevValue => !prevValue );
+		
+		pullbuttonTransferstyle();
+		
+		};
+
+	const buttonsignalTransferstyle = valueprogress ? 0 : 1
+		
+    const pullbuttonTransferstyle = async () => {
+		
+			  
+		const res = await fetch('http://localhost:5000/tranferstyle',
+		{ method : "POST", 
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify(buttonsignalTransferstyle)})
+		const data = await res.json();
+		  
+		}
+
+
+
+	const [filled, setFilled] = useState(0);
+	const [isRunning, setIsRunning] = useState(false);
+	useEffect(() => {
+		if (filled < 100 && isRunning) {
+			setTimeout(() => setFilled(prev => prev += 2), 800)
+		}
+	},[filled, isRunning])
+
   ////PANEL PRINCIPAL
 
   const [selectedImg, setSelectedImg]=useState(images[0]);
@@ -34,6 +92,29 @@ function Home() {
 
     setSelectedImg(images[i]);
   }
+
+  /////ELIMINAR ELEMENTOS DEL PANEL
+
+  const [panelmain ,setMultipanelmain]= useState(0);
+    
+         const Multipanel = (state:any) => {
+ 
+                      setMultipanelmain(state);
+                      sendPanelstate();
+ 
+                        };
+ 
+          const Newstatepanel = panelmain;
+ 
+          const sendPanelstate = async () => {
+             
+           const res = await fetch('http://localhost:5000/mainpanel',
+           { method : "POST", 
+           headers: {'Content-Type': 'application/json'},
+           body: JSON.stringify(Newstatepanel)})
+           const data = await res.json();
+             
+           }
 
   /////////////////////////////////
 
@@ -566,15 +647,62 @@ return (
         <HStack>
         <Flex gap="3">
         <Box  className="aumento" border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="180px" h="180px">
-        <img src={selectedImg} alt="Select" className="selected"></img>
+        <Popover placement='top-start'>
+            <PopoverTrigger>
+              <img src={selectedImg} alt="Select" className="selected"></img>
+            </PopoverTrigger>
+            <Portal >
+            <PopoverContent w ="150px" h="60px">
+            <PopoverArrow />
+            <PopoverCloseButton />
+            <PopoverBody w="40px" h="60px">
+             <But w="80px" h="30px" colorScheme='red' onClick = {(e)=> {Multipanel(0); get();}} >Remove</But>
+              </PopoverBody>
+             </PopoverContent>
+              </Portal>
+              </Popover>
         </Box>
-        <Box className="aumento" border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="180px" h="180px">
-        <img src={selectedImg2} alt="Select" className="selected"></img>        
+        <Box className="aumento" border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="180px" h="180px" onClick = {(e)=> {Multipanel(0);}}>
+        <Popover placement='top-start'>
+            <PopoverTrigger>
+             <img src={selectedImg2} alt="Select" className="selected"></img>  
+            </PopoverTrigger>
+            <Portal >
+            <PopoverContent w ="150px" h="60px" >
+            <PopoverArrow />
+            <PopoverCloseButton />
+            <PopoverBody w="40px" h="60px">
+             <But w="80px" h="30px" colorScheme='red' onClick = {(e)=> {Multipanel(0); get(); }} >Remove</But>
+              </PopoverBody>
+             </PopoverContent>
+              </Portal>
+              </Popover>
+              
         </Box>
         </Flex>
         </HStack>
         <Center>
-        <Progressbar></Progressbar>
+        <But  colorScheme= "red"  borderRadius='md' w="100%" h="30px" bg= "red"  onClick={(e) => {setIsRunning(true); activeInactiveButtontransferstyle();setOverlay(<OverlayOne />);  onOpen();}}> Style transfer</But>
+        <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="white"  borderRadius='md'  bg ="#e80b9d">
+                              <Heading textColor={"white"} size ="md">Creating a new style.....</Heading>
+                              <div className="progressbar">
+			                                 <div style={{
+				                                              height: "100%",
+				                                               width: `${filled}%`,
+				                                               backgroundColor: "#e80b9d" ,
+				                                               transition:"width 1s"
+			                                            }}></div>
+			                                  <span className="progressPercent">{ filled }%</span>
+		                         </div>
+                              
+                              </ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
+        
         </Center>
       </VStack>
 
