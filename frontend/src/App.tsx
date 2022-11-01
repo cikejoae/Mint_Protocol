@@ -7,15 +7,13 @@ import './App.css';
 function App() {
   return (
     <Grid w='100%' h='100%'>
-      <HStack h='80px'>
-        <Flex gap='500'>
+      <HStack h='100px'>
+
           <Box p='4' bg='white'>
-            <Image src="mintlogot.png"
-                    boxSize="50%"></Image>
-            <header> Mint Protocol </header>  
+            <Image src="logoMint.png"
+                    boxSize="80%"></Image> 
           </Box>
-            <Spacer/>
-              <Box p='4' bg='white.400'>
+            <Flex w='600px'></Flex>
               <Breadcrumb spacing='10px'>
                 <BreadcrumbItem>
                 <a href="#about">About</a>
@@ -29,8 +27,7 @@ function App() {
                 <a href="#contact">Contact us</a>
                 </BreadcrumbItem>
               </Breadcrumb>
-          </Box>
-      </Flex>
+              
       </HStack>
 
       <VStack w = '100%' h = '700px' backgroundImage={"collage.jpeg"} alignItems='center' 
