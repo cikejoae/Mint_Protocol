@@ -17,7 +17,7 @@
 }
  .carousel_items{
   display: flex;
-  animation: carousel 15s linear infinite;
+  animation: carousel 20s linear infinite;
 
 
 }

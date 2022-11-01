@@ -75,6 +75,10 @@ function App() {
               <div className="carousel_items">
               <HStack  w="100px" h="300px" ></HStack>
 
+              <HStack>
+              <Box w='70px'></Box>
+              </HStack>
+          
               <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
               <img src={"./adan.jpg"}></img> 
@@ -120,7 +124,56 @@ function App() {
               <img width = "100%" height="100%" src={"./Persistencia_de_la_memoria.jpg"}></img>
           </Box>
           </article>
- 
+
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img width = "100%" height="100%" src={"./cat-catching-a-bird-1939.jpg"}></img>
+          </Box>
+          </article>
+
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img width = "100%" height="100%" src={"./claude-monet-irises-in-monets-garden-1899.jpg"}></img>
+          </Box>
+          </article>
+
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img width = "100%" height="100%" src={"./Irises-1889.jpg"}></img>
+          </Box>
+          </article>
+
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img width = "100%" height="100%" src={"./jeanne-samary-in-a-low-necked-dress-1877.jpg"}></img>
+          </Box>
+          </article>
+
+          <HStack>
+          <Box w='70px'></Box>
+          </HStack>
+
+          <article className="carousel_img">
+          <Box  className="aumento" w="300px" h="300px">
+              <img width = "100%" height="100%" src={"./old-guitarist-chicago-1903.jpg"}></img>
+          </Box>
+          </article>
       </div>
       </VStack>
       </div>
@@ -186,7 +239,7 @@ function App() {
             Scarlet Rangel
           </Heading>
             <Text fontWeight={600} color={'gray.500'} size="sm" mb={4}>
-              @scar.rguez
+              @scar_rguez
             </Text>
               <Text
               textAlign={'center'}
@@ -217,8 +270,9 @@ function App() {
               }}
               _focus={{
                 bg: 'blue.500',
-              }}>
-              Follow
+              }}
+              >
+                <a href="https://twitter.com/Scar_Rguez">Follow</a>
             </Button>
           </Stack>
         </Stack>
@@ -284,7 +338,7 @@ function App() {
               _focus={{
                 bg: 'blue.500',
               }}>
-              Follow
+              <a href="https://twitter.com/a_mont24">Follow</a>
             </Button>
           </Stack>
         </Stack>
