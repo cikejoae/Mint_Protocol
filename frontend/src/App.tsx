@@ -7,11 +7,11 @@ import './App.css';
 function App() {
   return (
     <Grid w='100%' h='100%'>
-      <HStack h='100px'>
-
-          <Box p='4' bg='white'>
+      <HStack h='100px' width='100%' backgroundColor='white' position="fixed">
+          <Box>
             <Image src="logoMint.png"
-                    boxSize="80%"></Image> 
+                    boxSize="80%"
+                    ></Image> 
           </Box>
             <Flex w='600px'></Flex>
               <Breadcrumb spacing='10px'>
@@ -27,9 +27,9 @@ function App() {
                 <a href="#contact">Contact us</a>
                 </BreadcrumbItem>
               </Breadcrumb>
-              
       </HStack>
 
+      <Box h="100px"></Box>
       <VStack w = '100%' h = '700px' backgroundImage={"collage.jpeg"} alignItems='center' 
         max-width='100px'>
         <Box h='200px'></Box>
@@ -180,7 +180,7 @@ function App() {
       </Container>
         
         <VStack>
-          <Box h='40px'></Box>
+          <Box h='100px'></Box>
         </VStack>
         <a id="about"></a> 
         <VStack  w = '100%' h = '800px' background= '#e80b9d' alignItems='center' 
@@ -202,10 +202,10 @@ function App() {
         </VStack>
 
         <Divider/>
+        <a id="team"></a>  
         <VStack>
-        <Box h='50px'></Box>
+        <Box h='100px'></Box>
         </VStack>
-        <a id="team"></a>
         <Heading> Team </Heading>
         <VStack>
         <Box h='100px'></Box>
