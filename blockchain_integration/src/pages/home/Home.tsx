@@ -687,7 +687,16 @@ return (
                          {overlay}
                     <ModalContent >
                             <ModalHeader  border='2px' borderColor="white"  borderRadius='md'  bg ="#e80b9d">
-                              <Heading textColor={"white"} size ="md">Creating a new style.....</Heading>
+                              <Heading textColor={"white"} size ="md">Learning and transferring style...............</Heading>
+                              <Box w="100%" h="30px"></Box>
+                              <Flex gap ="8">
+                             
+                                 <img  className="aumento"  width="180px" height="180px" src={selectedImg} alt="Select" ></img>
+                                <img className="aumento"  width="180px" height="180px" src={"./images/photo.jpg"}  ></img>
+                              
+                              </Flex>
+                              <Box w="100%" h="30px"></Box>
+                              <Center>
                               <div className="progressbar">
 			                                 <div style={{
 				                                              height: "100%",
@@ -697,6 +706,7 @@ return (
 			                                            }}></div>
 			                                  <span className="progressPercent">{ filled }%</span>
 		                         </div>
+                             </Center>
                               
                               </ModalHeader>
                      <ModalCloseButton bg ="white" />
