@@ -16,7 +16,7 @@ function App() {
           </Box>
             <Spacer/>
               <Box p='4' bg='white.400'>
-              <Breadcrumb spacing='8px'>
+              <Breadcrumb spacing='10px'>
                 <BreadcrumbItem>
                 <a href="#about">About</a>
                 </BreadcrumbItem>
@@ -33,7 +33,7 @@ function App() {
       </Flex>
       </HStack>
 
-      <VStack w = '100%' h = '700px' background= '#e80b9d' alignItems='center' 
+      <VStack w = '100%' h = '700px' backgroundImage={"collage.jpeg"} alignItems='center' 
         max-width='100px'>
         <Box h='200px'></Box>
           <Heading h='100px'
