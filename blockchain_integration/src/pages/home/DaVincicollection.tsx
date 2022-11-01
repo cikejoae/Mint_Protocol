@@ -3,6 +3,17 @@ import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
 import { ChangeEvent } from 'react';
+import {Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton, 
+  useDisclosure
+} from '@chakra-ui/react'
+
 import { isWhiteSpaceLike } from 'typescript';
 import './App.css';
 
@@ -12,6 +23,48 @@ import './App.css';
 
 
 function Davincicollection() {
+
+
+   ///////////////////////////////SCREEN SECUNDARY
+
+   const OverlayOne = () => (
+    <ModalOverlay
+      bg='blackAlpha.300'
+      backdropFilter='blur(10px) hue-rotate(90deg)'
+    />
+  )
+
+
+        const { isOpen, onOpen, onClose } = useDisclosure()
+        const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
+        
+
+
+         ///PANEL CONTROL
+         const [panel ,setMultipanel]= useState(0);
+    
+         const Multipanel = (state:any) => {
+ 
+                      setMultipanel(state);
+                      sendPanelstate();
+ 
+                        };
+ 
+          const Newstatepanel = panel;
+ 
+          const sendPanelstate = async () => {
+             
+                   
+           const res = await fetch('http://localhost:5000/mainpanel',
+           { method : "POST", 
+           headers: {'Content-Type': 'application/json'},
+           body: JSON.stringify(Newstatepanel)})
+           const data = await res.json();
+             
+           }
+
+////////////////////////////////////////////////////////////////////////
 
         ///Multistate fuction
         const [multi, setMulti]= useState(0);
@@ -97,7 +150,14 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Da vinci vitruve luc viatour</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" onClick = {(e)=> {Multistate(1);}}  colorScheme='red'>Add</But>
+             <But w="20px" h="40px" onClick = {(e)=> {Multistate(1); Multipanel(62); setOverlay(<OverlayOne />);  onOpen();}}  colorScheme='red'>Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -122,7 +182,14 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Rapery for a seated (1470)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2); Multipanel(63); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -147,7 +214,14 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Mona lisa (1503)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);  Multipanel(64); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -173,7 +247,14 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Profile of a warrior in helmet (1472)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}}   type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);  Multipanel(65); setOverlay(<OverlayOne />);  onOpen();}}   type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -199,7 +280,14 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >Study of hands (1474)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}}   type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);  Multipanel(66); setOverlay(<OverlayOne />);  onOpen();}}   type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -216,7 +304,7 @@ function Davincicollection() {
             <PopoverTrigger>
             
             <But  bg ="white" w="300px" h="300px" > 
-              <img width = "100%"  height="100%" src={"./style/Leonardo_davinci_collection/the-baptism-of-christ-c-1475.png"}  ></img>
+              <img width = "100%"  height="100%" src={"./style/Leonardo_davinci_collection/the-baptism-of-christ-c-1475.jpg"}  ></img>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -225,7 +313,14 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md">The baptism of christ (1475)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}}  type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);  Multipanel(67); setOverlay(<OverlayOne />);  onOpen();}}  type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -251,7 +346,14 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >The madonna of the carnation (1480)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);   Multipanel(68); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -278,7 +380,14 @@ function Davincicollection() {
             <PopoverHeader><Heading size = "md" >The lady with the ermine cecilia gallerani (1496)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);   Multipanel(69); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -300,10 +409,17 @@ function Davincicollection() {
             <Portal>
             <PopoverContent>
             <PopoverArrow />
-            <PopoverHeader><Heading size = "md" >Autorretrato </Heading></PopoverHeader>
+            <PopoverHeader><Heading size = "md" >Self portrait (1513) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9); Multipanel(70); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>

@@ -1,6 +1,16 @@
 import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
+import {Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton, 
+  useDisclosure
+} from '@chakra-ui/react'
 import { ChangeEvent } from 'react';
 import { isWhiteSpaceLike } from 'typescript';
 import './App.css';
@@ -11,6 +21,50 @@ import './App.css';
 
 
 function Salvadordalicollection() {
+        
+        
+  ///////////////////////////////SCREEN SECUNDARY
+
+      const OverlayOne = () => (
+        <ModalOverlay
+          bg='blackAlpha.300'
+          backdropFilter='blur(10px) hue-rotate(90deg)'
+        />
+      )
+    
+    
+            const { isOpen, onOpen, onClose } = useDisclosure()
+            const [overlay, setOverlay] = React.useState(<OverlayOne />)
+    
+            
+    
+    
+             ///PANEL CONTROL
+             const [panel ,setMultipanel]= useState(0);
+        
+             const Multipanel = (state:any) => {
+     
+                          setMultipanel(state);
+                          sendPanelstate();
+     
+                            };
+     
+              const Newstatepanel = panel;
+     
+              const sendPanelstate = async () => {
+                 
+                       
+               const res = await fetch('http://localhost:5000/mainpanel',
+               { method : "POST", 
+               headers: {'Content-Type': 'application/json'},
+               body: JSON.stringify(Newstatepanel)})
+               const data = await res.json();
+                 
+               }
+    
+    ////////////////////////////////////////////////////////////////////////
+
+
 
         ///Multistate fuction
         const [multi, setMulti]= useState(0);
@@ -96,7 +150,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" > Peyzazh bliz figerasa (1910)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(1);  Multipanel(52); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -121,7 +182,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" >Boat (1918)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(2);  Multipanel(53); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -146,7 +214,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" >Dream for bee (1944)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(3); Multipanel(54); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -172,7 +247,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" >Landscape (1916)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);}} type="submit" >Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(4);  Multipanel(55); setOverlay(<OverlayOne />);  onOpen();}} type="submit" >Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -198,7 +280,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" >Landscape near ampurdan (1914)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(5);  Multipanel(56); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -224,7 +313,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md">llane beach cadaques (1919)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(6);  Multipanel(57); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -250,7 +346,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" >The Persistence of Memory (1931)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(7);  Multipanel(58); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -277,7 +380,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" >Portdogue (1918)</Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(8);  Multipanel(59); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -302,7 +412,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" >The disintegration of the persistence of memory (1952) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(9);  Multipanel(60); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
@@ -326,7 +443,14 @@ function Salvadordalicollection() {
             <PopoverHeader><Heading size = "md" >The great masturbator (1929) </Heading></PopoverHeader>
             <PopoverCloseButton />
             <PopoverBody>
-             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);}} type="submit">Add</But>
+             <But w="20px" h="40px" colorScheme='red' onClick = {(e)=> {Multistate(10);   Multipanel(61); setOverlay(<OverlayOne />);  onOpen();}} type="submit">Add</But>
+             <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                         {overlay}
+                    <ModalContent >
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                     <ModalCloseButton bg ="white" />
+                   </ModalContent>
+              </Modal>
               </PopoverBody>
              </PopoverContent>
               </Portal>
