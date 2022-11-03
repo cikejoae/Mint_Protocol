@@ -1,20 +1,18 @@
-import { useApi, useAccount } from '@gear-js/react-hooks';
+import { useApi, useBalanceSubscription, useLoggedInAccount } from '@gear-js/react-hooks';
 import { Routing } from 'pages';
 import { Header, ApiLoader } from 'components';
 import { withProviders } from 'hocs';
-import { useWasm } from 'hooks/context';
-
 
 function Component() {
   const { isApiReady } = useApi();
-  const { isAccountReady } = useAccount();
-  const wasm = useWasm();
-  
+  const { isLoginReady } = useLoggedInAccount();
+
+  useBalanceSubscription();
 
   return (
     <>
-      <Header isAccountVisible={isAccountReady} />
-      <main>{isApiReady && isAccountReady &&  wasm  ? <Routing /> : <ApiLoader />}</main>
+      <Header isAccountVisible={isLoginReady} />
+      <main>{isApiReady && isLoginReady ? <Routing /> : <ApiLoader />}</main>
     </>
   );
 }

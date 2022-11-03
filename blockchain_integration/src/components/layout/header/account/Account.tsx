@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { useAccount} from '@gear-js/react-hooks';
+import { useAccount, useAccounts } from '@gear-js/react-hooks';
 import { Button as But } from '@chakra-ui/react';
 import { AccountsModal } from './accounts-modal';
 import { Wallet } from './wallet';
 
 function Account() {
   const { account } = useAccount();
+  const { accounts } = useAccounts();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -23,7 +24,7 @@ function Account() {
       ) : (
         <But colorScheme= "pink" w="150px" h="50px" bg= "#e80b9d"  onClick={openModal}> Connect </But>
       )}
-      {isModalOpen && <AccountsModal close={ closeModal}></AccountsModal>}
+      {isModalOpen && <AccountsModal accounts={accounts} close={closeModal} />}
     </>
   );
 }

@@ -1,5 +1,4 @@
-import  { useAccount } from '@gear-js/react-hooks';
-import {CreateLink} from './create-link';
+import { Logo } from './logo';
 import { Account } from './account';
 import styles from './Header.module.scss';
 
@@ -8,14 +7,9 @@ type Props = {
 };
 
 function Header({ isAccountVisible }: Props) {
-  
-  const { account } = useAccount();
-
   return (
     <header className={styles.header}>
-      <nav className={styles.nav}>
-        {account && <CreateLink/> }
-      </nav>
+      <Logo />
       {isAccountVisible && <Account />}
     </header>
   );
