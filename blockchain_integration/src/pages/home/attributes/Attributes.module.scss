@@ -1,0 +1,83 @@
+@use '@gear-js/ui/variables' as *;
+
+.field {
+  background-color: white;
+ 
+
+  &:not(:last-child) {
+    background-color: white;
+   
+  }
+
+  & > *:not(:last-child) {
+    background-color: white;
+   
+  }
+}
+
+.inputs {
+  background-color: white;
+  
+ 
+
+  & > *:not(:last-child) {
+    background-color: white;
+    
+  }
+}
+Input:Focus {
+  color: #e80b9d;
+  background-color: white;
+  box-sizing: white;
+}
+
+Textarea  {
+  color: #e80b9d;
+  background-color: white;
+}
+
+.input {
+  background-color: white;
+  color: #e80b9d;
+  font-weight: bold;
+}
+
+
+
+Button {
+
+  background-color: #e80b9d;
+  border-radius: 3px;
+  border: 1px;
+  border-radius: 3px; 
+}
+
+
+input[type="text"], textarea {
+
+  background-color : #e80b9d; 
+
+}
+
+btn{
+    display: block;
+    margin: 5rem auto;
+    border: none;
+    border-radius: 3px;     
+    outline: none;
+    width: 100px;
+    height: 40px;
+    background-color: #937DC2;
+    transition: box-shadow 0.5s;
+    font-size: 16px;
+    font-family:arial;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btn:hover{
+    -webkit-box-shadow: inset 100px 0 0 0 #7c54d1;
+      box-shadow: inset 100px 0 0 0 #7c54d1;
+  }
+
+

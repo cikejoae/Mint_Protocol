@@ -1,19 +1,10 @@
 import React, {MouseEventHandler, MouseEvent , useState, useEffect} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react';
-import { FaRedhat } from "react-icons/fa";
+import {FiRefreshCcw } from "react-icons/fi";
 import { truncate } from 'fs';
 import './App.css';
-import {Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton, 
-  useDisclosure
-} from '@chakra-ui/react'
+import {Text,Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter,ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import { Davincicollection } from './DaVincicollection';
 import { Picassocollection} from './Picassocollection';
 import {Vincentvangoghcollection} from './Vincentvangoghcollection';
@@ -28,11 +19,49 @@ import images from "./images";
 import {Form} from  './form';
 import { Filters } from './Filters';
 import { render } from '@testing-library/react';
+import { useNFTs, useOwnerNFTs, useApprovedNFTs } from 'hooks';
+import { useAccount } from '@gear-js/react-hooks';
+import { NFT } from './nft';
+import { InfoText, Loader } from 'components';
+import { Filter } from './filter';
+import styles from './Home.module.scss';
+import { FILTERS } from 'cons';
 
 
 
 
 function Home() {
+
+  const [filter, setFilter] = useState('All');
+  const { account } = useAccount();
+
+  const nfts = useNFTs();
+  const { ownerNFTs, isOwnerNFTsRead } = useOwnerNFTs();
+  const { approvedNFTs, isApprovedNFTsRead } = useApprovedNFTs();
+
+  const getList = () => {
+    switch (filter) {
+      case 'My':
+        return ownerNFTs;
+      case 'Approved':
+        return approvedNFTs;
+      default:
+        return nfts;
+    }
+  };
+
+  const getNFTs = () =>
+    getList()?.map(({ id, name, media }) => (
+      <li key={id}>
+        <NFT id={id} name={name} media={media} />
+      </li>
+    ));
+
+  const NFTs = getNFTs();
+  const isEachNftLoaded = nfts && (account ? isOwnerNFTsRead && isApprovedNFTsRead : true);
+  const isAnyNft = !!NFTs?.length;
+
+  
 
   //////////SCREN SECUNDARY
   const OverlayOne = () => (
@@ -646,6 +675,7 @@ return (
         
         <HStack>
         <Flex gap="3">
+        <But   w="30px" h="30px" bg= "white"   type="submit" onClick ={(e)=> { get();}}> <FiRefreshCcw  ></FiRefreshCcw></But>
         <Box  className="aumento" border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="180px" h="180px">
         <Popover placement='top-start'>
             <PopoverTrigger>
@@ -723,28 +753,7 @@ return (
 
       <img  width="100%" height="100%" src={"./images/photo.jpg"}  ></img>
       
-      <Box  w="100%" h="50px">
-      <Popover>
-            <PopoverTrigger>
-            <But  colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"    type="submit"> Mint </But>     
-            </PopoverTrigger>
-            <Portal>
-            <PopoverContent>
-            <PopoverArrow />
-            <PopoverCloseButton />
-            <PopoverBody>
-            <HStack>
-              <Flex gap="6">
-             <But w="120px" h="50px" colorScheme='red' onClick = {(e)=> { get();}}>NFT </But>
-             <But w="120px" h="50px" colorScheme='red'>RMRK</But>
-             </Flex>
-             </HStack>
-              </PopoverBody>
-             </PopoverContent>
-              </Portal>
-              </Popover>
-       
-      </Box>
+      
       <Form></Form>
       </Box>
       <Spacer />
@@ -839,6 +848,7 @@ return (
             </Tooltip>
           </Box>
           </Flex>
+
           </VStack>
         </div> 
            </TabPanel>
@@ -866,6 +876,20 @@ return (
       </TabPanel>
     <TabPanel>
       <p>My NFT collection</p>
+      <>
+      <header className={styles.header}>
+        <h2 className={styles.heading}></h2>
+        {account && <Filter list={FILTERS} value={filter} onChange={setFilter} />}
+      </header>
+      {isEachNftLoaded ? (
+        <>
+          {isAnyNft && <ul className={styles.list}>{NFTs}</ul>}
+          {!isAnyNft && <InfoText text="There are no NFTs at the moment." />}
+        </>
+      ) : (
+        <Loader />
+      )}
+    </>
     </TabPanel>
     </TabPanels>
     </Tabs>

@@ -16,7 +16,7 @@ function Accounts({ list, onChange }: Props) {
 
   const handleAccountButtonClick = (account: InjectedAccountWithMeta) => {
     switchAccount(account);
-    localStorage.setItem(LOCAL_STORAGE.ACCOUNT, account.address);
+    localStorage.setItem('account', account.address);
     onChange();
   };
 

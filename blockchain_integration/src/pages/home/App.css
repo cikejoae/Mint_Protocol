@@ -10,6 +10,14 @@
     font-weight: bold;
   }
 
+  .Textarea {
+
+    background: white;
+
+
+
+  }
+
   
 
   h1 {
@@ -127,4 +135,85 @@
     -webkit-box-shadow: inset 100px 0 0 0 #7c54d1;
       box-shadow: inset 100px 0 0 0 #7c54d1;
   }
+
+  .form{
+
+    background-color: white;
+
+    font-family:arial;
+  
+}
+.input{
+
+  background-color: white;
+  font-family:arial;
+  font-weight: bold;
+  font-size: 16px;
+  color: #e80b9d;
+  border-radius: 3px;     
+}
+
+.input:hover{
+
+  background-color: white;
+  
+}
+
+.buttone{
+
+  background-color: #e80b9d;
+  border-radius: 3px;
+  border: 1px;
+  border-radius: 3px;     
+
+
+}
+.buttone:hover{
+  background-color: black;
+  transform: scale(1.2);
+  box-shadow: 0px 0px 0px 0px;
+
+}
+Textarea:Focus  {
+  
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #e80b9d;
+  resize: none;
+}
+
+Input:Focus {
+  
+  background-color: #e80b9d;
+  color: white;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+
+.buttoncancel{
+  
+  background-color: white;
+  border-radius: 3px;
+  border: 1px;
+  border-radius: 3px;     
+
+
+}
+
+
+
+
+.Checkbox {
+
+  background-color: #e80b9d;
+
+
+}
+
+input[type="text"], textarea {
+
+  background-color : #e80b9d; 
+
+}
   

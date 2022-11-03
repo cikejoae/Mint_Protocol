@@ -2,18 +2,22 @@ import {
   ApiProvider as GearApiProvider,
   AlertProvider as GearAlertProvider,
   AccountProvider,
-  ProviderProps,
 } from '@gear-js/react-hooks';
 import { Alert, alertStyles } from '@gear-js/ui';
-import { ComponentType } from 'react';
+import { ComponentType, ReactNode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { IPFSProvider, WasmProvider } from 'context';
 import { ADDRESS } from 'consts';
 
-function ApiProvider({ children }: ProviderProps) {
+type Props = {
+  children: ReactNode;
+}
+
+function ApiProvider({ children }: Props) {
   return <GearApiProvider providerAddress={ADDRESS.NODE}>{children}</GearApiProvider>;
 }
 
-function AlertProvider({ children }: ProviderProps) {
+function AlertProvider({ children }: Props) {
   return (
     <GearAlertProvider template={Alert} containerClassName={alertStyles.root}>
       {children}
@@ -21,7 +25,7 @@ function AlertProvider({ children }: ProviderProps) {
   );
 }
 
-const providers = [BrowserRouter, AlertProvider, ApiProvider, AccountProvider];
+const providers = [BrowserRouter, AlertProvider, IPFSProvider ,ApiProvider, AccountProvider, WasmProvider];
 
 function withProviders(Component: ComponentType) {
   return () => providers.reduceRight((children, Provider) => <Provider>{children}</Provider>, <Component />);

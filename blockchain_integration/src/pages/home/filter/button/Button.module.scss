@@ -1,0 +1,37 @@
+
+
+.button {
+  background-color: #e80b9d;
+  border-radius: 16px;
+
+  }
+
+.button:hover{
+    transform: scale(1.2);
+    box-shadow: 0px 0px 0px 0px;
+    background-color: #e80b9d;
+    border-radius: 16px;
+  }
+
+
+.active {
+  background-color: #e80b9d;
+  border-radius: 16px;
+  cursor: default;
+
+  &:hover {
+    background-color: #e80b9d;
+    border-radius: 16px;
+  }
+}
+
+.aumento{
+  transition: 0.55;
+  animation: ease-in;
+}
+
+.aumento:hover{
+  transform: scale(1.2);
+  box-shadow: 0px 0px 0px 0px;
+}
+
