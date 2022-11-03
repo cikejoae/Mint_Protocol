@@ -1,0 +1,15 @@
+@use '@gear-js/ui/variables' as *;
+
+@mixin card($padding: 30px) {
+  padding: $padding;
+  background-image:  white;
+  border-radius:white;
+}
+
+%absoluteCenter {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
