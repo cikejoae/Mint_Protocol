@@ -11,7 +11,7 @@
   font-size: $fontSizeMedium;
 
   &:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: #e80b9d;
   }
 
   &:nth-child(even) {
@@ -30,9 +30,14 @@
 
 .button {
   white-space: nowrap;
-  background-color: #3975e9;
+  background-color: #e80b9d;
 
   &:hover {
-    background-color: #2955ab;
+    background-color: #e80b9d;
   }
+}
+
+Button {
+  white-space: nowrap;
+  background-color: #e80b9d;
 }

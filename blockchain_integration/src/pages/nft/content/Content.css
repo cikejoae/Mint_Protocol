@@ -1,0 +1,15 @@
+.increasesize{
+    background-color: #e80b9d;
+    color: white;
+    transition: 0.55;
+    animation: ease-in;
+    border-radius: 15px;
+  }
+  
+  .increasesize:hover{
+    background-color: #e80b9d;
+    color: white;
+    border-radius: 15px;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 0px 0px;
+  }

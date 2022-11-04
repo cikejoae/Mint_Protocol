@@ -9,6 +9,6 @@ const LOCAL_STORAGE = {
   ACCOUNT: 'account',
 };
 
-const FILTERS = ['All', 'My'];
+const FILTERS = ['My'];
 
 export { ADDRESS, LOCAL_STORAGE, FILTERS };

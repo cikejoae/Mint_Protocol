@@ -33,7 +33,7 @@ import { render } from '@testing-library/react';
 
 function Home() {
 
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState('My');
   const { account } = useAccount();
 
   const nfts = useNFTs();

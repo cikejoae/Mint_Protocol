@@ -13,12 +13,13 @@
 }
 
 .heading {
-  // TODO: replace w/ @gear-js/ui. it's not h5, so prolly h6 (?)
-  font-family: Syncopate, sans-serif;
-  font-size: 16px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
   line-height: 30px;
   text-align: center;
-  color: $textColorSecondary;
+  color: #e80b9d;
 }
 
 .text {
@@ -27,7 +28,6 @@
 }
 
 .bold {
-  // TODO: replace w. @gear-js/ui
   font-family: Syncopate;
   font-size: 22px;
   line-height: 30px;

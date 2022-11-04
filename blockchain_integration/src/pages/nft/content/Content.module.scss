@@ -1,9 +1,7 @@
-@use '@gear-js/ui/variables' as *;
-@use 'assets/styles/shared' as *;
+
 
 .heading {
   margin-bottom: 50px;
-  // TODO: replace w/ @gear-js/ui
   font-family: Syncopate, sans-serif;
   font-size: 32px;
   line-height: 40px;
@@ -28,14 +26,24 @@
   display: block;
   max-height: 350px;
   margin: 0 auto;
-  border-radius: $borderRadius;
+  border-radius: 15px;
 }
 
-.buttons {
-  display: flex;
-  margin-top: 30px;
+.Button2 {
+  background-color: #e80b9d;
+  color: white;
+}
 
-  & > *:not(:last-child) {
-    margin-right: 30px;
-  }
+.increasesize{
+  background-color: #e80b9d;
+  color: white;
+  transition: 0.55;
+  animation: ease-in;
+}
+
+.increasesize:hover{
+  background-color: #e80b9d;
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0px 0px 0px 0px;
 }

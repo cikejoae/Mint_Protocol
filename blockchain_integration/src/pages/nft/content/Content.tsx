@@ -1,11 +1,12 @@
 import { Hex } from '@gear-js/api';
 import { useAccount } from '@gear-js/react-hooks';
-import { Button } from '@gear-js/ui';
 import clsx from 'clsx';
 import { Addresses } from '../addresses';
 import { Attributes } from '../attributes';
 import { Card } from '../card';
 import styles from './Content.module.scss';
+import {Box, Button as Butt, Flex, Heading, Spacer} from '@chakra-ui/react'
+import './Content.css';
 
 type Props = {
   heading: string;
@@ -49,9 +50,14 @@ function Content(props: Props) {
             <img src={image} alt="" className={styles.image} />
           </div>
           {isOwner && (
-            <div className={styles.buttons}>
-              <Button text="Transfer" color="secondary" onClick={onTransferButtonClick} block />
-              <Button text="Approve" onClick={onApproveButtonClick} block />
+            <div >
+              <Flex gap ="4">
+              <Box w="280px" h="50px">
+              </Box>
+              <Box className="increasesize" bg="#e80b9d" w="100px" h="50px">
+              <Butt  bg="#e80b9d"  w="100%" h="100%" onClick={onTransferButtonClick} ><Heading textColor={"white"} size="sm"> Transfer</Heading> </Butt>
+              </Box>
+              </Flex>
             </div>
           )}
         </section>
@@ -59,7 +65,7 @@ function Content(props: Props) {
           <div className={detailsClassName}>
             <Card heading="Owner" text={ownerId} />
             {rarity && <Card heading="Rarity" text={rarity} />}
-            <Card heading="Description" text={description} />
+            <Card  heading="Description" text={description} />
             {attributes && <Attributes attributes={attributes} />}
           </div>
           {isAnyApprovedAccount && (
