@@ -18,6 +18,7 @@ import {Renoircollection} from './Renoircollection';
 import {Rembrandcollection} from './Rembrandcollection';
 import images from "./images";
 import {Form} from  './form';
+import {FiRefreshCcw} from "react-icons/fi";
 
 
 
@@ -624,6 +625,7 @@ return (
         <Heading size="md">Styles  </Heading>
         
         <HStack>
+        <But className="aumento" bg="white" w="50px" h="50px" onClick = {(e)=> {get();}} ><FiRefreshCcw color ="red" size = "100%"></FiRefreshCcw></But>
         <Flex gap="3">
         <Box  className="aumento" border='2px' borderColor="#e80b9d" borderRadius='md' bg="white" w="180px" h="180px">
         <Popover placement='top-start'>
