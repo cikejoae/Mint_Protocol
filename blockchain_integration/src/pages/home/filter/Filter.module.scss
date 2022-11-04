@@ -1,0 +1,11 @@
+@use '@gear-js/ui/variables' as *;
+
+.filter {
+  padding: 4px;
+  background-color: #e80b9d;
+  border-radius: $borderRadius;
+
+  & > *:not(:last-child) {
+    margin-right: 5px;
+  }
+}
