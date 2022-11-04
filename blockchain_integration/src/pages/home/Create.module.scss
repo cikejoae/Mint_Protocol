@@ -39,12 +39,11 @@
 
 .input,
 .button {
-  background-color: #e80b9d;
   max-width: 540px;
 }
 
 .input {
-  background-color: #e80b9d;
+  
   flex: 1;
   display: grid;
   grid-template-columns: 4fr 6fr;
@@ -55,7 +54,7 @@
 }
 
 .checkbox {
-  background-color: #e80b9d;
+
   &Wrapper {
     &::before {
       content: '';

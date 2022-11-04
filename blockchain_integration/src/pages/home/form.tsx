@@ -8,7 +8,8 @@ import { getMintDetails, getMintPayload } from 'utils';
 import { Attributes } from './attributes';
 import React, {MouseEventHandler, MouseEvent , useState, useEffect} from 'react';
 import {Heading, Stack, Box, FormLabel, useDisclosure, Button as Butt, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, Center, Flex, HStack, VStack, } from '@chakra-ui/react'
-  import { GrAdd} from "react-icons/gr";
+import { GrAdd} from "react-icons/gr";
+import { FaRedhat } from "react-icons/fa";
 
 
 
@@ -89,7 +90,7 @@ function Form() {
     return (
       <>
         <Butt w="100%" h="50px" bg= "white"  type="submit" onClick={onOpen}>
-          Add features
+        <GrAdd></GrAdd><Heading size="md">Add features</Heading>
         </Butt>
         <Drawer
           isOpen={isOpen}

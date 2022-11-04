@@ -1,4 +1,5 @@
-
+import React, { useState, useEffect} from 'react';
+import { Button as But,Flex, Heading, Box, HStack,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Spacer,Center,  Tooltip, Portal, Popover, PopoverTrigger, PopoverContent,PopoverBody, PopoverArrow, PopoverCloseButton,Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, useDisclosure } from '@chakra-ui/react';
 import { useNFTs, useOwnerNFTs, useApprovedNFTs } from 'hooks';
 import { InfoText, Loader } from 'components';
 import { FILTERS } from 'cons';
@@ -6,13 +7,7 @@ import { useAccount } from '@gear-js/react-hooks';
 import { NFT } from './nft';
 import { Filter } from './filter';
 import styles from './styles.module.scss';
-import React, {MouseEventHandler, MouseEvent , useState, useEffect} from 'react';
-import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip } from '@chakra-ui/react';
-import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react';
-import { FaRedhat } from "react-icons/fa";
-import { truncate } from 'fs';
 import './App.css';
-import {Text,Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter,ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import { Davincicollection } from './DaVincicollection';
 import { Picassocollection} from './Picassocollection';
 import {Vincentvangoghcollection} from './Vincentvangoghcollection';
@@ -21,12 +16,9 @@ import {Claudemonetcollection} from  './Claudemonetcollection';
 import {Edvardmunchcollection} from './Edvardmunchcollection';
 import {Renoircollection} from './Renoircollection';
 import {Rembrandcollection} from './Rembrandcollection';
-import {Progressbar} from './progressbar';
-import { ga } from './Galery';
 import images from "./images";
 import {Form} from  './form';
-import { Filters } from './Filters';
-import { render } from '@testing-library/react';
+
 
 
 
@@ -62,8 +54,6 @@ function Home() {
   const isEachNftLoaded = nfts && (account ? isOwnerNFTsRead && isApprovedNFTsRead : true);
   const isAnyNft = !!NFTs?.length;
 
- 
-  //////////SCREN SECUNDARY
   const OverlayOne = () => (
     <ModalOverlay
       bg='blackAlpha.300'
@@ -76,7 +66,6 @@ function Home() {
         const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
 
-  ////PROGRESS BAR
 
   const [valueprogress, setValueprogress] = useState(false);
 
@@ -111,7 +100,6 @@ function Home() {
 		}
 	},[filled, isRunning])
 
-  ////PANEL PRINCIPAL
 
   const [selectedImg, setSelectedImg]=useState(images[0]);
 
@@ -122,7 +110,6 @@ function Home() {
     setSelectedImg(images[i]);
   }
 
-  /////ELIMINAR ELEMENTOS DEL PANEL
 
   const [panelmain ,setMultipanelmain]= useState(0);
     
@@ -177,38 +164,7 @@ function Home() {
 
  
 
-  
 
-  const [multi, setMulti]= useState(0);
-    
-  const Multistate = (state:any) => {
-
-     setMulti(state);
-     let Newstate = multi;
-
-     
-
-   };
-
-   let Newstate = multi;
-   let statepanel_1 = 0;
-   if (Newstate > 0) { let statepanel_1 = 1;}
-   function resultado_p () {if (Newstate == 0){return(<img src={"./icons/VACIO.png"}  ></img>)}
-   else if (Newstate == 1 ) {return(<img src={"./icons/COCHINO.png"}  ></img>)}
-   else if (Newstate == 2 ){return(<img src={"./icons/CLOWN.png"}  ></img>)}
-   else if (Newstate == 3 ){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)}
-   else if (Newstate == 4 ){return(<img src={"./icons/POLKA.png"}  ></img>)}
-   else if (Newstate == 5 ){return(<img src={"./icons/POLKADOT.png"}  ></img>)}
-   else if (Newstate == 6 ){return(<img src={"./icons/MUSTACHE.png"}  ></img>)}
-   else if (Newstate == 7 ){return(<img src={"./icons/GLASSES.png"}  ></img>)}
-   else if (Newstate == 8 ){return(<img src={"./icons/FOCUS.png"}  ></img>)}
-   else if (Newstate == 9 ){return(<img src={"./icons/HAT.png"}  ></img>)}
-   else if (Newstate == 10 ){return(<img src={"./icons/BEARD.png"}  ></img>)}
-   
- }
-
-
- //////STATES PANEL
 
  const [beard, setBeard]= useState(false);
     
@@ -369,8 +325,7 @@ function Home() {
     
       
 
-   
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
  
 
   const [value, setValue] = useState(false);
@@ -746,29 +701,6 @@ return (
 
 
       <img  width="100%" height="100%" src={"./images/photo.jpg"}  ></img>
-      
-      <Box  w="100%" h="50px">
-      <Popover>
-            <PopoverTrigger>
-            <But  colorScheme= "pink" w="100%" h="50px" bg= "#e80b9d"    type="submit"> Mint </But>     
-            </PopoverTrigger>
-            <Portal>
-            <PopoverContent>
-            <PopoverArrow />
-            <PopoverCloseButton />
-            <PopoverBody>
-            <HStack>
-              <Flex gap="6">
-             <But w="120px" h="50px" colorScheme='red' onClick = {(e)=> { get();}}>NFT </But>
-             <But  w="120px" h="50px" colorScheme='red'>RMRK</But>
-             </Flex>
-             </HStack>
-              </PopoverBody>
-             </PopoverContent>
-              </Portal>
-              </Popover>
-       
-      </Box>
       <Form></Form>
       </Box>
       <Spacer />
