@@ -1,0 +1,19 @@
+@use '@gear-js/ui/headings' as *;
+
+.header {
+  color: #e80b9d ;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  @extend %h5;
+}
+
+.list {
+  color: #e80b9d ;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}

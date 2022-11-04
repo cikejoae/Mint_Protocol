@@ -1,0 +1,68 @@
+@use '@gear-js/ui/variables' as *;
+
+@mixin verticalGap($gap) {
+  & > *:not(:last-child) {
+    margin-bottom: $gap;
+  }
+}
+
+@mixin horizontalGap($gap) {
+  & > *:not(:last-child) {
+    margin-right: $gap;
+  }
+}
+
+.heading {
+  margin-bottom: 32px;
+  // TODO: replace w/ @gear-js/ui heading styles
+  font-family: 'Syncopate', sans-serif;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.main {
+  padding: 25px 40px;
+  background-color: #e80b9d;
+  border: 1px dashed #e80b9d;
+  border-radius: $borderRadius;
+}
+
+.form {
+  background-color: #e80b9d;
+  @include verticalGap(32px);
+}
+
+.item {
+  @include horizontalGap(32px);
+  display: flex;
+  align-items: center;
+}
+
+.input,
+.button {
+  max-width: 540px;
+}
+
+.input {
+  background-color: #e80b9d;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+}
+
+.error {
+  color:#e80b9d;
+}
+
+.checkbox {
+  background-color: #e80b9d;
+  &Wrapper {
+    &::before {
+      content: '';
+    }
+  }
+
+  &Error {
+    margin-left: auto;
+  }
+}
