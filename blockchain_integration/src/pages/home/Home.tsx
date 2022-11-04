@@ -1,19 +1,18 @@
+
+import { useNFTs, useOwnerNFTs, useApprovedNFTs } from 'hooks';
+import { InfoText, Loader } from 'components';
+import { FILTERS } from 'cons';
+import { useAccount } from '@gear-js/react-hooks';
+import { NFT } from './nft';
+import { Filter } from './filter';
+import styles from './styles.module.scss';
 import React, {MouseEventHandler, MouseEvent , useState, useEffect} from 'react';
 import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip } from '@chakra-ui/react';
 import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react';
 import { FaRedhat } from "react-icons/fa";
 import { truncate } from 'fs';
 import './App.css';
-import {Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton, 
-  useDisclosure
-} from '@chakra-ui/react'
+import {Text,Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter,ModalBody, ModalCloseButton, useDisclosure} from '@chakra-ui/react'
 import { Davincicollection } from './DaVincicollection';
 import { Picassocollection} from './Picassocollection';
 import {Vincentvangoghcollection} from './Vincentvangoghcollection';
@@ -34,6 +33,36 @@ import { render } from '@testing-library/react';
 
 function Home() {
 
+  const [filter, setFilter] = useState('All');
+  const { account } = useAccount();
+
+  const nfts = useNFTs();
+  const { ownerNFTs, isOwnerNFTsRead } = useOwnerNFTs();
+  const { approvedNFTs, isApprovedNFTsRead } = useApprovedNFTs();
+
+  const getList = () => {
+    switch (filter) {
+      case 'My':
+        return ownerNFTs;
+      case 'Approved':
+        return approvedNFTs;
+      default:
+        return nfts;
+    }
+  };
+
+  const getNFTs = () =>
+    getList()?.map(({ id, name, media }) => (
+      <li key={id}>
+        <NFT id={id} name={name} media={media} />
+      </li>
+    ));
+
+  const NFTs = getNFTs();
+  const isEachNftLoaded = nfts && (account ? isOwnerNFTsRead && isApprovedNFTsRead : true);
+  const isAnyNft = !!NFTs?.length;
+
+ 
   //////////SCREN SECUNDARY
   const OverlayOne = () => (
     <ModalOverlay
@@ -116,12 +145,7 @@ function Home() {
              
            }
 
-  /////////////////////////////////
-
-
-
-
-
+ 
 
   const [panel, setPanel]= useState();
 
@@ -736,7 +760,7 @@ return (
             <HStack>
               <Flex gap="6">
              <But w="120px" h="50px" colorScheme='red' onClick = {(e)=> { get();}}>NFT </But>
-             <But w="120px" h="50px" colorScheme='red'>RMRK</But>
+             <But  w="120px" h="50px" colorScheme='red'>RMRK</But>
              </Flex>
              </HStack>
               </PopoverBody>
@@ -839,6 +863,9 @@ return (
             </Tooltip>
           </Box>
           </Flex>
+
+         
+          
           </VStack>
         </div> 
            </TabPanel>
@@ -866,6 +893,20 @@ return (
       </TabPanel>
     <TabPanel>
       <p>My NFT collection</p>
+      <>
+      <header className={styles.header}>
+        <h2 className={styles.heading}></h2>
+        {account && <Filter list={FILTERS} value={filter} onChange={setFilter} />}
+      </header>
+      {isEachNftLoaded ? (
+        <>
+          {isAnyNft && <ul className={styles.list}>{NFTs}</ul>}
+          {!isAnyNft && <InfoText text="" />}
+        </>
+      ) : (
+        <Loader />
+      )}
+    </>
     </TabPanel>
     </TabPanels>
     </Tabs>

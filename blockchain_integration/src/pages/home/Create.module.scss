@@ -14,7 +14,6 @@
 
 .heading {
   margin-bottom: 32px;
-  // TODO: replace w/ @gear-js/ui heading styles
   font-family: 'Syncopate', sans-serif;
   font-size: 22px;
   line-height: 30px;
@@ -40,6 +39,7 @@
 
 .input,
 .button {
+  background-color: #e80b9d;
   max-width: 540px;
 }
 

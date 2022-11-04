@@ -127,4 +127,41 @@
     -webkit-box-shadow: inset 100px 0 0 0 #7c54d1;
       box-shadow: inset 100px 0 0 0 #7c54d1;
   }
+
+  .formu{
+
+    background-color: white;
+    color: #e80b9d;
+    font-weight: bold;
+  }
+
+
+  .buttoninf{
+
+    background-color: #e80b9d;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+  }
+
+  .buttoninf:hover{
+    transform: scale(1.2);
+    background-color: #e80b9d;
+    color: white;
+    font-weight: bold;
+}
+
+
+Input{
+
+  background-color: #e80b9d;
+
+}
+
+Textarea {
+  background-color: #e80b9d;
+  color: #fff;
+    }
+
+
   

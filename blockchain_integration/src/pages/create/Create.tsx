@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import plus from 'asset/images/form/plus.svg';
 import { useIPFS, useSendNFTMessage } from 'hooks';
-import { getMintDetails, getMintPayload } from 'utile';
+import { getMintDetails, getMintPayload } from 'utils';
 import { Attributes } from './attributes';
 import styles from './Create.module.scss';
 

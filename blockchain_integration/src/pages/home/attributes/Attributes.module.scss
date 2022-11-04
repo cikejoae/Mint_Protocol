@@ -2,6 +2,7 @@
 
 .field {
   background-color: #e80b9d;
+  font-weight: bolder;
   display: flex;
   align-items: center;
 
@@ -15,9 +16,9 @@
 }
 
 .inputs {
-  background-color: #e80b9d;
   flex: 1;
   max-width: 540px;
+  font-weight: bolder;
 
   & > *:not(:last-child) {
     margin-bottom: 4px;
@@ -25,11 +26,14 @@
 }
 
 .input {
-  background-color: #e80b9d;
+  background-color: white;
+  color: #e80b9d;
+  font-weight: bolder;
   display: grid;
   grid-template-columns: 4fr 6fr;
 }
 
 .error {
+  font-weight: bolder;
   color: #e80b9d;
 }
