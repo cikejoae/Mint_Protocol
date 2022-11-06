@@ -13,8 +13,11 @@ function App() {
                     boxSize="80%"
                     ></Image> 
           </Box>
-            <Flex w='600px'></Flex>
-              <Breadcrumb spacing='10px'>
+            <Flex w='500px'></Flex>
+              <Breadcrumb spacing='25px' fontWeight='medium' fontSize='20px'>
+                <BreadcrumbItem>
+                <a href="#home">Home</a>
+                </BreadcrumbItem>
                 <BreadcrumbItem>
                 <a href="#about">About</a>
                 </BreadcrumbItem>
@@ -52,6 +55,7 @@ function App() {
 
       <Divider/>
       <Box h='100px'></Box>
+      <a id="home"></a>
       <VStack>
       <Box h='100px'></Box>
       <Heading h='200px' w='900px'
@@ -226,7 +230,7 @@ function App() {
             <Image 
               objectFit="cover"
               boxSize="100%"
-            />
+            src="Scarlet.jpg"/>
           </Flex>
         <Stack
           flex={1}
@@ -293,7 +297,7 @@ function App() {
             <Image 
               objectFit="cover"
               boxSize="100%"
-            />
+            src="Adrian.jpeg"/>
           </Flex>
         <Stack
           flex={1}
