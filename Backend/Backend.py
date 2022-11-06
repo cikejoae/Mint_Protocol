@@ -173,7 +173,7 @@ class Videocapture():
              
              
              
-        self.Davincicollection=["Leonardo_davinci_collection/da-vinci-vitruve-luc-viatour.jpg","Leonardo_davinci_collection/drapery-for-a-seated-1470.jpg","Leonardo_davinci_collection/mona-lisa.1503.jpg","Leonardo_davinci_collection/profile-of-a-warrior-in-helmet-1472.jpg","Leonardo_davinci_collection/study-of-hands-1474.jpg","Leonardo_davinci_collection/the-baptism-of-christ-c-1475.png","Leonardo_davinci_collection/the-madonna-of-the-carnation-1480.jpg","Leonardo_davinci_collection/the-lady-with-the-ermine-cecilia-gallerani-1496.jpg","Leonardo_davinci_collection/Autorretrato.jpg"]
+        self.Davincicollection=["Leonardo_davinci_collection/da-vinci-vitruve-luc-viatour.jpg","Leonardo_davinci_collection/drapery-for-a-seated-1470.jpg","Leonardo_davinci_collection/mona-lisa.1503.jpg","Leonardo_davinci_collection/profile-of-a-warrior-in-helmet-1472.jpg","Leonardo_davinci_collection/study-of-hands-1474.jpg","Leonardo_davinci_collection/the-baptism-of-christ-c-1475.jpg","Leonardo_davinci_collection/the-madonna-of-the-carnation-1480.jpg","Leonardo_davinci_collection/the-lady-with-the-ermine-cecilia-gallerani-1496.jpg","Leonardo_davinci_collection/Autorretrato.jpg"]
              
         if self.Davincicollection_state != 0 :
               

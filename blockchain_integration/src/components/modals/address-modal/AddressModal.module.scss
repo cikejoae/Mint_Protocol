@@ -1,0 +1,12 @@
+@use '@gear-js/ui/variables' as *;
+
+.form {
+  & > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.error {
+  margin-top: 5px;
+  color: $errorColor;
+}

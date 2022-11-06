@@ -1,0 +1,12 @@
+
+
+.filter {
+  color: white;
+  background-color: white;
+
+  & > *:not(:last-child) {
+    margin-right: 5px;
+    color: white;
+  background-color: white;
+  }
+}
