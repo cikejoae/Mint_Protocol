@@ -8,11 +8,9 @@ import time
 from math import hypot
 import torch 
 import torch.optim as optim
-import torchvision
 from torchvision import transforms, models
 import matplotlib.pyplot as plt
 from PIL import Image
-import numpy as np
 
 class Videocapture():
     
@@ -431,7 +429,7 @@ class Videocapture():
 
         #################
         _, frame = cap.read()
-        rows, cols, _ = frame.shape
+        rows, cols, _ = frame.shape   
         nose_mask = np.zeros((rows, cols), np.uint8)
         #############################################
 
@@ -543,7 +541,7 @@ class Videocapture():
                                              int(eyebrow_center[1] + eyebrow_height / 2))
                             
                          
-                               # Adding the new filter
+                              
                          
                              On_head = cv2.resize(on_face_image_dot, (eyebrow_width, eyebrow_height))
                              nose_pig_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
@@ -610,7 +608,7 @@ class Videocapture():
                                              int(eyebrow_center[1] + eyebrow_height / 2))
                             
                          
-                               # Adding the new filter
+                              
                          
                              On_head = cv2.resize(on_face_image_dot_2, (eyebrow_width, eyebrow_height))
                              nose_pig_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
@@ -645,7 +643,7 @@ class Videocapture():
                                               int(center[1] + eyebrow_height / 2))
                              
                           
-                                # Adding the new filter
+                              
                           
                               On_head = cv2.resize(on_head_mustache, (eyebrow_width, eyebrow_height))
                               eyebrow_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
@@ -680,7 +678,7 @@ class Videocapture():
                                               int(eyebrow_center[1] + eyebrow_height / 2))
                              
                           
-                                # Adding the new filter
+                             
                           
                               On_head = cv2.resize(on_head_glasses, (eyebrow_width, eyebrow_height))
                               eyebrow_gray = cv2.cvtColor(On_head, cv2.COLOR_BGR2GRAY)
