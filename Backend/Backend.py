@@ -60,6 +60,8 @@ class Videocapture():
             self.n=1
             lr=0.05
             self.Style_tranfer(self.mainpanel[-1],lr,self.n)
+            self.mainpanel=[]
+            self.MAINPANEL=[0,0]
             time.sleep(5)
             
         else:
@@ -849,6 +851,7 @@ class Videocapture():
             self.Rembrandcollection_state = int(request.json)
             print(self.Rembrandcollection_state)
             self.Multiprocess()
+            return {"Recibido": True}
             
         
         
@@ -859,6 +862,7 @@ class Videocapture():
             self.Salvadordalicollection_state = int(request.json)
             print(self.Salvadordalicollection_state)
             self.Multiprocess()
+            return {"Recibido": True}
             
         
         
@@ -868,6 +872,7 @@ class Videocapture():
             self.Renoircollection_state = int(request.json)
             print(self.Renoircollection_state)
             self.Multiprocess()
+            return {"Recibido": True}
           
         
         
@@ -887,6 +892,7 @@ class Videocapture():
             self.Claudemonetcollection_state = int(request.json)
             print(self.Claudemonetcollection_state)
             self.Multiprocess()
+            return {"Recibido": True}
           
         
         
@@ -896,6 +902,7 @@ class Videocapture():
             self.Picassocollection_state = int(request.json)
             print(self.Picassocollection_state)
             self.Multiprocess()
+            return {"Recibido": True}
           
         
         @app.route("/Vincentvangoghcollection",methods = ['POST'])
@@ -904,6 +911,7 @@ class Videocapture():
             self.Vincentvangoghcollection_state = int(request.json)
             print(self.Vincentvangoghcollection_state)
             self.Multiprocess()
+            return {"Recibido": True}
            
         
         @app.route("/Davincicollection",methods = ['POST'])
@@ -912,6 +920,7 @@ class Videocapture():
             self.Davincicollection_state = int(request.json)
             print(self.Davincicollection_state)
             self.Multiprocess()
+            return {"Recibido": True}
            
         
         @app.route("/button_nose_pork",methods = ['POST'])
@@ -919,6 +928,7 @@ class Videocapture():
             print("DATA RECIBIDA")
             print(request.json)
             self.filter_nose_pork = int(request.json)
+            return {"Recibido": True}
            
         @app.route("/button_nose_clown",methods = ['POST'])
         def button_nose_clown():
@@ -928,6 +938,7 @@ class Videocapture():
              
             
              self.filter_nose_clown = int(request.json)
+             return {"Recibido": True}
              
           
             
@@ -937,6 +948,7 @@ class Videocapture():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_gavin = int(request.json)
+             return {"Recibido": True}
              
              
         @app.route("/button_dot",methods = ['POST'])
@@ -944,6 +956,7 @@ class Videocapture():
              print("DATA RECIBIDA")
 
              self.filter_dot = int(request.json)
+             return {"Recibido": True}
          
         @app.route("/button_dot_2",methods = ['POST'])
         def button_dot_2():
@@ -953,6 +966,7 @@ class Videocapture():
               
            
               self.filter_dot_2 = int(request.json)
+              return {"Recibido": True}
               
              
          
@@ -962,6 +976,7 @@ class Videocapture():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_glasses = int(request.json)
+             return {"Recibido": True}
             
          
         @app.route("/button_mustache",methods = ['POST'])
@@ -969,6 +984,7 @@ class Videocapture():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_mustache = int(request.json)
+             return {"Recibido": True}
             
          
         @app.route("/button_focus",methods = ['POST'])
@@ -976,6 +992,7 @@ class Videocapture():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_focus = int(request.json)
+             return {"Recibido": True}
             
          
         @app.route("/button_hat",methods = ['POST'])
@@ -983,6 +1000,7 @@ class Videocapture():
              print("DATA RECIBIDA")
              print(request.json)
              self.filter_hat = int(request.json)
+             return {"Recibido": True}
             
          
         @app.route("/button_beard",methods = ['POST'])
@@ -990,7 +1008,8 @@ class Videocapture():
              
              print("DATA RECIBIDA")
              print(request.json)
-             self.filter_beard = int(request.json) 
+             self.filter_beard = int(request.json)
+             return {"Recibido": True} 
             
 
         @app.route("/tranferstyle",methods = ['POST'])
@@ -1000,6 +1019,7 @@ class Videocapture():
              print(request.json)
              
              self.Style_transfer = int(request.json)
+             return {"Recibido": True}
              
              
             

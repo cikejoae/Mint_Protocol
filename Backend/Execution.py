@@ -15,15 +15,3 @@ for pack in lst:
     time.sleep(5)
     print("Instalado correctamente",pack)
     
-
-
-scripts_paths = ("Backend.py")
-
-       
-
-procesos = [subprocess.Popen(["python", script]) for script in scripts_paths]
-
-for proceso in procesos:
-                proceso.wait()
-        
-print("Ejecución exitosa....")
