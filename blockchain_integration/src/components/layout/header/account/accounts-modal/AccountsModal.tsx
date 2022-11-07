@@ -7,8 +7,7 @@ type Props = {
 };
 
 function AccountsModal({ close }: Props) {
- 
-  const {accounts} = useAccount();
+  const { accounts } = useAccount();
 
   return (
     <Modal heading="Connect" close={close}>
