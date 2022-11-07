@@ -1,12 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import { OnLogin, InfoText } from 'components';
 import { Create } from './create';
+import { main } from './main';
 import { Home } from './home';
 import { NFT } from './nft';
 
 const routes = [
-  { path: '/', Page: Home },
+  { path: '/', Page: main },
   { path: 'nft/:id', Page: NFT },
+  {  path: 'mint', Page:  Home },
   { path: 'create', Page: Create, isPrivate: true },
 ];
 

@@ -1,15 +1,14 @@
 import { Button, Checkbox, FileInput, Input, Textarea } from '@gear-js/ui';
 import { useAlert } from '@gear-js/react-hooks';
 import { useForm, useFieldArray } from 'react-hook-form';
-import clsx from 'clsx';
 import plus from 'asset/images/form/plus.svg';
 import { useIPFS, useSendNFTMessage } from 'hooks';
 import { getMintDetails, getMintPayload } from 'utils';
-import { Attributes } from './attributes';
-import React, {MouseEventHandler, MouseEvent , useState, useEffect} from 'react';
-import {Heading, Stack, Box, FormLabel, useDisclosure, Button as Butt, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, Center, Flex, HStack, VStack, } from '@chakra-ui/react'
 import { GrAdd} from "react-icons/gr";
-import { FaRedhat } from "react-icons/fa";
+import { Attributes } from './attributes';
+import React, { useState, useEffect} from 'react';
+import {Heading, Box,useDisclosure, Button as Butt, Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, Center, Flex, VStack, } from '@chakra-ui/react'
+
 
 
 
@@ -94,7 +93,7 @@ function Form() {
         </Butt>
         <Drawer
           isOpen={isOpen}
-          placement='right'
+          placement='left'
 
           onClose={onClose}
         >

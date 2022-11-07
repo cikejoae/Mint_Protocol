@@ -1,0 +1,37 @@
+
+.aumento{
+    transition: 0.55;
+    animation: ease-in;
+}
+
+.aumento:hover{
+    transform: scale(1.2);
+    box-shadow: 0px 0px 0px 0px;
+}
+
+.carousel{
+
+  max-width: 1500px;
+  margin: 0 auto;
+  overflow: hidden;
+
+}
+ .carousel_items{
+  display: flex;
+  animation: carousel 20s linear infinite;
+
+
+}
+  .carousel_img{
+    display: block;
+    width: 300px;
+    object-fit: cover;
+
+  }
+  @keyframes carousel
+  {
+    100%
+    {
+      transform: translateX(-2560px);
+    }
+  }
