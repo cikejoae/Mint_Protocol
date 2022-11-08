@@ -1,0 +1,14 @@
+gunicorn
+cmake
+dlib
+numpy
+torch
+torchvision
+opencv-contrib-python
+numpy
+matplotlib
+flask
+flask_cors
+Pillow
+torch
+torchvision
