@@ -27,7 +27,7 @@ function main() {
                 </BreadcrumbItem>
 
                 <BreadcrumbItem>
-                <a href="#contact">Contact us</a>
+                <a href="#contact">Contact</a>
                 </BreadcrumbItem>
               </Breadcrumb>
       </HStack>
@@ -288,7 +288,7 @@ function main() {
         borderWidth="1px"
         borderRadius="lg"
         w={{ sm: '100%', md: '400px' }}
-        height={{ sm: '476px', md: '20rem' }}
+        height={{ sm: '600px', md: '20rem' }}
         direction={{ base: 'column', md: 'row' }}
         bg={useColorModeValue('white', 'gray.900')}
         boxShadow={'2xl'}
@@ -316,7 +316,7 @@ function main() {
                 textAlign={'center'}
                 color={useColorModeValue('gray.700', 'gray.400')}
                 px={3}>
-                Computational Physics and Artificial Intelligence.
+                Artificial Intelligence.
               </Text>
           <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
           </Stack>
