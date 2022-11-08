@@ -64,7 +64,7 @@ function App() {
                 >
                 Create your own NFT collections with the best visual filters and with the style of your favorite artist..    
               </Heading>
-              <Button colorScheme='pink' size='md' height='60px'
+              <Button  colorScheme='pink' size='md' height='60px'
                       width='200px'
                       borderRadius='30px'
                       >
