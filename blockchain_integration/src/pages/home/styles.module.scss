@@ -2,16 +2,19 @@
 
 .header {
   color: #e80b9d ;
+  background-color: white;
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
 }
 
 .heading {
+  background-color: white;
   @extend %h5;
 }
 
 .list {
+  background-color: white;
   color: #e80b9d ;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

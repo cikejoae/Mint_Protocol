@@ -9,7 +9,7 @@ function main() {
     <Grid w='100%' h='100%'>
       <HStack h='100px' width='100%' backgroundColor='white' position="fixed">
           <Box>
-            <Image src="logoMint.png"
+            <Image src="./main/logoMint.png"
                     boxSize="80%"
                     ></Image> 
           </Box>
@@ -33,7 +33,7 @@ function main() {
       </HStack>
 
       <Box h="100px"></Box>
-      <VStack w = '100%' h = '700px' backgroundImage={"collage.jpeg"} alignItems='center' 
+      <VStack w = '100%' h = '700px' backgroundImage={"./main/collage.jpeg"} alignItems='center' 
         max-width='100px'>
         <Box h='200px'></Box>
           <Heading h='100px'
@@ -85,7 +85,7 @@ function main() {
           
               <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img src={"./adan.jpg"}></img> 
+              <img src={"../main/adan.jpg"}></img> 
           </Box>
           </article>
           
@@ -95,7 +95,7 @@ function main() {
 
           <article className="carousel_img">
           <Box className="aumento" w="300px" h="300px">
-              <img src={"./Grito.jpg"}></img>
+              <img src={"./main/Grito.jpg"}></img>
           </Box>
           </article>
 
@@ -105,7 +105,7 @@ function main() {
 
           <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img  src={"./Mona_Lisa.jpg"}></img>
+              <img  src={"./main/Mona_Lisa.jpg"}></img>
           </Box>
           </article>
 
@@ -115,7 +115,7 @@ function main() {
 
           <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img src={"./StarryNight.jpg"}></img>
+              <img src={"./main/StarryNight.jpg"}></img>
           </Box>
           </article>
 
@@ -125,7 +125,7 @@ function main() {
 
           <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img width = "100%" height="100%" src={"./Persistencia_de_la_memoria.jpg"}></img>
+              <img width = "100%" height="100%" src={"./main/Persistencia_de_la_memoria.jpg"}></img>
           </Box>
           </article>
 
@@ -135,7 +135,7 @@ function main() {
 
           <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img width = "100%" height="100%" src={"./cat-catching-a-bird-1939.jpg"}></img>
+              <img width = "100%" height="100%" src={"./main/cat-catching-a-bird-1939.jpg"}></img>
           </Box>
           </article>
 
@@ -145,7 +145,7 @@ function main() {
 
           <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img width = "100%" height="100%" src={"./claude-monet-irises-in-monets-garden-1899.jpg"}></img>
+              <img width = "100%" height="100%" src={"./main/claude-monet-irises-in-monets-garden-1899.jpg"}></img>
           </Box>
           </article>
 
@@ -155,7 +155,7 @@ function main() {
 
           <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img width = "100%" height="100%" src={"./Irises-1889.jpg"}></img>
+              <img width = "100%" height="100%" src={"./main/Irises-1889.jpg"}></img>
           </Box>
           </article>
 
@@ -165,7 +165,7 @@ function main() {
 
           <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img width = "100%" height="100%" src={"./jeanne-samary-in-a-low-necked-dress-1877.jpg"}></img>
+              <img width = "100%" height="100%" src={"./main/jeanne-samary-in-a-low-necked-dress-1877.jpg"}></img>
           </Box>
           </article>
 
@@ -175,7 +175,7 @@ function main() {
 
           <article className="carousel_img">
           <Box  className="aumento" w="300px" h="300px">
-              <img width = "100%" height="100%" src={"./old-guitarist-chicago-1903.jpg"}></img>
+              <img width = "100%" height="100%" src={"./main/old-guitarist-chicago-1903.jpg"}></img>
           </Box>
           </article>
       </div>
@@ -230,7 +230,7 @@ function main() {
             <Image 
               objectFit="cover"
               boxSize="100%"
-            src="Scarlet.jpg"/>
+            src="./main/Scarlet.jpg"/>
           </Flex>
         <Stack
           flex={1}
@@ -297,7 +297,7 @@ function main() {
             <Image 
               objectFit="cover"
               boxSize="100%"
-            src="Adrian.jpeg"/>
+            src="./main/Adrian.jpeg"/>
           </Flex>
         <Stack
           flex={1}

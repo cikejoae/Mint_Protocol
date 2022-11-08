@@ -163,5 +163,16 @@ Textarea {
   color: #fff;
     }
 
+.filterstyle {
+
+  background-color: #fff;
+  color: #fff;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
 
   

@@ -4,6 +4,7 @@ import { useNFTs, useOwnerNFTs, useApprovedNFTs } from 'hooks';
 import { InfoText, Loader } from 'components';
 import { FILTERS } from 'cons';
 import { useAccount } from '@gear-js/react-hooks';
+import {FiRefreshCcw} from "react-icons/fi";
 import { NFT } from './nft';
 import { Filter } from './filter';
 import styles from './styles.module.scss';
@@ -18,7 +19,7 @@ import {Renoircollection} from './Renoircollection';
 import {Rembrandcollection} from './Rembrandcollection';
 import images from "./images";
 import {Form} from  './form';
-import {FiRefreshCcw} from "react-icons/fi";
+
 
 
 
@@ -178,7 +179,7 @@ function Home() {
 
   const beardbut = beard ? 0 : 1
 
-  function beardPanel () {if (beardbut == 0 ){return(<img src={"./icons/BEARD.png"}  ></img>)};}
+  function beardPanel () {if (beardbut === 0 ){return(<img src={"./icons/BEARD.png"}  ></img>)};}
 
 
 
@@ -193,7 +194,7 @@ function Home() {
 
   const hatbut = hat ? 0 : 1
 
-  function hatPanel () {if (hatbut == 0 ){return(<img src={"./icons/HAT.png"}  ></img>)};}
+  function hatPanel () {if (hatbut === 0 ){return(<img src={"./icons/HAT.png"}  ></img>)};}
 
 
 
@@ -211,7 +212,7 @@ function Home() {
 
   const focusbut = focus ? 0 : 1
 
-  function focusPanel () {if (focusbut == 0 ){return(<img src={"./icons/FOCUS.png"}  ></img>)};}
+  function focusPanel () {if (focusbut === 0 ){return(<img src={"./icons/FOCUS.png"}  ></img>)};}
 
 
 
@@ -227,7 +228,7 @@ function Home() {
 
   const glassesbut = glasses ? 0 : 1
 
-  function glassesPanel () {if (glassesbut == 0 ){return(<img src={"./icons/GLASSES.png"}  ></img>)};}
+  function glassesPanel () {if (glassesbut === 0 ){return(<img src={"./icons/GLASSES.png"}  ></img>)};}
 
 
 
@@ -243,7 +244,7 @@ function Home() {
 
   const mustachebut = mustache ? 0 : 1
 
-  function mustachePanel () {if (mustachebut == 0  ){return(<img src={"./icons/MUSTACHE.png"}  ></img>)};}
+  function mustachePanel () {if (mustachebut === 0  ){return(<img src={"./icons/MUSTACHE.png"}  ></img>)};}
 
 
 
@@ -261,7 +262,7 @@ function Home() {
 
   const polkadotbut = polkadot ? 0 : 1
 
-  function polkadotPanel () {if (polkadotbut == 0 ){return(<img src={"./icons/POLKADOT.png"}  ></img>)};}
+  function polkadotPanel () {if (polkadotbut === 0 ){return(<img src={"./icons/POLKADOT.png"}  ></img>)};}
 
 
 
@@ -277,7 +278,7 @@ function Home() {
 
   const polkabut = polka ? 0 : 1
 
-  function polkaPanel () {if (polkabut == 0  ){return(<img src={"./icons/POLKA.png"}  ></img>)};}
+  function polkaPanel () {if (polkabut === 0  ){return(<img src={"./icons/POLKA.png"}  ></img>)};}
 
 
  const [gavin, setGavin]= useState(false);
@@ -291,7 +292,7 @@ function Home() {
 
   const gavinbut = gavin ? 0 : 1
 
-  function gavinPanel () {if (gavinbut == 0 ){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)};}
+  function gavinPanel () {if (gavinbut === 0 ){return(<img src={"./icons/GAVIN_NEW.png"}  ></img>)};}
 
    
 
@@ -308,7 +309,7 @@ function Home() {
    
      const pigbut = pig ? 0 : 1
 
-     function pigPanel () {if (pigbut == 0 ){return(<img src={"./icons/COCHINO.png"}  ></img>)};}
+     function pigPanel () {if (pigbut === 0 ){return(<img src={"./icons/COCHINO.png"}  ></img>)};}
   
   const [clown, setClown]= useState(false);
     
@@ -321,7 +322,7 @@ function Home() {
     
       const clownbut = clown ? 0 : 1
  
-      function clownPanel () {if (clownbut == 0){return(<img src={"./icons/CLOWN.png"}  ></img>)};}
+      function clownPanel () {if (clownbut === 0){return(<img src={"./icons/CLOWN.png"}  ></img>)};}
 
     
       
@@ -667,10 +668,10 @@ return (
         <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="white"  borderRadius='md'  bg ="#e80b9d">
-                              <Heading textColor={"white"} size ="md">Learning and transferring style...............</Heading>
+                            <ModalHeader h="300px" w="480px"  border='2px' borderColor="white"  borderRadius='md'  bg ="#e80b9d">
+                              <Heading textColor={"white"} size ="md"> NST algorithm learning and transferring style.....</Heading>
                               <Box w="100%" h="30px"></Box>
-                              <Flex gap ="8">
+                              <Flex gap ="16">
                              
                                  <img  className="aumento"  width="180px" height="180px" src={selectedImg} alt="Select" ></img>
                                 <img className="aumento"  width="180px" height="180px" src={"./images/photo.jpg"}  ></img>
@@ -690,7 +691,8 @@ return (
                              </Center>
                               
                               </ModalHeader>
-                     <ModalCloseButton bg ="white" />
+    
+                      
                    </ModalContent>
               </Modal>
         
@@ -828,7 +830,7 @@ return (
     <TabPanel>
       <p>My NFT collection</p>
       <>
-      <header className={styles.header}>
+      <header className={"filterstyle"}>
         <h2 className={styles.heading}></h2>
         {account && <Filter list={FILTERS} value={filter} onChange={setFilter} />}
       </header>
