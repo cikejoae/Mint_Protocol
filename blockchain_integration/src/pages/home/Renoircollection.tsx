@@ -1,19 +1,5 @@
-import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
-import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
-import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
-import { ChangeEvent } from 'react';
-import {Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton, 
-  useDisclosure
-} from '@chakra-ui/react'
-
-import { isWhiteSpaceLike } from 'typescript';
+import React, { MouseEvent , useState,} from 'react';
+import { Button as But,Flex, Heading, Box, HStack, VStack, Center, Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverArrow, PopoverCloseButton,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton, useDisclosure } from '@chakra-ui/react';
 import './App.css';
 
 
@@ -23,10 +9,7 @@ import './App.css';
 
 function Renoircollection() {
 
-   
-
-  ///////////////////////////////SCREEN SECUNDARY
-
+  
   const OverlayOne = () => (
     <ModalOverlay
       bg='blackAlpha.300'
@@ -41,8 +24,20 @@ function Renoircollection() {
         
 
 
-         ///PANEL CONTROL
          const [panel ,setMultipanel]= useState(0);
+
+         const Newstatepanel = panel;
+
+         const sendPanelstate = async () => {
+             
+                   
+          const res = await fetch('http://localhost:5000/mainpanel',
+          { method : "POST", 
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(Newstatepanel)})
+          const data = await res.json();
+            
+          }
     
          const Multipanel = (state:any) => {
  
@@ -51,34 +46,16 @@ function Renoircollection() {
  
                         };
  
-          const Newstatepanel = panel;
+          
  
-          const sendPanelstate = async () => {
-             
-                   
-           const res = await fetch('http://localhost:5000/mainpanel',
-           { method : "POST", 
-           headers: {'Content-Type': 'application/json'},
-           body: JSON.stringify(Newstatepanel)})
-           const data = await res.json();
-             
-           }
+          
 
-////////////////////////////////////////////////////////////////////////
 
-        ///Multistate fuction
         const [multi, setMulti]= useState(0);
-    
-        const Multistate = (state:any) => {
 
-                     setMulti(state);
-                     sendMultistate();
+        const Newstate = multi;
 
-                       };
-
-         const Newstate = multi;
-
-         const sendMultistate = async () => {
+        const sendMultistate = async () => {
             
                   
           const res = await fetch('http://localhost:5000/Renoircollection',
@@ -89,9 +66,17 @@ function Renoircollection() {
             
           }
 
-         ///Carusel fuctions
+    
+        const Multistate = (state:any) => {
 
+                     setMulti(state);
+                     sendMultistate();
 
+                       };
+
+        
+
+         
          const [className, setclassName]= useState('carousel_slow');
 
          const fixedcarrusel = (event: MouseEvent<HTMLDivElement>) =>{
@@ -126,8 +111,7 @@ function Renoircollection() {
           <Center className="aumento" > Pierre Auguste Renoir </Center>
          
          </Box>
-         <Box w="100%" h="50px">
-         </Box>
+         <Box w="100%" h="50px"/>
         </VStack>
         <div >
         <VStack  w="100%" h="350px">
@@ -141,7 +125,7 @@ function Renoircollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/banks-of-the-seine-at-champrosay-1876.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/banks-of-the-seine-at-champrosay-1876.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -154,7 +138,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -173,7 +157,7 @@ function Renoircollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/by-the-fireside-1875.jpg"}  ></img>
+              <img  alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/by-the-fireside-1875.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -186,7 +170,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -205,7 +189,7 @@ function Renoircollection() {
             <PopoverTrigger>
 
             <But bg ="white" w="300px" h="300px"  type="submit">
-              <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/by-the-seashore-1883.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/by-the-seashore-1883.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -218,7 +202,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -238,7 +222,7 @@ function Renoircollection() {
             <PopoverTrigger>
 
               <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/girl-gathering-flowers-1872.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/girl-gathering-flowers-1872.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -251,7 +235,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -271,7 +255,7 @@ function Renoircollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/girl-with-a-dog-1875.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/girl-with-a-dog-1875.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -284,7 +268,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -304,7 +288,7 @@ function Renoircollection() {
             <PopoverTrigger>
             
             <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%"  height="100%" src={"./style/Pierre_auguste_renoir_collection/jeanne-samary-in-a-low-necked-dress-1877.jpg"}  ></img>
+              <img alt="" width = "100%"  height="100%" src="./style/Pierre_auguste_renoir_collection/jeanne-samary-in-a-low-necked-dress-1877.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -317,7 +301,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -337,7 +321,7 @@ function Renoircollection() {
             <PopoverTrigger>
             
                 <But bg ="white" w="300px" h="300px"  type="submit"> 
-                <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/self-portrait-with-a-white-hat-1910.jpg"}  ></img>
+                <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/self-portrait-with-a-white-hat-1910.jpg"/>
                </But>
             </PopoverTrigger>
             <Portal>
@@ -350,7 +334,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -371,7 +355,7 @@ function Renoircollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-            <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/the-duck-pond-1873.jpg"}  ></img>
+            <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/the-duck-pond-1873.jpg"/>
             </But>
             </PopoverTrigger>
             <Portal>
@@ -384,7 +368,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -403,7 +387,7 @@ function Renoircollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/the-seine-at-argenteuil-1875.jpg"}  ></img> 
+              <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/the-seine-at-argenteuil-1875.jpg" /> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -416,7 +400,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -434,7 +418,7 @@ function Renoircollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/young-woman-with-a-dog-1876.jpg"}  ></img> 
+              <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/young-woman-with-a-dog-1876.jpg"/> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -447,7 +431,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -465,7 +449,7 @@ function Renoircollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pierre_auguste_renoir_collection/young-woman-with-a-japanese-umbrella-1876.jpg"}  ></img> 
+              <img alt="" width = "100%" height="100%" src="./style/Pierre_auguste_renoir_collection/young-woman-with-a-japanese-umbrella-1876.jpg"/> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -478,7 +462,7 @@ function Renoircollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -493,9 +477,7 @@ function Renoircollection() {
           </Flex>
       </HStack>
       </div> 
-      <VStack bg="red" w="100%" h="500px">
-
-      </VStack>
+      <VStack bg="red" w="100%" h="500px"/>
       </VStack>
       </div>
       </>

@@ -1,18 +1,5 @@
-import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
-import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
-import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
-import {Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton, 
-  useDisclosure
-} from '@chakra-ui/react'
-import { ChangeEvent } from 'react';
-import { isWhiteSpaceLike } from 'typescript';
+import React, { MouseEvent , useState,} from 'react';
+import { Button as But,Flex, Heading, Box, HStack, VStack, Center, Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverArrow, PopoverCloseButton,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton, useDisclosure } from '@chakra-ui/react';
 import './App.css';
 
 
@@ -22,7 +9,6 @@ import './App.css';
 
 function Picassocollection() {
 
-  ///////////////////////////////SCREEN SECUNDARY
 
   const OverlayOne = () => (
     <ModalOverlay
@@ -36,19 +22,12 @@ function Picassocollection() {
         const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
 
-          ///PANEL CONTROL
           const [panel ,setMultipanel]= useState(0);
-    
-          const Multipanel = (state:any) => {
-  
-                       setMultipanel(state);
-                       sendPanelstate();
-  
-                         };
-  
-           const Newstatepanel = panel;
-  
-           const sendPanelstate = async () => {
+
+          const Newstatepanel = panel;
+
+
+          const sendPanelstate = async () => {
               
                     
             const res = await fetch('http://localhost:5000/mainpanel',
@@ -58,26 +37,24 @@ function Picassocollection() {
             const data = await res.json();
               
             }
- 
- ////////////////////////////////////////////////////////////////////////
-
-        
-
-
-
-        ///Multistate fuction
-        const [multi, setMulti]= useState(0);
     
-        const Multistate = (state:any) => {
+          const Multipanel = (state:any) => {
+  
+                       setMultipanel(state);
+                       sendPanelstate();
+  
+                         };
+  
+          
+  
+           
+ 
+ 
+        const [multi, setMulti]= useState(0);
 
-                     setMulti(state);
-                     sendMultistate();
+        const Newstate = multi;
 
-                       };
-
-         const Newstate = multi;
-
-         const sendMultistate = async () => {
+        const sendMultistate = async () => {
             
                   
           const res = await fetch('http://localhost:5000/Picassocollection',
@@ -87,6 +64,17 @@ function Picassocollection() {
           const data = await res.json();
             
           }
+    
+        const Multistate = (state:any) => {
+
+                     setMulti(state);
+                     sendMultistate();
+
+                       };
+
+         
+
+         
 
 
          const [className, setclassName]= useState('carousel_slow');
@@ -121,8 +109,7 @@ function Picassocollection() {
           <Center className="aumento" > Pablo Picasso </Center>
          
          </Box>
-         <Box w="100%" h="50px">
-         </Box>
+         <Box w="100%" h="50px"/>
         </VStack>
         <div >
         <VStack  w="100%" h="350px">
@@ -136,7 +123,7 @@ function Picassocollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/cat-catching-a-bird-1939.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/cat-catching-a-bird-1939.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -149,7 +136,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -168,7 +155,7 @@ function Picassocollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/child-with-dove-1901.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/child-with-dove-1901.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -181,7 +168,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -200,7 +187,7 @@ function Picassocollection() {
             <PopoverTrigger>
 
             <But bg ="white" w="300px" h="300px"  type="submit">
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/figures-at-the-seaside-1931.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/figures-at-the-seaside-1931.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -213,7 +200,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -233,7 +220,7 @@ function Picassocollection() {
             <PopoverTrigger>
 
               <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/girl-on-the-ball-1905.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/girl-on-the-ball-1905.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -246,7 +233,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -266,7 +253,7 @@ function Picassocollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/mujeres_de_argel_picasso.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/mujeres_de_argel_picasso.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -279,7 +266,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -299,7 +286,7 @@ function Picassocollection() {
             <PopoverTrigger>
             
             <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%"  height="100%" src={"./style/Pablo_picasso_collection/old-guitarist-chicago-1903.jpg"}  ></img>
+              <img alt="" width = "100%"  height="100%" src="./style/Pablo_picasso_collection/old-guitarist-chicago-1903.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -312,7 +299,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -332,7 +319,7 @@ function Picassocollection() {
             <PopoverTrigger>
             
                 <But bg ="white" w="300px" h="300px"  type="submit"> 
-                <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/portrait-of-ambroise-vollard-1910.jpg"}  ></img>
+                <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/portrait-of-ambroise-vollard-1910.jpg"/>
                </But>
             </PopoverTrigger>
             <Portal>
@@ -345,7 +332,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -366,7 +353,7 @@ function Picassocollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-            <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/portrait-of-dora-maar-1937.jpg"}  ></img>
+            <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/portrait-of-dora-maar-1937.jpg"/>
             </But>
             </PopoverTrigger>
             <Portal>
@@ -379,7 +366,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -398,7 +385,7 @@ function Picassocollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/Portrait-of-woman-in-dhermine-pass-1937.jpg"}  ></img> 
+              <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/Portrait-of-woman-in-dhermine-pass-1937.jpg"/> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -411,7 +398,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -429,7 +416,7 @@ function Picassocollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"}  ></img> 
+              <img alt="" width = "100%" height="100%" src="./style/Pablo_picasso_collection/the-girls-of-avignon-1907.jpg"/> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -442,7 +429,7 @@ function Picassocollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -456,9 +443,7 @@ function Picassocollection() {
           </Flex>
       </HStack>
       </div> 
-      <VStack bg="red" w="100%" h="500px">
-
-      </VStack>
+      <VStack bg="red" w="100%" h="500px"/>
       </VStack>
       </div>
       </>

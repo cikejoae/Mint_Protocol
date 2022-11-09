@@ -1,21 +1,5 @@
-import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
-import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
-import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
-import {Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton, 
-  useDisclosure
-} from '@chakra-ui/react'
-
-
-import { ChangeEvent } from 'react';
-import { isWhiteSpaceLike } from 'typescript';
-import images from "./images";
+import React, { MouseEvent , useState,} from 'react';
+import { Button as But,Flex, Heading, Box, HStack, VStack, Center, Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverArrow, PopoverCloseButton,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton, useDisclosure } from '@chakra-ui/react';
 import './App.css';
 
 
@@ -25,8 +9,6 @@ import './App.css';
 function Vincentvangoghcollection() {
 
  
-
-  ///////////////////////////////SCREEN SECUNDARY
 
       const OverlayOne = () => (
     <ModalOverlay
@@ -40,9 +22,6 @@ function Vincentvangoghcollection() {
         const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
         
-
-
-         ///PANEL CONTROL
          const [panel ,setMultipanel]= useState(0);
     
          const Multipanel = (state:any) => {
@@ -65,10 +44,7 @@ function Vincentvangoghcollection() {
              
            }
 
-////////////////////////////////////////////////////////////////////////
-      
 
-        ///Multistate fuction
         const [multi, setMulti]= useState(0);
     
         const Multistate = (state:any) => {
@@ -127,8 +103,7 @@ function Vincentvangoghcollection() {
           
          
          </Box>
-         <Box w="100%" h="50px">
-         </Box>
+         <Box w="100%" h="50px"/>
         </VStack>
         <div >
         <VStack  w="100%" h="350px">
@@ -142,7 +117,7 @@ function Vincentvangoghcollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/Irises-1889.jpg"}  ></img>
+              <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/Irises-1889.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -174,7 +149,7 @@ function Vincentvangoghcollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/landscape-with-house-and-ploughman-1889.jpg"}  ></img>
+              <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/landscape-with-house-and-ploughman-1889.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -206,7 +181,7 @@ function Vincentvangoghcollection() {
             <PopoverTrigger>
 
             <But bg ="white" w="300px" h="300px"  type="submit">
-              <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/paul-gauguin-s-armchair-1888.jpg"}  ></img>
+              <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/paul-gauguin-s-armchair-1888.jpg" />
               </But>
             </PopoverTrigger>
             <Portal>
@@ -239,7 +214,7 @@ function Vincentvangoghcollection() {
             <PopoverTrigger>
 
               <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/prisoners-exercising-prisoners-round-1890.jpg"}  ></img>
+              <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/prisoners-exercising-prisoners-round-1890.jpg" />
               </But>
             </PopoverTrigger>
             <Portal>
@@ -272,7 +247,7 @@ function Vincentvangoghcollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/red-vineyards-at-arles-1888.jpg"}  ></img>
+              <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/red-vineyards-at-arles-1888.jpg" />
               </But>
             </PopoverTrigger>
             <Portal>
@@ -305,7 +280,7 @@ function Vincentvangoghcollection() {
             <PopoverTrigger>
             
             <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%"  height="100%" src={"./style/Vincent_van_gogh_collection/self-portrait-1887.jpg"}  ></img>
+              <img width = "100%"  height="100%" src="./style/Vincent_van_gogh_collection/self-portrait-1887.jpg" />
               </But>
             </PopoverTrigger>
             <Portal>
@@ -338,7 +313,7 @@ function Vincentvangoghcollection() {
             <PopoverTrigger>
             
                 <But bg ="white" w="300px" h="300px"  type="submit"> 
-                <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/self-portrait-with-bandaged-ear-1889.jpg"}  ></img>
+                <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/self-portrait-with-bandaged-ear-1889.jpg"/>
                </But>
             </PopoverTrigger>
             <Portal>
@@ -372,7 +347,7 @@ function Vincentvangoghcollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-            <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/StarryNight.jpg"}  ></img>
+            <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/StarryNight.jpg"/>
             </But>
             </PopoverTrigger>
             <Portal>
@@ -404,7 +379,7 @@ function Vincentvangoghcollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/still-life-vase-with-fifteen-sunflowers-1888.jpg"}  ></img> 
+              <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/still-life-vase-with-fifteen-sunflowers-1888.jpg" /> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -435,7 +410,7 @@ function Vincentvangoghcollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Vincent_van_gogh_collection/wheatfield-with-crows-1890.jpg"}  ></img> 
+              <img width = "100%" height="100%" src="./style/Vincent_van_gogh_collection/wheatfield-with-crows-1890.jpg"/> 
               </But>
             </PopoverTrigger>
             <Portal>

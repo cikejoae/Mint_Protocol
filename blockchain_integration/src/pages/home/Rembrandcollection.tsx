@@ -1,18 +1,5 @@
-import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
-import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
-import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
-import { ChangeEvent } from 'react';
-import {Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton, 
-  useDisclosure
-} from '@chakra-ui/react'
-import { isWhiteSpaceLike } from 'typescript';
+import React, { MouseEvent , useState,} from 'react';
+import { Button as But,Flex, Heading, Box, HStack, VStack, Center, Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverArrow, PopoverCloseButton,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton, useDisclosure } from '@chakra-ui/react';
 import './App.css';
 
 
@@ -22,9 +9,6 @@ import './App.css';
 
 function Rembrandcollection() {
 
-  
-
-  ///////////////////////////////SCREEN SECUNDARY
 
   const OverlayOne = () => (
     <ModalOverlay
@@ -40,8 +24,20 @@ function Rembrandcollection() {
         
 
 
-         ///PANEL CONTROL
          const [panel ,setMultipanel]= useState(0);
+
+         const Newstatepanel = panel;
+
+         const sendPanelstate = async () => {
+             
+                   
+          const res = await fetch('http://localhost:5000/mainpanel',
+          { method : "POST", 
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(Newstatepanel)})
+          const data = await res.json();
+            
+          }
     
          const Multipanel = (state:any) => {
  
@@ -50,34 +46,16 @@ function Rembrandcollection() {
  
                         };
  
-          const Newstatepanel = panel;
+         
  
-          const sendPanelstate = async () => {
-             
-                   
-           const res = await fetch('http://localhost:5000/mainpanel',
-           { method : "POST", 
-           headers: {'Content-Type': 'application/json'},
-           body: JSON.stringify(Newstatepanel)})
-           const data = await res.json();
-             
-           }
+          
 
-////////////////////////////////////////////////////////////////////////
 
-        ///Multistate fuction
         const [multi, setMulti]= useState(0);
-    
-        const Multistate = (state:any) => {
 
-                     setMulti(state);
-                     sendMultistate();
+        const Newstate = multi;
 
-                       };
-
-         const Newstate = multi;
-
-         const sendMultistate = async () => {
+        const sendMultistate = async () => {
             
                   
           const res = await fetch('http://localhost:5000/Rembrandcollection',
@@ -87,9 +65,19 @@ function Rembrandcollection() {
           const data = await res.json();
             
           }
+    
+        const Multistate = (state:any) => {
 
-         ///Carusel fuctions
+                     setMulti(state);
+                     sendMultistate();
 
+                       };
+
+        
+
+        
+
+   
 
          const [className, setclassName]= useState('carousel_slow');
 
@@ -125,8 +113,7 @@ function Rembrandcollection() {
           <Center className="aumento" > Rembrand </Center>
          
          </Box>
-         <Box w="100%" h="50px">
-         </Box>
+         <Box w="100%" h="50px"/>
         </VStack>
         <div >
         <VStack  w="100%" h="350px">
@@ -140,7 +127,7 @@ function Rembrandcollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Rembrandt_collection/beggar-man-and-woman-1628.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/beggar-man-and-woman-1628.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -153,7 +140,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -172,7 +159,7 @@ function Rembrandcollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Rembrandt_collection/beggar-man-and-woman-behind-a-bank-1630.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/beggar-man-and-woman-behind-a-bank-1630.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -185,7 +172,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -204,7 +191,7 @@ function Rembrandcollection() {
             <PopoverTrigger>
 
             <But bg ="white" w="300px" h="300px"  type="submit">
-              <img width = "100%" height="100%" src={"./style/Rembrandt_collection/old-man-in-a-long-cloak-sitting-in-an-armchair-1630.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/old-man-in-a-long-cloak-sitting-in-an-armchair-1630.jpg" />
               </But>
             </PopoverTrigger>
             <Portal>
@@ -217,7 +204,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -237,7 +224,7 @@ function Rembrandcollection() {
             <PopoverTrigger>
 
               <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Rembrandt_collection/seated-old-man-1630.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/seated-old-man-1630.jpg" />
               </But>
             </PopoverTrigger>
             <Portal>
@@ -250,7 +237,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -270,7 +257,7 @@ function Rembrandcollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Rembrandt_collection/self-portrait-1630.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/self-portrait-1630.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -283,7 +270,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -303,7 +290,7 @@ function Rembrandcollection() {
             <PopoverTrigger>
             
             <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%"  height="100%" src={"./style/Rembrandt_collection/self-portrait-leaning-forward-listening-1628.jpg"}  ></img>
+              <img alt="" width = "100%"  height="100%" src="./style/Rembrandt_collection/self-portrait-leaning-forward-listening-1628.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -316,7 +303,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -336,7 +323,7 @@ function Rembrandcollection() {
             <PopoverTrigger>
             
                 <But bg ="white" w="300px" h="300px"  type="submit"> 
-                <img width = "100%" height="100%" src={"./style/Rembrandt_collection/st-jerome-kneeling-1630.jpg"}  ></img>
+                <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/st-jerome-kneeling-1630.jpg" />
                </But>
             </PopoverTrigger>
             <Portal>
@@ -349,7 +336,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -370,7 +357,7 @@ function Rembrandcollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px"  type="submit"> 
-            <img width = "100%" height="100%" src={"./style/Rembrandt_collection/st-paul-in-meditation-1629.jpg"}  ></img>
+            <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/st-paul-in-meditation-1629.jpg"/>
             </But>
             </PopoverTrigger>
             <Portal>
@@ -383,7 +370,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -402,7 +389,7 @@ function Rembrandcollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Rembrandt_collection/the-flight-into-egypt-a-sketch-1627.jpg"}  ></img> 
+              <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/the-flight-into-egypt-a-sketch-1627.jpg"/> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -415,7 +402,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -433,7 +420,7 @@ function Rembrandcollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px"   type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Rembrandt_collection/widebrim-1632.jpg"}  ></img> 
+              <img alt="" width = "100%" height="100%" src="./style/Rembrandt_collection/widebrim-1632.jpg"/> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -446,7 +433,7 @@ function Rembrandcollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -461,9 +448,7 @@ function Rembrandcollection() {
           </Flex>
       </HStack>
       </div> 
-      <VStack bg="red" w="100%" h="500px">
-
-      </VStack>
+      <VStack bg="red" w="100%" h="500px"/>
       </VStack>
       </div>
       </>

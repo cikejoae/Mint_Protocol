@@ -1,22 +1,7 @@
 
-import React, {MouseEventHandler, MouseEvent , useState,} from 'react';
-import { Button as But,Flex, Heading, Box, HStack, CircularProgress, CircularProgressLabel,Tabs, TabList, TabPanels, Tab, TabPanel, VStack, Stack, Spacer,ButtonGroup,Center, ButtonProps, useColorModeValue, Tooltip, background } from '@chakra-ui/react';
-import { Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, PopoverAnchor,} from '@chakra-ui/react'
-import { ChangeEvent } from 'react';
-import {Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton, 
-  useDisclosure
-} from '@chakra-ui/react'
-
-import { isWhiteSpaceLike } from 'typescript';
+import React, { MouseEvent , useState,} from 'react';
+import { Button as But,Flex, Heading, Box, HStack, VStack, Center, Portal, Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverArrow, PopoverCloseButton,Modal,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton, useDisclosure } from '@chakra-ui/react';
 import './App.css';
-
 
 
 
@@ -24,8 +9,6 @@ import './App.css';
 
 function Davincicollection() {
 
-
-   ///////////////////////////////SCREEN SECUNDARY
 
    const OverlayOne = () => (
     <ModalOverlay
@@ -40,9 +23,20 @@ function Davincicollection() {
 
         
 
-
-         ///PANEL CONTROL
          const [panel ,setMultipanel]= useState(0);
+
+         const sendPanelstate = async () => {
+
+          const Newstatepanel = panel;
+             
+                   
+          const res = await fetch('http://localhost:5000/mainpanel',
+          { method : "POST", 
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(Newstatepanel)})
+          const data = await res.json();
+            
+          }
     
          const Multipanel = (state:any) => {
  
@@ -51,34 +45,16 @@ function Davincicollection() {
  
                         };
  
-          const Newstatepanel = panel;
+          
  
-          const sendPanelstate = async () => {
-             
-                   
-           const res = await fetch('http://localhost:5000/mainpanel',
-           { method : "POST", 
-           headers: {'Content-Type': 'application/json'},
-           body: JSON.stringify(Newstatepanel)})
-           const data = await res.json();
-             
-           }
+          
 
-////////////////////////////////////////////////////////////////////////
 
-        ///Multistate fuction
         const [multi, setMulti]= useState(0);
-    
-        const Multistate = (state:any) => {
 
-                     setMulti(state);
-                     sendMultistate();
+        const Newstate = multi;
 
-                       };
-
-         const Newstate = multi;
-
-         const sendMultistate = async () => {
+        const sendMultistate = async () => {
             
                   
           const res = await fetch('http://localhost:5000/Davincicollection',
@@ -88,8 +64,18 @@ function Davincicollection() {
           const data = await res.json();
             
           }
+    
+        const Multistate = (state:any) => {
 
-         ///Carusel fuctions
+                     setMulti(state);
+                     sendMultistate();
+
+                       };
+
+      
+
+         
+
 
 
          const [className, setclassName]= useState('carousel_slow');
@@ -126,8 +112,7 @@ function Davincicollection() {
           <Center className="aumento" > Leonardo da Vinci </Center>
          
          </Box>
-         <Box w="100%" h="50px">
-         </Box>
+         <Box w="100%" h="50px"/>
         </VStack>
         <div >
         <VStack  w="100%" h="350px">
@@ -141,7 +126,7 @@ function Davincicollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px" type="submit"> 
-              <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/da-vinci-vitruve-luc-viatour.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Leonardo_davinci_collection/da-vinci-vitruve-luc-viatour.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -154,7 +139,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -173,7 +158,7 @@ function Davincicollection() {
           <Popover>
             <PopoverTrigger>
             <But bg ="white" w="300px" h="300px"   > 
-              <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/drapery-for-a-seated-1470.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Leonardo_davinci_collection/drapery-for-a-seated-1470.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -186,7 +171,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -205,7 +190,7 @@ function Davincicollection() {
             <PopoverTrigger>
 
             <But bg ="white" w="300px" h="300px" >
-              <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/mona-lisa.1503.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Leonardo_davinci_collection/mona-lisa.1503.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -218,7 +203,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -238,7 +223,7 @@ function Davincicollection() {
             <PopoverTrigger>
 
               <But bg ="white" w="300px" h="300px" > 
-              <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/profile-of-a-warrior-in-helmet-1472.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Leonardo_davinci_collection/profile-of-a-warrior-in-helmet-1472.jpg" />
               </But>
             </PopoverTrigger>
             <Portal>
@@ -251,7 +236,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -271,7 +256,7 @@ function Davincicollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px" > 
-              <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/study-of-hands-1474.jpg"}  ></img>
+              <img alt="" width = "100%" height="100%" src="./style/Leonardo_davinci_collection/study-of-hands-1474.jpg"/>
               </But>
             </PopoverTrigger>
             <Portal>
@@ -284,7 +269,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -304,7 +289,7 @@ function Davincicollection() {
             <PopoverTrigger>
             
             <But  bg ="white" w="300px" h="300px" > 
-              <img width = "100%"  height="100%" src={"./style/Leonardo_davinci_collection/the-baptism-of-christ-c-1475.jpg"}  ></img>
+              <img alt="" width = "100%"  height="100%" src="./style/Leonardo_davinci_collection/the-baptism-of-christ-c-1475.jpg" />
               </But>
             </PopoverTrigger>
             <Portal>
@@ -317,7 +302,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -337,7 +322,7 @@ function Davincicollection() {
             <PopoverTrigger>
             
                 <But bg ="white" w="300px" h="300px" > 
-                <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/the-madonna-of-the-carnation-1480.jpg"}  ></img>
+                <img alt="" width = "100%" height="100%" src="./style/Leonardo_davinci_collection/the-madonna-of-the-carnation-1480.jpg"/>
                </But>
             </PopoverTrigger>
             <Portal>
@@ -350,7 +335,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -371,7 +356,7 @@ function Davincicollection() {
             <PopoverTrigger>
             
             <But bg ="white" w="300px" h="300px" > 
-            <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/the-lady-with-the-ermine-cecilia-gallerani-1496.jpg"}  ></img>
+            <img alt="" width = "100%" height="100%" src="./style/Leonardo_davinci_collection/the-lady-with-the-ermine-cecilia-gallerani-1496.jpg"/>
             </But>
             </PopoverTrigger>
             <Portal>
@@ -384,7 +369,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -403,7 +388,7 @@ function Davincicollection() {
             <PopoverTrigger>
             
               <But  bg ="white" w="300px" h="300px" > 
-              <img width = "100%" height="100%" src={"./style/Leonardo_davinci_collection/Autorretrato.jpg"}  ></img> 
+              <img alt="" width = "100%" height="100%" src="./style/Leonardo_davinci_collection/Autorretrato.jpg" /> 
               </But>
             </PopoverTrigger>
             <Portal>
@@ -416,7 +401,7 @@ function Davincicollection() {
              <Modal isCentered isOpen={isOpen} onClose={onClose}>
                          {overlay}
                     <ModalContent >
-                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor={"white"} size ="md">Added</Heading></ModalHeader>
+                            <ModalHeader  border='2px' borderColor="#e80b9d"  borderRadius='md'  bg ="#e80b9d"><Heading textColor="white" size ="md">Added</Heading></ModalHeader>
                      <ModalCloseButton bg ="white" />
                    </ModalContent>
               </Modal>
@@ -431,9 +416,7 @@ function Davincicollection() {
           </Flex>
       </HStack>
       </div> 
-      <VStack bg="red" w="100%" h="500px">
-
-      </VStack>
+      <VStack bg="red" w="100%" h="500px"/>
       </VStack>
       </div>
       </>
