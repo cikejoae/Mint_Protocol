@@ -35,7 +35,7 @@ Frontend Developer. Github : ScarRodriguez
 INSTRUCCCIONES DE USO  PARA WINDOWS 10
 
 
-PASO 1. Descargar  NODE.js en https://nodejs.org/en/
+PASO 1. Descargar  NODE.js en https://nodejs.org/en/ y git para windows https://git-scm.com/downloads
 
 ![image](https://user-images.githubusercontent.com/111330447/200871209-0ff02ae4-85c9-415d-abf3-e249445a6ac7.png)
 
