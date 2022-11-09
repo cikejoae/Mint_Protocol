@@ -28,3 +28,74 @@ Computational physics and artificial intelligence software developer. Github: A-
 Scarlet Rangel
 
 Frontend Developer. Github : ScarRodriguez
+
+
+
+
+INSTRUCCCIONES DE USO  PARA WINDOWS 10
+
+
+PASO 1. Descargar  NODE.js en https://nodejs.org/en/
+
+![image](https://user-images.githubusercontent.com/111330447/200871209-0ff02ae4-85c9-415d-abf3-e249445a6ac7.png)
+
+ 
+Abre el CMD y obtén el repositorio con el comando:
+•	git clone https://github.com/A-mont/Mint_Protocol.git
+
+PASO 2. Instalar Python preferentemente 3.10.0 en el siguiente link https://www.python.org/downloads/ seleccionando la casilla  Add python.exe to PATH.
+
+![image](https://user-images.githubusercontent.com/111330447/200871760-6954fd74-6dbb-4d4d-9eef-529fa887b5a6.png)
+
+
+
+PASO 3. Instalar las librerías de C++ de  https://visualstudio.microsoft.com/es/downloads/.
+Seleccionamos el botón Community e instalamos
+
+![image](https://user-images.githubusercontent.com/111330447/200871838-b0dd5cae-1db1-4b66-82a0-db3746943016.png)
+
+
+Una vez dentro del instalador seleccionamos la casilla Desarrollo para el escritorio con C++ y apretamos el botón instalar.
+
+![image](https://user-images.githubusercontent.com/111330447/200871900-74bf6498-c841-40e0-a072-88be72f40447.png)
+
+ 
+
+
+
+
+PASO 4. Ingresamos desde el CMD al directorio backend y ejecutamos los comandos.
+
+Comando 1:
+
+•	cd Mint_Protocol/Backend
+
+Comando 2:
+
+•	python Execution.py
+
+Comando 3:
+
+•	python Backend.py
+
+PASO 5. Creamos una nueva terminal CMD e Ingresamos al directorio blockchain_integration:
+
+Primero:
+
+•	cd Mint_Protocol/blockchain_integration
+
+•	Renombra el archivo .env.txt a .env
+
+Ejecuta:
+
+•	yarn install
+
+Finalmente:
+
+•	yarn start
+
+Esto ejecutará el proyecto en el Localhost:3000
+
+Listo!!!! ya puedes probar el prototipo de Mint protocol desde la comodidad de tu computadora…..
+
+
