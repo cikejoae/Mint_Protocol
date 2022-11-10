@@ -32,7 +32,9 @@ Team:
  
 Adrian Montero
 
-Computational physics and artificial intelligence software developer. Github: A-mont
+Computational physics and artificial intelligence software developer. 
+Github: A-mont
+twitter: https://twitter.com/a_mont24
 
 Scarlet Rangel
 
