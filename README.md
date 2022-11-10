@@ -69,9 +69,11 @@ PASO 1. Descargar  NODE.js en https://nodejs.org/en/ y git para windows https://
 Abre el CMD y obtén el repositorio con el comando:
 •	git clone https://github.com/A-mont/Mint_Protocol.git
 
-PASO 2. Instalar Python preferentemente 3.10.0 en el siguiente link https://www.python.org/downloads/ seleccionando la casilla  Add python.exe to PATH.
+PASO 2. Instalar Python 3.10.0 en el siguiente link https://www.python.org/downloads/release/python-3100/ seleccionando la casilla  Add python.exe to PATH (IMPORTANTE) .
 
-![image](https://user-images.githubusercontent.com/111330447/200871760-6954fd74-6dbb-4d4d-9eef-529fa887b5a6.png)
+![image](https://user-images.githubusercontent.com/111330447/201202567-b93ac966-ecd4-41a9-adeb-c13387affd0e.png)
+![image](https://user-images.githubusercontent.com/111330447/201202653-c630d012-9755-46cc-a98e-c858d4fb22d0.png)
+
 
 
 
