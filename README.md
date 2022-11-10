@@ -19,6 +19,15 @@ Mint Protocol is a decentralized application that generates NFT collections usin
 (CNNs). For the generation of NFT collections, smart contracts were compiled to WASM and deployed on the Gear network.
 
 
+Business model
+
+The business model will consist of a commission for NFT generation, payment for advanced protocol features and  payment for filters and exclusive styles for users.
+
+
+The construction of a marketplace with commission for the sale of NFTs created in mint protocol.
+
+
+
 Team: 
  
 Adrian Montero
@@ -28,6 +37,13 @@ Computational physics and artificial intelligence software developer. Github: A-
 Scarlet Rangel
 
 Frontend Developer. Github : ScarRodriguez
+
+
+Technologies.
+Programming languages: TypeScript, Python, Rust, CSS, HTML
+Libraries: Flask, Opencv, Pytorch, Dlib, Numpy,matplotlib.
+Framework: React
+API: Polkadot.JS, Gear-JS, IPFS-JS
 
 
 
