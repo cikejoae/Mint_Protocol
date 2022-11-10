@@ -28,13 +28,21 @@ The construction of a marketplace with commission for the sale of NFTs created i
 
 
 
-Team: 
+Team:
+
+
+![image](https://user-images.githubusercontent.com/111330447/201170415-ab52cfbf-0f18-4026-82ae-f8315c5970ef.png)
  
 Adrian Montero
 
 Computational physics and artificial intelligence software developer. 
 Github: A-mont
-twitter: https://twitter.com/a_mont24
+
+Twitter: https://twitter.com/a_mont24
+
+
+
+![image](https://user-images.githubusercontent.com/111330447/201170532-d4d7b2ea-8c68-473d-83a3-aa8ce248674f.png)
 
 Scarlet Rangel
 
