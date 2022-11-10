@@ -46,6 +46,8 @@ class Videocapture():
         #Style tranfer
         self.Style_transfer=0
         
+        vgg = models.vgg19(pretrained=True).features
+        
         
     def execution(self):
         
