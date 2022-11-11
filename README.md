@@ -124,6 +124,7 @@ Comando 3:
 
 •	python Backend.py
 
+Este paso activará tu webcam, deja la terminal activa y continua con el paso 5.
 
 
 PASO 5. Creamos una nueva terminal CMD e Ingresamos al directorio blockchain_integration:
