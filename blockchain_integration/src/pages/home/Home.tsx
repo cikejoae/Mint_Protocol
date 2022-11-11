@@ -669,7 +669,7 @@ return (
                          {overlay}
                     <ModalContent >
                             <ModalHeader h="300px" w="480px"  border='2px' borderColor="white"  borderRadius='md'  bg ="#e80b9d">
-                              <Heading textColor={"white"} size ="md"> NST algorithm learning and transferring style.....</Heading>
+                              <Heading textColor={"white"} size ="md">The NST algorithm is learning and transferring style.....</Heading>
                               <Box w="100%" h="30px"></Box>
                               <Flex gap ="16">
                              
