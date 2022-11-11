@@ -1,8 +1,6 @@
 # Mint Protocol
 
 
-MINT PROTOCOL
-
 Category: NFT
 
 Challenge: Gear Technologies
