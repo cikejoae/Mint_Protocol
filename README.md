@@ -49,11 +49,25 @@ Scarlet Rangel
 Frontend Developer. Github : ScarRodriguez
 
 
+
+
+
+
+
 Technologies.
+
+
 Programming languages: TypeScript, Python, Rust, CSS, HTML
+
 Libraries: Flask, Opencv, Pytorch, Dlib, Numpy,matplotlib.
+
 Framework: React
+
 API: Polkadot.JS, Gear-JS, IPFS-JS
+
+
+
+
 
 
 
@@ -67,7 +81,11 @@ PASO 1. Descargar  NODE.js en https://nodejs.org/en/ y git para windows https://
 
  
 Abre el CMD y obtén el repositorio con el comando:
+
+
 •	git clone https://github.com/A-mont/Mint_Protocol.git
+
+
 
 PASO 2. Instalar Python 3.10.0 en el siguiente link https://www.python.org/downloads/release/python-3100/ seleccionando la casilla  Add python.exe to PATH (IMPORTANTE) .
 
@@ -106,13 +124,15 @@ Comando 3:
 
 •	python Backend.py
 
+
+
 PASO 5. Creamos una nueva terminal CMD e Ingresamos al directorio blockchain_integration:
 
 Primero:
 
 •	cd Mint_Protocol/blockchain_integration
 
-•	Renombra el archivo .env.txt a .env
+•	Renombra el archivo .env.txt a .env (IMPORTANTE)
 
 Ejecuta:
 
