@@ -134,6 +134,8 @@ Primero:
 
 •	Renombra el archivo .env.txt a .env (IMPORTANTE)
 
+•	npm install --global yarn
+
 Ejecuta:
 
 •	yarn install
