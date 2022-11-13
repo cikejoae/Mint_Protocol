@@ -146,3 +146,4 @@ Esto ejecutará el proyecto en el Localhost:3000
 Listo!!!! ya puedes probar el prototipo de Mint protocol desde la comodidad de tu computadora…..
 
 
+FUENTE DE IMAGENES: https://www.wikiart.org/es
