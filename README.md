@@ -31,7 +31,7 @@ The construction of a marketplace with commission for the sale of NFTs created i
 
 ![image](https://user-images.githubusercontent.com/111330447/201170415-ab52cfbf-0f18-4026-82ae-f8315c5970ef.png)
  
-Adrian Montero
+Adrián Montero
 
 Computational physics and artificial intelligence software developer. 
 Github: A-mont
@@ -153,4 +153,4 @@ PRESENTACIÓN EN VIVO, CONTÁCTANOS: a.mont.24.777@gmail.com
 ELPROCESO DE MINTEO REQUERIRÁ SALDO EN LA TESNET-V4 DE GEAR: https://idea.gear-tech.io/
 
 
-FUENTE DE IMAGENES: https://www.wikiart.org/es
+FUENTE DE IMÁGENES: https://www.wikiart.org/es
