@@ -148,6 +148,7 @@ Esto ejecutará el proyecto en el Localhost:3000
 
 Listo!!!! ya puedes probar el prototipo de Mint protocol desde la comodidad de tu computadora…..
 
+PRESENTACIÓN EN VIVO, CONTÁCTANOS: a.mont.24.777@gmail.com
 
 ELPROCESO DE MINTEO REQUERIRÁ SALDO EN LA TESNET-V4 DE GEAR: https://idea.gear-tech.io/
 
